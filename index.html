@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <!-- =====================================================
        InfraOne – Digital Signage Landing/Flyer (HTML only)
@@ -9,12 +10,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Werbebildschirme ohne Abo – InfraOne Digital Signage (lokal)</title>
-  <meta name="description" content="InfraOne Digital Signage: Werbebildschirme ohne Abo. Lokales CMS, günstige Player, personalisierte Anzeige-Vorlagen. Für Gastro, Retail, Büros, Spitäler & Filialnetze. Optional Cloud & SIM/4G/5G.">
+  <meta name="description"
+    content="InfraOne Digital Signage: Werbebildschirme ohne Abo. Lokales CMS, günstige Player, personalisierte Anzeige-Vorlagen. Für Gastro, Retail, Büros, Spitäler & Filialnetze. Optional Cloud & SIM/4G/5G.">
 
   <!-- Canonical & Social -->
   <link rel="canonical" href="https://www.infraone.ch/infraone-digitalsignage/">
   <meta property="og:title" content="Werbebildschirme ohne Abo – InfraOne Digital Signage (lokal)">
-  <meta property="og:description" content="Einmal investieren, zentral steuern. Starter CHF 660.–, KMU CHF 2’370.–. Cloud-Variante separat.">
+  <meta property="og:description"
+    content="Einmal investieren, zentral steuern. Starter CHF 660.–, KMU CHF 2’370.–. Cloud-Variante separat.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.infraone.ch/infraone-digitalsignage/">
   <meta property="og:image" content="assets/images/screen1.jpg">
@@ -29,127 +32,521 @@
 
   <style>
     /* ================= TOKENS & RESET ================= */
-    :root{
-      --io-green:#3C9646; /* aktualisierte InfraOne-Farbe */
-      --io-red:#D72027;
-      --ink:#0f172a;
-      --muted:#6b7280;
-      --bg:#f5f7fa;
-      --card:#ffffff;
-      --shadow:0 14px 34px rgba(0,0,0,.10);
-      --radius:20px;
-      --maxw:1180px;
-      --sp-1:10px; --sp-2:16px; --sp-3:22px; --sp-4:32px; --sp-5:48px; --sp-6:64px;
+    :root {
+      --io-green: #3C9646;
+      /* aktualisierte InfraOne-Farbe */
+      --io-red: #D72027;
+      --ink: #0f172a;
+      --muted: #6b7280;
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --shadow: 0 14px 34px rgba(0, 0, 0, .10);
+      --radius: 20px;
+      --maxw: 1180px;
+      --sp-1: 10px;
+      --sp-2: 16px;
+      --sp-3: 22px;
+      --sp-4: 32px;
+      --sp-5: 48px;
+      --sp-6: 64px;
       --hover-raise: translateY(-4px);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-    h1,h2,h3,h4{line-height:1.2;margin:0 0 .5em}
-    p{margin:.25em 0 1em}
-    a{color:var(--io-green);text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:var(--maxw);margin:auto;padding:0 var(--sp-2)}
-    .grid{display:grid;gap:var(--sp-3)}
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--sp-3)}
-    .section{padding:var(--sp-5) 0}
-    .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:14px 20px;border-radius:12px;font-weight:700;transition:.2s ease}
-    .btn-primary{background:var(--io-green);color:#fff}
-    .btn-primary:hover{filter:saturate(105%) brightness(1.03);transform:var(--hover-raise)}
-    .btn-ghost{border:2px solid var(--io-green);color:var(--io-green);background:#fff}
-    .btn-ghost:hover{background:#e8f7ea;transform:var(--hover-raise)}
-    .pill{display:inline-block;padding:.35em .7em;border-radius:999px;font-weight:700}
-    .badge{background:#E8F9EA;color:#0E7F1C;border:1px solid #CFF3D4}
-    .muted{color:var(--muted)}
-    .hover-card{transition:transform .2s ease, box-shadow .2s ease}
-    .hover-card:hover{transform:var(--hover-raise);box-shadow:0 18px 40px rgba(0,0,0,.12)}
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font: 16px/1.55 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink)
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.2;
+      margin: 0 0 .5em
+    }
+
+    p {
+      margin: .25em 0 1em
+    }
+
+    a {
+      color: var(--io-green);
+      text-decoration: none
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: auto;
+      padding: 0 var(--sp-2)
+    }
+
+    .grid {
+      display: grid;
+      gap: var(--sp-3)
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: var(--sp-3)
+    }
+
+    .section {
+      padding: var(--sp-5) 0
+    }
+
+    .btn {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: .2s ease
+    }
+
+    .btn-primary {
+      background: var(--io-green);
+      color: #fff
+    }
+
+    .btn-primary:hover {
+      filter: saturate(105%) brightness(1.03);
+      transform: var(--hover-raise)
+    }
+
+    .btn-ghost {
+      border: 2px solid var(--io-green);
+      color: var(--io-green);
+      background: #fff
+    }
+
+    .btn-ghost:hover {
+      background: #e8f7ea;
+      transform: var(--hover-raise)
+    }
+
+    .pill {
+      display: inline-block;
+      padding: .35em .7em;
+      border-radius: 999px;
+      font-weight: 700
+    }
+
+    .badge {
+      background: #E8F9EA;
+      color: #0E7F1C;
+      border: 1px solid #CFF3D4
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .hover-card {
+      transition: transform .2s ease, box-shadow .2s ease
+    }
+
+    .hover-card:hover {
+      transform: var(--hover-raise);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .12)
+    }
 
     /* ================= NAVBAR ================= */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #e5e7eb}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px var(--sp-2);max-width:var(--maxw);margin:auto}
-    .nav-brand{display:flex;gap:10px;align-items:center}
-    .logo-img{width:34px;height:34px;border-radius:8px;object-fit:contain;display:block}
-    .nav-links{display:flex;gap:16px;flex-wrap:wrap}
-    .nav-links a{font-weight:600;color:#1f2937}
-    .nav-cta{display:flex;gap:10px}
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid #e5e7eb
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px var(--sp-2);
+      max-width: var(--maxw);
+      margin: auto
+    }
+
+    .nav-brand {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .logo-img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      object-fit: contain;
+      display: block
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: #1f2937
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 10px
+    }
 
     /* ================= HERO ================= */
-    .hero{position:relative}
-    .hero-media{position:relative;height:70vh;min-height:440px;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
-    .hero-media:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.25),rgba(0,0,0,.6))}
-    .hero-media{background:url('assets/images/screen1.jpg') center/cover no-repeat}
-    .hero-body{position:relative;z-index:1;padding:0 var(--sp-2)}
-    .hero h1{font-size:clamp(30px,4.6vw,56px);color:#fff;text-shadow:0 8px 32px rgba(0,0,0,.45)}
-    .hero p{font-size:clamp(16px,1.3vw,20px);max-width:880px;margin:12px auto 18px;color:#eef2ff}
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .hero {
+      position: relative
+    }
+
+    .hero-media {
+      position: relative;
+      height: 70vh;
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center
+    }
+
+    .hero-media:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .25), rgba(0, 0, 0, .6))
+    }
+
+    .hero-media {
+      background: url('assets/images/screen1.jpg') center/cover no-repeat
+    }
+
+    .hero-body {
+      position: relative;
+      z-index: 1;
+      padding: 0 var(--sp-2)
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.6vw, 56px);
+      color: #fff;
+      text-shadow: 0 8px 32px rgba(0, 0, 0, .45)
+    }
+
+    .hero p {
+      font-size: clamp(16px, 1.3vw, 20px);
+      max-width: 880px;
+      margin: 12px auto 18px;
+      color: #eef2ff
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center
+    }
 
     /* ================= SECTION TITLE ================= */
-    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:var(--sp-3)}
-    .section-title .line{flex:1;height:2px;background:linear-gradient(90deg,var(--io-green),transparent)}
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: var(--sp-3)
+    }
+
+    .section-title .line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--io-green), transparent)
+    }
 
     /* ================= BENEFITS / USE CASES ================= */
-    .benefits{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .benefit{display:grid;gap:10px}
-    .benefit .img-wrap{position:relative;border-radius:12px;overflow:hidden}
-    .benefit img{width:100%;height:160px;object-fit:cover}
-    .benefit .tag{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;padding:4px 8px;border-radius:8px;font-size:12px}
-    .usecases{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .usecase .img-wrap{height:180px;border-radius:12px;overflow:hidden}
-    .usecase img{width:100%;height:100%;object-fit:cover}
+    .benefits {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+    }
+
+    .benefit {
+      display: grid;
+      gap: 10px
+    }
+
+    .benefit .img-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden
+    }
+
+    .benefit img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover
+    }
+
+    .benefit .tag {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      background: rgba(0, 0, 0, .55);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 12px
+    }
+
+    .usecases {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+    }
+
+    .usecase .img-wrap {
+      height: 180px;
+      border-radius: 12px;
+      overflow: hidden
+    }
+
+    .usecase img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
 
     /* ================= PACKAGES ================= */
-    .packages{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-    .package{display:flex;flex-direction:column}
-    .price{font-size:28px;color:var(--io-red);font-weight:800}
-    .pkg-body{flex:1}
-    .pkg-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:12px;flex-wrap:wrap}
-    .pkg-footer .btn{flex:0 0 auto}
-    .pkg-note{flex:1 1 220px;color:var(--muted);font-size:.95rem}
+    .packages {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    }
+
+    .package {
+      display: flex;
+      flex-direction: column
+    }
+
+    .price {
+      font-size: 28px;
+      color: var(--io-red);
+      font-weight: 800
+    }
+
+    .pkg-body {
+      flex: 1
+    }
+
+    .pkg-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .pkg-footer .btn {
+      flex: 0 0 auto
+    }
+
+    .pkg-note {
+      flex: 1 1 220px;
+      color: var(--muted);
+      font-size: .95rem
+    }
 
     /* ================= COMPARISON ================= */
-    .cmp-grid{grid-template-columns:1fr 1fr}
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:12px 10px;text-align:left;border-bottom:1px solid #e5e7eb}
-    th{background:#f0fdf4}
-    .cmp-media{border-radius:12px;overflow:hidden}
-    .cmp-media img{width:100%;height:100%;object-fit:cover}
+    .cmp-grid {
+      grid-template-columns: 1fr 1fr
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse
+    }
+
+    th,
+    td {
+      padding: 12px 10px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb
+    }
+
+    th {
+      background: #f0fdf4
+    }
+
+    .cmp-media {
+      border-radius: 12px;
+      overflow: hidden
+    }
+
+    .cmp-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
 
     /* ================= TECH / PROCESS ================= */
-    .specs{grid-template-columns:repeat(4,1fr)} /* 4 Blöcke nebeneinander */
-    .spec{display:block}
-    .steps{counter-reset:step}
-    .step{position:relative;padding-left:56px}
-    .step:not(:last-child){margin-bottom:18px}
-    .step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:10px;background:var(--io-green);color:#fff;display:grid;place-items:center;font-weight:800}
+    .specs {
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    /* 4 Blöcke nebeneinander */
+    .spec {
+      display: block
+    }
+
+    .steps {
+      counter-reset: step
+    }
+
+    .step {
+      position: relative;
+      padding-left: 56px
+    }
+
+    .step:not(:last-child) {
+      margin-bottom: 18px
+    }
+
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--io-green);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800
+    }
 
     /* ================= TESTIMONIALS / FAQ ================= */
-    .testimonials{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-    .stars{color:#f59e0b}
-    details{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px}
-    details+details{margin-top:12px}
-    summary{cursor:pointer;font-weight:700}
+    .testimonials {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    }
+
+    .stars {
+      color: #f59e0b
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px
+    }
+
+    details+details {
+      margin-top: 12px
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700
+    }
 
     /* ================= FUNNELS / FOOTER ================= */
-    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:8px}
-    .sticky-cta a{box-shadow:var(--shadow)}
-    .cta-banner{background:linear-gradient(135deg,rgba(60,150,70,.1),rgba(215,32,39,.05));border:1px solid #e7f7ea}
-    footer{padding:var(--sp-4) 0;color:#fff;background:#0f172a}
-    footer a{color:#fff}
+    .sticky-cta {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .sticky-cta a {
+      box-shadow: var(--shadow)
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(60, 150, 70, .1), rgba(215, 32, 39, .05));
+      border: 1px solid #e7f7ea
+    }
+
+    footer {
+      padding: var(--sp-4) 0;
+      color: #fff;
+      background: #0f172a
+    }
+
+    footer a {
+      color: #fff
+    }
 
     /* ================= ANIMATIONS / MEDIA ================= */
-    .reveal{opacity:0;transform:translateY(10px);transition:opacity .4s ease, transform .4s ease}
-    .reveal.in-view{opacity:1;transform:none}
-    @media (max-width:980px){
-      .cmp-grid{grid-template-columns:1fr}
-      .specs{grid-template-columns:repeat(2,1fr)}
+    .reveal {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .4s ease, transform .4s ease
     }
-    @media (max-width:760px){
-      .nav-links{display:none}
-      .hero-media{height:58vh}
-      .section{padding:var(--sp-4) 0}
-      .pkg-footer{flex-direction:column;align-items:flex-start}
-      .pkg-note{text-align:left}
-      .specs{grid-template-columns:1fr}
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: none
+    }
+
+    @media (max-width:980px) {
+      .cmp-grid {
+        grid-template-columns: 1fr
+      }
+
+      .specs {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width:760px) {
+      .nav-links {
+        display: none
+      }
+
+      .hero-media {
+        height: 58vh
+      }
+
+      .section {
+        padding: var(--sp-4) 0
+      }
+
+      .pkg-footer {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .pkg-note {
+        text-align: left
+      }
+
+      .specs {
+        grid-template-columns: 1fr
+      }
     }
   </style>
 
@@ -207,6 +604,7 @@
   }
   </script>
 </head>
+
 <body>
 
   <!-- ================= NAV ================= -->
@@ -214,10 +612,7 @@
     <div class="nav-inner">
       <div class="nav-brand">
         <a href="https://www.infraone.ch/" aria-label="Zur InfraOne Hauptseite">
-          <img class="logo-img"
-            src="assets/images/logo.png"
-            alt="InfraOne Logo"
-            width="34" height="34"
+          <img class="logo-img" src="assets/images/logo.png" alt="InfraOne Logo" width="34" height="34"
             decoding="async" />
         </a>
         <strong><a href="https://www.infraone.ch/" style="color:inherit;text-decoration:none">InfraOne</a></strong>
@@ -245,7 +640,8 @@
       <div class="hero-body">
         <span class="pill badge">InfraOne • Digital Signage ohne Abo</span>
         <h1>Werbebildschirme <em>lokal</em> betrieben – mit personalisierten Vorlagen</h1>
-        <p class="muted">Einmal investieren, zentral steuern, Inhalte in Sekunden ändern. Für Gastronomie, Retail, Büros, Spitäler & Filialnetze. Optional Cloud & SIM/4G/5G.</p>
+        <p class="muted">Einmal investieren, zentral steuern, Inhalte in Sekunden ändern. Für Gastronomie, Retail,
+          Büros, Spitäler & Filialnetze. Optional Cloud & SIM/4G/5G.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#pakete">Pakete & Preise</a>
           <a class="btn btn-ghost" href="/whitepaper/index.html" target="_blank" rel="noopener">Whitepaper laden</a>
@@ -257,28 +653,35 @@
   <!-- ================= BENEFITS ================= -->
   <section id="benefits" class="section">
     <div class="container">
-      <div class="section-title"><h2>Warum InfraOne Digital Signage?</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Warum InfraOne Digital Signage?</h2>
+        <div class="line"></div>
+      </div>
       <div class="grid benefits">
         <article class="card hover-card benefit reveal">
-          <div class="img-wrap"><img loading="lazy" decoding="async" alt="Einmal investieren – Kostenkontrolle" src="assets/images/screen6.jpg"></div>
+          <div class="img-wrap"><img loading="lazy" decoding="async" alt="Einmal investieren – Kostenkontrolle"
+              src="assets/images/screen6.jpg"></div>
           <span class="tag">Kostenkontrolle</span>
           <h3>Einmal zahlen – laufen lassen</h3>
           <p class="muted">Ohne Pflicht-Monatsabos. Volle Kostenkontrolle & Datenhoheit.</p>
         </article>
         <article class="card hover-card benefit reveal">
-          <div class="img-wrap"><img loading="lazy" decoding="async" alt="Einfache Bedienung am Laptop" src="assets/images/screen7.jpg"></div>
+          <div class="img-wrap"><img loading="lazy" decoding="async" alt="Einfache Bedienung am Laptop"
+              src="assets/images/screen7.jpg"></div>
           <span class="tag">Vorlagen</span>
           <h3>Personalisierte Anzeige-Vorlagen</h3>
           <p class="muted">Fixfertige Designs (Menü, Aktionen, Öffnungszeiten, KPI). Inhalte austauschen – fertig.</p>
         </article>
         <article class="card hover-card benefit reveal">
-          <div class="img-wrap"><img loading="lazy" decoding="async" alt="Offline-Betrieb" src="assets/images/screen8.jpg"></div>
+          <div class="img-wrap"><img loading="lazy" decoding="async" alt="Offline-Betrieb"
+              src="assets/images/screen8.jpg"></div>
           <span class="tag">Betrieb</span>
           <h3>Offline-tauglich & skalierbar</h3>
           <p class="muted">Läuft weiter ohne Internet. Von 1 bis 100+ Displays – beliebig erweiterbar.</p>
         </article>
         <article class="card hover-card benefit reveal">
-          <div class="img-wrap"><img loading="lazy" decoding="async" alt="Skalierung vieler Bildschirme" src="assets/images/screen9.jpg"></div>
+          <div class="img-wrap"><img loading="lazy" decoding="async" alt="Skalierung vieler Bildschirme"
+              src="assets/images/screen9.jpg"></div>
           <span class="tag">Integration</span>
           <h3>Daten & Feeds</h3>
           <p class="muted">Wetter, Kalender, Social-Posts, CSV/JSON-Daten, Websites, Dashboards – alles zentral.</p>
@@ -306,27 +709,35 @@
   <!-- ================= USE CASES ================= -->
   <section id="usecases" class="section">
     <div class="container">
-      <div class="section-title"><h2>Einsatzmöglichkeiten</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Einsatzmöglichkeiten</h2>
+        <div class="line"></div>
+      </div>
       <div class="grid usecases">
         <article class="card hover-card usecase reveal">
-          <div class="img-wrap"><img loading="lazy" decoding="async" src="assets/images/screen10.jpg" alt="Digitales Menü im Restaurant"></div>
+          <div class="img-wrap"><img loading="lazy" decoding="async" src="assets/images/screen10.jpg"
+              alt="Digitales Menü im Restaurant"></div>
           <h3>Gastronomie</h3>
           <p>Menü-Boards, Tagesaktionen, Events, Allergene. Änderung in Sekunden.</p>
         </article>
         <article class="card hover-card usecase reveal">
-          <div class="img-wrap"><img loading="lazy" decoding="async" src="assets/images/screen11.jpg" alt="Retail Videowall"></div>
+          <div class="img-wrap"><img loading="lazy" decoding="async" src="assets/images/screen11.jpg"
+              alt="Retail Videowall"></div>
           <h3>Retail</h3>
           <p>Aktionen, QR-Codes, Kampagnen, Cross-Selling – zentral geplant.</p>
         </article>
         <article class="card hover-card usecase reveal">
-          <div class="img-wrap"><img loading="lazy" decoding="async" src="assets/images/screen12.jpg" alt="Unternehmens-Lobby mit Infoscreen"></div>
+          <div class="img-wrap"><img loading="lazy" decoding="async" src="assets/images/screen12.jpg"
+              alt="Unternehmens-Lobby mit Infoscreen"></div>
           <h3>Corporate & Spitäler</h3>
           <p>Empfang, Wegeleitung, Sicherheit, KPI-Boards, Wartezeiten – immer aktuell.</p>
         </article>
         <article class="card hover-card usecase reveal">
-          <div class="img-wrap"><img loading="lazy" decoding="async" src="assets/images/screen13.jpg" alt="Filialnetz mit zentraler Steuerung"></div>
+          <div class="img-wrap"><img loading="lazy" decoding="async" src="assets/images/screen13.jpg"
+              alt="Filialnetz mit zentraler Steuerung"></div>
           <h3>Mehrere Standorte</h3>
-          <p>Zentrale Inhalte, lokale Freigaben, Zeitpläne, Reporting. SIM/4G/5G möglich – ideal auch Outdoor/Terminals.</p>
+          <p>Zentrale Inhalte, lokale Freigaben, Zeitpläne, Reporting. SIM/4G/5G möglich – ideal auch Outdoor/Terminals.
+          </p>
         </article>
       </div>
     </div>
@@ -335,7 +746,10 @@
   <!-- ================= PACKAGES ================= -->
   <section id="pakete" class="section">
     <div class="container">
-      <div class="section-title"><h2>Pakete & Preise (einmalig)</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Pakete & Preise (einmalig)</h2>
+        <div class="line"></div>
+      </div>
       <div class="grid packages">
         <article class="card hover-card package reveal">
           <h3>Starter-Paket</h3>
@@ -406,7 +820,10 @@
   <!-- ================= CLOUD ABO (SEPARAT) ================= -->
   <section id="cloud" class="section">
     <div class="container">
-      <div class="section-title"><h2>Cloud-Abo (separates Modell)</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Cloud-Abo (separates Modell)</h2>
+        <div class="line"></div>
+      </div>
 
       <div class="card reveal">
         <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">
@@ -434,33 +851,65 @@
         </div>
       </div>
 
-      <small class="muted">Hinweis: Cloud ist für kleine Setups gedacht. Für mehr Displays/Standorte empfehlen wir die lokalen Pakete (Starter/KMU).</small>
+      <small class="muted">Hinweis: Cloud ist für kleine Setups gedacht. Für mehr Displays/Standorte empfehlen wir die
+        lokalen Pakete (Starter/KMU).</small>
     </div>
   </section>
 
   <!-- ================= COMPARISON ================= -->
   <section id="vergleich" class="section">
     <div class="container">
-      <div class="section-title"><h2>Vergleich: InfraOne (lokal) vs. typische Cloud-Abos</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Vergleich: InfraOne (lokal) vs. typische Cloud-Abos</h2>
+        <div class="line"></div>
+      </div>
       <div class="card reveal">
         <div class="grid cmp-grid">
           <div>
             <table aria-label="Vergleichstabelle">
               <thead>
-                <tr><th>Feature</th><th>InfraOne (lokal)</th><th>Typisches Cloud-Abo</th></tr>
+                <tr>
+                  <th>Feature</th>
+                  <th>InfraOne (lokal)</th>
+                  <th>Typisches Cloud-Abo</th>
+                </tr>
               </thead>
               <tbody>
-                <tr><td>Monatliche Gebühren</td><td><strong>Nein</strong> (Service optional)</td><td>Ja, pro Display/Monat</td></tr>
-                <tr><td>Datenhoheit</td><td>Im Haus, volle Kontrolle</td><td>Extern, abhängig vom Anbieter</td></tr>
-                <tr><td>Offline-Betrieb</td><td>Ja (Cache)</td><td>Eingeschränkt</td></tr>
-                <tr><td>Skalierung</td><td>Beliebig, ohne Abo-Zuschläge</td><td>Kosten steigen je Display</td></tr>
-                <tr><td>Vorlagen & Integrationen</td><td>Personalisierte Designs & Datenfeeds</td><td>Oft begrenzt</td></tr>
-                <tr><td>TCO nach 2 Jahren</td><td><strong>Niedriger</strong></td><td>Höher durch Abos</td></tr>
+                <tr>
+                  <td>Monatliche Gebühren</td>
+                  <td><strong>Nein</strong> (Service optional)</td>
+                  <td>Ja, pro Display/Monat</td>
+                </tr>
+                <tr>
+                  <td>Datenhoheit</td>
+                  <td>Im Haus, volle Kontrolle</td>
+                  <td>Extern, abhängig vom Anbieter</td>
+                </tr>
+                <tr>
+                  <td>Offline-Betrieb</td>
+                  <td>Ja (Cache)</td>
+                  <td>Eingeschränkt</td>
+                </tr>
+                <tr>
+                  <td>Skalierung</td>
+                  <td>Beliebig, ohne Abo-Zuschläge</td>
+                  <td>Kosten steigen je Display</td>
+                </tr>
+                <tr>
+                  <td>Vorlagen & Integrationen</td>
+                  <td>Personalisierte Designs & Datenfeeds</td>
+                  <td>Oft begrenzt</td>
+                </tr>
+                <tr>
+                  <td>TCO nach 2 Jahren</td>
+                  <td><strong>Niedriger</strong></td>
+                  <td>Höher durch Abos</td>
+                </tr>
               </tbody>
             </table>
           </div>
           <div class="cmp-media">
-            <img loading="lazy" decoding="async" src="assets/images/screen17.jpg" alt="Kontrollraum mit Signage"/>
+            <img loading="lazy" decoding="async" src="assets/images/screen17.jpg" alt="Kontrollraum mit Signage" />
           </div>
         </div>
       </div>
@@ -470,7 +919,10 @@
   <!-- ================= TECH SPECS ================= -->
   <section id="technik" class="section">
     <div class="container">
-      <div class="section-title"><h2>Technik – einfach erklärt</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Technik – einfach erklärt</h2>
+        <div class="line"></div>
+      </div>
       <div class="grid specs">
         <article class="card hover-card spec reveal">
           <h3>Software (CMS)</h3>
@@ -514,13 +966,31 @@
   <!-- ================= PROCESS ================= -->
   <section id="prozess" class="section">
     <div class="container">
-      <div class="section-title"><h2>So laufen Projekte ab</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>So laufen Projekte ab</h2>
+        <div class="line"></div>
+      </div>
       <div class="card steps reveal">
-        <div class="step"><h3>Bedarfsanalyse</h3><p class="muted">Displays, Standorte, Inhalte, Zuständigkeiten, Netz.</p></div>
-        <div class="step"><h3>Konzept & Angebot</h3><p class="muted">Paketwahl, Hardware-Sizing, Vorlagen, Zeitplan.</p></div>
-        <div class="step"><h3>Installation</h3><p class="muted">CMS-Server einrichten, Player registrieren, Tests.</p></div>
-        <div class="step"><h3>Content & Einführung</h3><p class="muted">Vorlagen befüllen, Feindaten übernehmen, Redaktion einweisen.</p></div>
-        <div class="step"><h3>Go-Live & Erweiterung</h3><p class="muted">Abnahme, Doku, optional Monitoring/Support, Ausbau.</p></div>
+        <div class="step">
+          <h3>Bedarfsanalyse</h3>
+          <p class="muted">Displays, Standorte, Inhalte, Zuständigkeiten, Netz.</p>
+        </div>
+        <div class="step">
+          <h3>Konzept & Angebot</h3>
+          <p class="muted">Paketwahl, Hardware-Sizing, Vorlagen, Zeitplan.</p>
+        </div>
+        <div class="step">
+          <h3>Installation</h3>
+          <p class="muted">CMS-Server einrichten, Player registrieren, Tests.</p>
+        </div>
+        <div class="step">
+          <h3>Content & Einführung</h3>
+          <p class="muted">Vorlagen befüllen, Feindaten übernehmen, Redaktion einweisen.</p>
+        </div>
+        <div class="step">
+          <h3>Go-Live & Erweiterung</h3>
+          <p class="muted">Abnahme, Doku, optional Monitoring/Support, Ausbau.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -528,7 +998,10 @@
   <!-- ================= ROI ================= -->
   <section class="section">
     <div class="container">
-      <div class="section-title"><h2>ROI-Rechner: Lohnt sich Digital Signage?</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>ROI-Rechner: Lohnt sich Digital Signage?</h2>
+        <div class="line"></div>
+      </div>
       <div class="card reveal">
         <form id="roiForm" aria-label="ROI-Rechner">
           <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
@@ -550,12 +1023,16 @@
   <!-- ================= KOSTENRECHNER (LOKAL) ================= -->
   <section id="kosten" class="section">
     <div class="container">
-      <div class="section-title"><h2>Kostenrechner (lokales System)</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Kostenrechner (lokales System)</h2>
+        <div class="line"></div>
+      </div>
       <div class="card reveal">
         <form id="costForm" aria-label="Kostenrechner lokal">
           <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
             <label>Anzahl Bildschirme<br><input type="number" id="screens" value="1" min="1"></label>
-            <label>Anzahl Standorte (1 CMS-Server/Standort)<br><input type="number" id="sites" value="1" min="1"></label>
+            <label>Anzahl Standorte (1 CMS-Server/Standort)<br><input type="number" id="sites" value="1"
+                min="1"></label>
           </div>
           <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
             <button type="button" class="btn btn-primary" onclick="calcLocal()">Einmalige Kosten berechnen</button>
@@ -564,21 +1041,44 @@
           <div id="costResult" style="margin-top:14px"></div>
         </form>
       </div>
-      <small class="muted">Rechenlogik: CHF 470 pro Standort (CMS-Server) + CHF 190 pro Bildschirm (Player). Starter-Paket = CHF 660 (1 Standort, 1 Bildschirm).</small>
+      <small class="muted">Rechenlogik: CHF 470 pro Standort (CMS-Server) + CHF 190 pro Bildschirm (Player).
+        Starter-Paket = CHF 660 (1 Standort, 1 Bildschirm).</small>
     </div>
   </section>
 
   <!-- ================= FAQ ================= -->
   <section id="faq" class="section">
     <div class="container">
-      <div class="section-title"><h2>FAQ</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>FAQ</h2>
+        <div class="line"></div>
+      </div>
       <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-        <details class="card reveal"><summary>Brauche ich zwingend Internet?</summary><p>Nein. Der Betrieb läuft lokal. Internet ist nützlich für Remote-Zugriff, Updates und mehrere Standorte.</p></details>
-        <details class="card reveal"><summary>Wie viele Displays sind möglich?</summary><p>Nahezu unbegrenzt. Wir dimensionieren Server, Netzwerk und Player entsprechend.</p></details>
-        <details class="card reveal"><summary>Cloud trotzdem möglich?</summary><p>Ja – als separates Modell mit einmalig CHF 250 inkl. Player und monatlich CHF 25 + 6/weit. Bildschirm.</p></details>
-        <details class="card reveal"><summary>Welche Player werden unterstützt?</summary><p>Empfohlen sind Android & Windows; zusätzlich je nach Projekt auch webOS, Tizen oder Linux.</p></details>
-        <details class="card reveal"><summary>Gibt es Vorlagen?</summary><p>Ja. InfraOne liefert personalisierte Anzeige-Vorlagen im eigenen Branding, die in Sekunden befüllt werden.</p></details>
-        <details class="card reveal"><summary>Support & Wartung?</summary><p>Optionaler Servicevertrag/SLA für Updates, Monitoring – flexibel nach Bedarf.</p></details>
+        <details class="card reveal">
+          <summary>Brauche ich zwingend Internet?</summary>
+          <p>Nein. Der Betrieb läuft lokal. Internet ist nützlich für Remote-Zugriff, Updates und mehrere Standorte.</p>
+        </details>
+        <details class="card reveal">
+          <summary>Wie viele Displays sind möglich?</summary>
+          <p>Nahezu unbegrenzt. Wir dimensionieren Server, Netzwerk und Player entsprechend.</p>
+        </details>
+        <details class="card reveal">
+          <summary>Cloud trotzdem möglich?</summary>
+          <p>Ja – als separates Modell mit einmalig CHF 250 inkl. Player und monatlich CHF 25 + 6/weit. Bildschirm.</p>
+        </details>
+        <details class="card reveal">
+          <summary>Welche Player werden unterstützt?</summary>
+          <p>Empfohlen sind Android & Windows; zusätzlich je nach Projekt auch webOS, Tizen oder Linux.</p>
+        </details>
+        <details class="card reveal">
+          <summary>Gibt es Vorlagen?</summary>
+          <p>Ja. InfraOne liefert personalisierte Anzeige-Vorlagen im eigenen Branding, die in Sekunden befüllt werden.
+          </p>
+        </details>
+        <details class="card reveal">
+          <summary>Support & Wartung?</summary>
+          <p>Optionaler Servicevertrag/SLA für Updates, Monitoring – flexibel nach Bedarf.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -600,11 +1100,14 @@
                 <li>Server, Storage & Virtualisierung</li>
                 <li>Managed Services & Support</li>
               </ul>
-              <p style="margin-top:8px">Mehr dazu auf unserer <a href="https://www.infraone.ch/" target="_blank" rel="noopener">Hauptseite</a>.</p>
+              <p style="margin-top:8px">Mehr dazu auf unserer <a href="https://www.infraone.ch/" target="_blank"
+                  rel="noopener">Hauptseite</a>.</p>
             </div>
           </div>
           <div style="text-align:right">
-            <a class="btn btn-primary" href="mailto:info@infraone.ch?subject=Demo%20Digital%20Signage&body=Hallo%20InfraOne,%20ich%20m%C3%B6chte%20eine%20Demo.%20Anzahl%20Displays:%20__%2C%20Branche:%20__">Demo per E-Mail</a>
+            <a class="btn btn-primary"
+              href="mailto:info@infraone.ch?subject=Demo%20Digital%20Signage&body=Hallo%20InfraOne,%20ich%20m%C3%B6chte%20eine%20Demo.%20Anzahl%20Displays:%20__%2C%20Branche:%20__">Demo
+              per E-Mail</a>
             <a class="btn btn-ghost" href="/whitepaper/index.html" target="_blank" rel="noopener">Whitepaper</a>
           </div>
         </div>
@@ -615,55 +1118,62 @@
   <!-- ================= STICKY CTA ================= -->
   <div class="sticky-cta" aria-label="Schnellkontakt">
     <a class="btn btn-primary" href="#pakete">Pakete ansehen</a>
-    <a class="btn btn-ghost" href="tel:+41522221818">Anrufen: +41 52 222 18 18</a>
-    <a class="btn btn-ghost" href="https://wa.me/41765875055" target="_blank" rel="noopener">WhatsApp: +41 76 587 50 55</a>
+    <a class="btn btn-ghost" href="tel:+41522221818">Anrufen</a>
+    <a class="btn btn-ghost" href="https://wa.me/41765875055" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 
   <!-- ================= FOOTER ================= -->
   <footer role="contentinfo">
     <div class="container">
-      <p><strong>InfraOne IT Solutions GmbH</strong> • Winterthur • <a href="https://www.infraone.ch/" target="_blank" rel="noopener">www.infraone.ch</a> • info@infraone.ch</p>
-      <p class="muted">Alle Preise exkl. MwSt. Optional: Service/SLA & Cloud nach Bedarf. PDF: <a href="assets/pdf/whitepaper_infraone-digitalsignage.pdf" target="_blank" rel="noopener">Whitepaper herunterladen</a></p>
+      <p><strong>InfraOne IT Solutions GmbH</strong> • Winterthur • <a href="https://www.infraone.ch/" target="_blank"
+          rel="noopener">www.infraone.ch</a> • info@infraone.ch</p>
+      <p class="muted">
+        Alle Preise exkl. MwSt. Optional: Service/SLA &amp; Cloud nach Bedarf.
+        PDF: <a href="assets/pdf/whitepaper-infraone-digitalsignage.pdf" download type="application/pdf" rel="noopener">
+          Whitepaper herunterladen
+        </a>
+      </p>
+
     </div>
   </footer>
 
   <!-- ================= SCRIPTS ================= -->
   <script>
     // Fallback für Background/Hero via data-fallback
-    (function(){
+    (function () {
       const hero = document.querySelector('.hero-media');
-      if(!hero) return;
+      if (!hero) return;
       const testImg = new Image();
       const bg = getComputedStyle(hero).backgroundImage;
       const urlMatch = bg && bg.match(/url\("?(.*?)"?\)/);
-      if(!urlMatch) return;
-      testImg.onerror = ()=>{ hero.style.backgroundImage = `url('${hero.getAttribute('data-fallback')}')`; };
+      if (!urlMatch) return;
+      testImg.onerror = () => { hero.style.backgroundImage = `url('${hero.getAttribute('data-fallback')}')`; };
       testImg.src = urlMatch[1];
     })();
 
     // Reveal on scroll
-    (function(){
-      const els=[...document.querySelectorAll('.reveal')];
-      if(!('IntersectionObserver' in window) || !els.length){
-        els.forEach(e=>e.classList.add('in-view'));return;
+    (function () {
+      const els = [...document.querySelectorAll('.reveal')];
+      if (!('IntersectionObserver' in window) || !els.length) {
+        els.forEach(e => e.classList.add('in-view')); return;
       }
-      const io=new IntersectionObserver((entries)=>{
-        entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in-view'); io.unobserve(en.target);} });
-      },{threshold:.12});
-      els.forEach(e=>io.observe(e));
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in-view'); io.unobserve(en.target); } });
+      }, { threshold: .12 });
+      els.forEach(e => io.observe(e));
     })();
 
     // Kostenrechner (lokal)
-    function calcLocal(){
-      const screens=+document.getElementById('screens').value||0;
-      const sites=+document.getElementById('sites').value||0;
-      if(screens<1 || sites<1){ document.getElementById('costResult').innerHTML='<div class="card">Bitte gültige Zahlen eingeben.</div>'; return; }
+    function calcLocal() {
+      const screens = +document.getElementById('screens').value || 0;
+      const sites = +document.getElementById('sites').value || 0;
+      if (screens < 1 || sites < 1) { document.getElementById('costResult').innerHTML = '<div class="card">Bitte gültige Zahlen eingeben.</div>'; return; }
       const serverCosts = sites * 470;
       const playerCosts = screens * 190;
       let total = serverCosts + playerCosts;
       // Starter Sonderfall
-      if(sites===1 && screens===1) total = 660;
-      const pkgHint = (sites===1 && screens<=10)
+      if (sites === 1 && screens === 1) total = 660;
+      const pkgHint = (sites === 1 && screens <= 10)
         ? `Hinweis: KMU-Paket fix CHF 2’370.– (bis 10 Player).`
         : `Für sehr grosse Setups: Enterprise (auf Anfrage).`;
       document.getElementById('costResult').innerHTML =
@@ -675,10 +1185,10 @@
     }
 
     // Cloud-Abo Rechner (separat)
-    function calcCloud(){
-      const n=+document.getElementById('cloudScreens').value||1;
-      const once = 250 + Math.max(0, n-1)*190;
-      const monthly = 25 + Math.max(0, n-1)*6;
+    function calcCloud() {
+      const n = +document.getElementById('cloudScreens').value || 1;
+      const once = 250 + Math.max(0, n - 1) * 190;
+      const monthly = 25 + Math.max(0, n - 1) * 6;
       document.getElementById('cloudResult').innerHTML =
         `<div class="card">
           <strong>Einmalig:</strong> CHF ${once.toLocaleString('de-CH')}.– (inkl. Player)<br>
@@ -687,15 +1197,16 @@
     }
 
     // ROI-Rechner
-    function calcROI(){
-      const d=+druck.value||0, h=+stunden.value||0, l=+lohn.value||0, i=+invest.value||0;
-      const monat = d + h*l;
-      const months = monat>0 ? Math.ceil(i/monat) : '—';
-      const text = monat>0
+    function calcROI() {
+      const d = +druck.value || 0, h = +stunden.value || 0, l = +lohn.value || 0, i = +invest.value || 0;
+      const monat = d + h * l;
+      const months = monat > 0 ? Math.ceil(i / monat) : '—';
+      const text = monat > 0
         ? `Geschätzte Ersparnis/Monat: CHF ${monat.toFixed(0)}. Break-even in ca. ${months} Monat(en).`
         : 'Bitte realistische Werte eintragen.';
       roiResult.innerHTML = `<div class="card" style="margin-top:8px">${text}</div>`;
     }
   </script>
 </body>
+
 </html>
