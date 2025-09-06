@@ -48,7 +48,7 @@
     .grid{display:grid;gap:var(--sp-3)}
     .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--sp-3)}
     .section{padding:var(--sp-5) 0}
-    .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:14px 20px;border-radius:12px;font-weight:700;transition:.2s ease}
+    .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:14px 20px;border-radius:12px;font-weight:700;transition:.2s ease; text-align:center;}
     .btn-primary{background:var(--io-green);color:#fff}
     .btn-primary:hover{filter:saturate(105%) brightness(1.03);transform:var(--hover-raise)}
     .btn-ghost{border:2px solid var(--io-green);color:var(--io-green);background:#fff}
@@ -60,11 +60,11 @@
     .hover-card:hover{transform:var(--hover-raise);box-shadow:0 18px 40px rgba(0,0,0,.12)}
 
     /* ================= NAVBAR ================= */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #e5e7eb}
+    .nav{position:sticky;top:0;z-index:55;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #e5e7eb}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px var(--sp-2);max-width:var(--maxw);margin:auto}
     .nav-brand{display:flex;gap:10px;align-items:center}
-    /* größeres Logo */
-    .logo-img{width:48px;height:48px;border-radius:8px;object-fit:contain;display:block}
+    /* Logo */
+    .logo-img{width:128px;height:50px;border-radius:8px;object-fit:contain;display:block}
     .nav-links{display:flex;gap:16px;flex-wrap:wrap}
     .nav-links a{font-weight:600;color:#1f2937}
     .nav-cta{display:flex;gap:10px}
@@ -157,8 +157,12 @@
       .hero-media{height:58vh}
       .section{padding:var(--sp-4) 0}
       .btn{padding:12px 16px;font-size:.95rem}
-      .pkg-footer{flex-direction:column;align-items:flex-start}
-      .pkg-note{text-align:left}
+
+      /* Pakete: Footer sauber stacken, keine Leerluft */
+      .packages .pkg-footer{flex-direction:column; align-items:stretch; gap:10px;}
+      .packages .pkg-footer .btn{width:100%}
+      .packages .pkg-note{ text-align:center; flex:initial; width:100%; }
+
       .specs{grid-template-columns:1fr}
 
       /* Sticky-CTA kleiner am Handy */
@@ -168,6 +172,36 @@
       /* Tabelle kompakter */
       .table-wrap table{min-width:520px}
       th,td{padding:10px}
+
+      /* Schwarze Mini-Tags (Überlappung) ausblenden */
+      .benefit .tag{display:none}
+
+      /* Cloud / CTA nach Paketen / Demo → 1 Spalte + zentriert */
+      #cloud .card .grid,
+      #pakete .cta-banner .grid,
+      #demo .card .grid{
+        grid-template-columns:1fr !important;
+        align-items:center !important;
+      }
+      #cloud .card .grid > div,
+      #pakete .cta-banner .grid > div,
+      #demo .card .grid > div{
+        text-align:center !important;
+      }
+      /* Rechte Spalte mit inline text-align:right überschreiben */
+      #pakete .cta-banner [style*="text-align:right"],
+      #demo .card [style*="text-align:right"]{ text-align:center !important; }
+
+      /* „Zum Kostenrechner“-Button unter Text + vollbreit */
+      #pakete .cta-banner .grid a.btn{ width:100% }
+
+      /* ROI / Kostenrechner / Cloud-Form: Buttons gleich groß & mittig */
+      #roiForm .btn,
+      #costForm .btn,
+      #cloudCalc .btn{ width:100% }
+      #roiForm [style*="display:flex"],
+      #costForm [style*="display:flex"],
+      #cloudCalc [style*="display:flex"]{ justify-content:center; gap:10px; }
     }
   </style>
 
@@ -214,7 +248,7 @@
     <div class="nav-inner">
       <div class="nav-brand">
         <a href="https://www.infraone.ch/" aria-label="Zur InfraOne Hauptseite">
-          <img class="logo-img" src="assets/images/logo.png" alt="InfraOne Logo" width="48" height="48" decoding="async" />
+          <img class="logo-img" src="assets/images/logo.png" alt="InfraOne Logo" width="64" height="64" decoding="async" />
         </a>
         <!-- Schriftzug neben Logo entfernt -->
       </div>
