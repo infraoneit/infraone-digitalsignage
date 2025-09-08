@@ -1,0 +1,304 @@
+<!-- ================= USE CASES ================= -->
+<section id="usecases" class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Anwendungsbereiche</h2>
+      <div class="line"></div>
+    </div>
+
+    <!-- SLIDER STYLES (scoped) -->
+    <style>
+      :root{ --io-green:#3C9646; }
+
+      #usecases .usecase-slider{position:relative;overflow:hidden;border-radius:20px}
+      #usecases .usecase-track{display:flex;transition:transform .5s ease;will-change:transform}
+      #usecases .uc-slide{min-width:100%;padding:0;margin:0}
+      #usecases .uc-card{
+        position:relative;height:730px;border-radius:20px;overflow:hidden;background:#000;
+      }
+
+      /* Ebenen */
+      #usecases .uc-front,
+      #usecases .uc-back{
+        position:absolute;inset:0;border-radius:20px;overflow:hidden;
+        transition:opacity .35s ease;
+      }
+      #usecases .uc-front{opacity:1;z-index:2}
+      #usecases .uc-back{opacity:0;z-index:1;pointer-events:none}
+
+      /* Show back via class */
+      #usecases .uc-card.show-back .uc-front{opacity:0;z-index:1;pointer-events:none}
+      #usecases .uc-card.show-back .uc-back{opacity:1;z-index:3;pointer-events:auto}
+
+      /* Bild */
+      #usecases .uc-front picture, 
+      #usecases .uc-front img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+      /* Titel vorne */
+      #usecases .uc-title{
+        position:absolute;left:50%;bottom:18px;transform:translateX(-50%);
+        background:rgba(15,23,42,.72);color:#fff;padding:12px 18px;border-radius:14px;
+        font-weight:800;font-size:clamp(18px,2.6vw,28px);text-align:center;
+        box-shadow:0 8px 24px rgba(0,0,0,.25)
+      }
+
+      /* Rückseite: grün/weiß */
+      #usecases .uc-back{
+        background:var(--io-green);color:#fff;display:flex;flex-direction:column;
+        justify-content:center;gap:12px;padding:28px;
+      }
+      #usecases .uc-back h3{margin:0}
+      #usecases .uc-back p{margin:0;line-height:1.6}
+
+      /* Info-/Zurück-Buttons (oben rechts) */
+      #usecases .uc-flip, #usecases .uc-unflip{
+        position:absolute;top:14px;right:14px;z-index:4;border:none;
+        padding:9px 12px;border-radius:12px;cursor:pointer;font-weight:900;
+        box-shadow:0 10px 22px rgba(0,0,0,.18);
+      }
+      /* „i“: weißes i auf grün */
+      #usecases .uc-flip{background:var(--io-green);color:#fff}
+      /* Zurück: weißer Pfeil auf grün */
+      #usecases .uc-unflip{background:var(--io-green);color:#fff}
+
+      /* Nav Buttons (grün) */
+      #usecases .uc-nav{
+        position:absolute;top:50%;transform:translateY(-50%);z-index:3;border:none;
+        width:46px;height:70px;border-radius:12px;background:var(--io-green);color:#fff;
+        box-shadow:0 12px 26px rgba(0,0,0,.22);cursor:pointer;font-size:24px;font-weight:800;opacity:.98;
+      }
+      #usecases .uc-prev{left:12px}
+      #usecases .uc-next{right:12px}
+
+      /* Dots */
+      #usecases .uc-dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+      #usecases .uc-dot{width:10px;height:10px;border-radius:999px;background:#d1d5db;border:1px solid #cbd5e1;cursor:pointer}
+      #usecases .uc-dot[aria-selected="true"]{background:var(--io-green);border-color:var(--io-green)}
+
+      /* Mobile */
+      @media (max-width:760px){
+        #usecases .uc-card{height:560px}
+        #usecases .uc-back{padding:18px}
+        #usecases .uc-nav{width:42px;height:64px}
+      }
+    </style>
+
+    <!-- SLIDER -->
+    <div class="usecase-slider" id="usecaseSlider" aria-label="Anwendungsbereiche">
+      <div class="usecase-track" id="usecaseTrack">
+
+        <!-- 1 Autosalon -->
+        <figure class="uc-slide" data-idx="0">
+          <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Autohaus-Showroom anzeigen">
+            <div class="uc-front">
+              <picture>
+                <source srcset="assets/images/usecases/usecase1.webp" type="image/webp">
+                <img src="assets/images/usecases/usecase1.jpg" alt="Autohaus Showroom mit Digital-Signage-Display">
+              </picture>
+              <div class="uc-title">Autohaus-Showroom: Modelle & Aktionen live</div>
+              <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
+            </div>
+            <div class="uc-back">
+              <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
+              <h3>Autohaus-Showroom: Fahrzeuge perfekt inszenieren</h3>
+              <p>Neuheiten, Leasingraten und Service-Aktionen direkt am Fahrzeug – zentral gesteuert. Ideal für <strong>digitale Werbung</strong> im Premium-Showroom. <strong>Digital-Signage Winterthur</strong>: Inhalte in Sekunden aktualisieren, Leads via QR-Codes & Online-Termin.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- 2 Restaurant -->
+        <figure class="uc-slide" data-idx="1">
+          <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu digitalen Menütafeln anzeigen">
+            <div class="uc-front">
+              <picture>
+                <source srcset="assets/images/usecases/usecase2.webp" type="image/webp">
+                <img src="assets/images/usecases/usecase2.jpg" alt="Digitale Menüboards in der Gastronomie">
+              </picture>
+              <div class="uc-title">Digitale Menütafeln: Preise & Tagesmenüs</div>
+              <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
+            </div>
+            <div class="uc-back">
+              <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
+              <h3>Gastronomie: Menüboards, Aktionen, Allergene</h3>
+              <p>Speisekarten & Tagesmenüs ohne Druckkosten aktualisieren. <strong>Werbebildschirme</strong> mit Vorlagen, Zeitplänen und Animationen steigern Bestellwert und Klarheit – ideal für Cafés, Take-Away & Fast-Casual.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- 3 Modehandel -->
+        <figure class="uc-slide" data-idx="2">
+          <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Fashion-Schaufenstern anzeigen">
+            <div class="uc-front">
+              <picture>
+                <source srcset="assets/images/usecases/usecase3.webp" type="image/webp">
+                <img src="assets/images/usecases/usecase3.jpg" alt="Fashion-Schaufenster mit Display">
+              </picture>
+              <div class="uc-title">Fashion: Schaufenster & In-Store Kampagnen</div>
+              <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
+            </div>
+            <div class="uc-back">
+              <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
+              <h3>Retail Fashion: Kampagnen, QR-Codes, Social Proof</h3>
+              <p>Laufkundschaft mit Lookbooks, Reels und Rabatt-Flashs anziehen. <strong>Digitale Werbung</strong> auf <strong>Werbebildschirmen</strong> schafft Aufmerksamkeit – Click-&-Collect, Größeninfos und Upselling direkt am Regal.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- 4 Hotel -->
+        <figure class="uc-slide" data-idx="3">
+          <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Hotel-Lobby & Gästeinfo anzeigen">
+            <div class="uc-front">
+              <picture>
+                <source srcset="assets/images/usecases/usecase4.webp" type="image/webp">
+                <img src="assets/images/usecases/usecase4.jpg" alt="Hotel-Lobby mit Info-Display">
+              </picture>
+              <div class="uc-title">Hotel: Lobby-Infos & Events</div>
+              <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
+            </div>
+            <div class="uc-back">
+              <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
+              <h3>Hotel: Begrüßung, Wegweiser, Events & Upselling</h3>
+              <p>Personalisierte Begrüßung, Frühstückszeiten, Spa-Slots, Tagungsräume und lokale Tipps. <strong>Digital-Signage Winterthur</strong>: zentrale Steuerung, Zeitpläne pro Bildschirm, mehr Zusatzverkäufe durch visuelles Upselling.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- 5 Wartezimmer -->
+        <figure class="uc-slide" data-idx="4">
+          <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Wartezimmer-Infos anzeigen">
+            <div class="uc-front">
+              <picture>
+                <source srcset="assets/images/usecases/usecase5.webp" type="image/webp">
+                <img src="assets/images/usecases/usecase5.jpg" alt="Wartezimmer mit Informationsdisplay">
+              </picture>
+              <div class="uc-title">Wartezimmer: Aufruf & Patienteninfo</div>
+              <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
+            </div>
+            <div class="uc-back">
+              <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
+              <h3>Gesundheitswesen: Aufrufsystem & Service-Infos</h3>
+              <p>Klare Anweisungen und Live-Infos: Aufrufe, Wartezeiten, Präventions-Hinweise. <strong>Werbebildschirme</strong> verbessern Orientierung & Service – DSGVO-konform, zentral steuerbar.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- 6 Gemeinde -->
+        <figure class="uc-slide" data-idx="5">
+          <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Gemeinde-Informationen anzeigen">
+            <div class="uc-front">
+              <picture>
+                <source srcset="assets/images/usecases/usecase6.webp" type="image/webp">
+                <img src="assets/images/usecases/usecase6.jpg" alt="Gemeindeverwaltung mit Infodisplay">
+              </picture>
+              <div class="uc-title">Gemeinde: Mitteilungen & Servicezeiten</div>
+              <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
+            </div>
+            <div class="uc-back">
+              <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
+              <h3>Öffentliche Hand: Bürgerinfos sichtbar machen</h3>
+              <p>Öffnungszeiten, Baustellen-Meldungen, Abstimmungstermine und Notfall-Hinweise zentral ausspielen – in Rathaus, Bibliothek oder Hallenbad. <strong>Digital-Signage</strong> sorgt für Reichweite & Transparenz.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- 7 Campus -->
+        <figure class="uc-slide" data-idx="6">
+          <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Campus & Schule anzeigen">
+            <div class="uc-front">
+              <picture>
+                <source srcset="assets/images/usecases/usecase7.webp" type="image/webp">
+                <img src="assets/images/usecases/usecase7.jpg" alt="Campus mit Digital-Signage-Displays">
+              </picture>
+              <div class="uc-title">Campus: Stundenplan & Events</div>
+              <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
+            </div>
+            <div class="uc-back">
+              <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
+              <h3>Bildung: Stundenpläne, Raumwechsel, Sicherheit</h3>
+              <p>Stundenpläne, Raumänderungen, Mensa-Menüs und Veranstaltungen an zentralen Orten. <strong>Werbebildschirme</strong> verbessern Orientierung & Sicherheit – Daten aus Kalendern, CSV/JSON oder Schul-Systemen.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- 8 Outdoor -->
+        <figure class="uc-slide" data-idx="7">
+          <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Outdoor-Displays anzeigen">
+            <div class="uc-front">
+              <picture>
+                <source srcset="assets/images/usecases/usecase8.webp" type="image/webp">
+                <img src="assets/images/usecases/usecase8.jpg" alt="Outdoor-Display mit SIM/4G/5G">
+              </picture>
+              <div class="uc-title">Outdoor: High-Brightness & SIM/4G/5G</div>
+              <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
+            </div>
+            <div class="uc-back">
+              <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
+              <h3>Outdoor-Displays: Wetterfest, hell & vernetzt</h3>
+              <p>Tageslichttaugliche <strong>Werbebildschirme</strong> mit SIM/4G/5G-Anbindung. Zeitpläne, Warnmeldungen und Kampagnen zentral steuern – robust für Gemeinden, Events & Handel.</p>
+            </div>
+          </div>
+        </figure>
+
+      </div>
+
+      <!-- NAV + Dots -->
+      <button class="uc-nav uc-prev" aria-label="Zurück" id="ucPrev">‹</button>
+      <button class="uc-nav uc-next" aria-label="Weiter" id="ucNext">›</button>
+      <div class="uc-dots" id="ucDots" role="tablist" aria-label="Slide Navigation"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDER SCRIPT -->
+<script>
+(function(){
+  const track = document.getElementById('usecaseTrack');
+  if(!track) return;
+  const slides = [...track.querySelectorAll('.uc-slide')];
+  const prev = document.getElementById('ucPrev');
+  const next = document.getElementById('ucNext');
+  const dotsWrap = document.getElementById('ucDots');
+  let idx = 0;
+
+  function render(){
+    track.style.transform = `translateX(-${idx*100}%)`;
+    [...dotsWrap.children].forEach((d,i)=>d.setAttribute('aria-selected', i===idx ? 'true' : 'false'));
+  }
+
+  // Dots erstellen
+  slides.forEach((_,i)=>{
+    const b=document.createElement('button');
+    b.className='uc-dot';
+    b.type='button';
+    b.setAttribute('aria-label',`Zu Slide ${i+1}`);
+    b.onclick=()=>{idx=i;render();};
+    dotsWrap.appendChild(b);
+  });
+
+  // Nav
+  prev.onclick=()=>{ idx = (idx-1+slides.length)%slides.length; render(); };
+  next.onclick=()=>{ idx = (idx+1)%slides.length; render(); };
+
+  // Info/Back (fade)
+  track.addEventListener('click', (e)=>{
+    const flipBtn = e.target.closest('.uc-flip');
+    const unflipBtn = e.target.closest('.uc-unflip');
+    if(flipBtn){
+      flipBtn.closest('.uc-card').classList.add('show-back');
+    }else if(unflipBtn){
+      unflipBtn.closest('.uc-card').classList.remove('show-back');
+    }
+  });
+
+  // Tastatur: Enter/Space toggeln
+  track.addEventListener('keydown', (e)=>{
+    if((e.key==='Enter'||e.key===' ') && e.target.classList.contains('uc-card')){
+      e.preventDefault();
+      e.target.classList.toggle('show-back');
+    }
+  });
+
+  // Initial aktiv markieren
+  render();
+})();
+</script>
