@@ -49,12 +49,12 @@
     .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;
       font-weight:700;transition:.2s ease;text-align:center;border:0;cursor:pointer}
     .btn-primary{background:var(--io-green);color:#fff}
+    .btn-primary[disabled]{opacity:.6;cursor:not-allowed}
     .btn-primary:hover{filter:saturate(105%) brightness(1.03);transform:var(--hover-raise)}
     .btn-ghost{border:2px solid var(--io-green);color:var(--io-green);background:#fff}
     .btn-ghost:hover{background:#e8f7ea;transform:var(--hover-raise)}
     .btn-muted{background:#f3f4f6;color:#111827}
     .btn-block{width:100%}
-    .btn[disabled]{opacity:.7;cursor:not-allowed}
 
     .pill{display:inline-block;padding:.35em .7em;border-radius:999px;font-weight:700}
     .badge{background:#E8F9EA;color:#0E7F1C;border:1px solid #CFF3D4}
@@ -84,14 +84,17 @@
 
     /* ================= SECTION TITLE ================= */
     .section-title{display:flex;align-items:center;gap:10px;margin-bottom:var(--sp-3)}
-    .section-title .line{flex:1;height:2px;background:linear-gradient(90deg,var(--io-green),transparent)}
+    .section-title .line{flex:1;height:2px;background:linear-gradient(90deg, var(--io-green), transparent)}
 
     /* ================= BENEFITS ================= */
     .benefits{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .benefit{display:grid;gap:10px}
-    .benefit .img-wrap{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/9}
-    .benefit img{width:100%;height:100%;object-fit:cover}
-    .benefit .tag{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;padding:4px 8px;border-radius:8px;font-size:12px}
+    .benefit .img-wrap{position:relative;border-radius:12px;overflow:hidden}
+    .benefit img{width:100%;height:150px;object-fit:cover}
+    .benefit .tag{display:none !important;} /* schwarze kleinen Tags komplett ausblenden */
+
+    /* ================= USE CASES ================= */
+    /* HIER DEIN SLIDER-CODE EINKLEBEN (HTML + CSS + JS) */
 
     /* ================= PACKAGES ================= */
     .packages{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
@@ -101,15 +104,14 @@
     .pkg-footer{display:flex;justify-content:flex-start;align-items:center;margin-top:auto;gap:12px;flex-wrap:wrap}
     .pkg-footer .btn-primary{min-width:220px}
     .pkg-note{flex:1 1 auto;color:var(--muted);font-size:.95rem}
+
+    /* Mietmodell hervorheben */
     .package--rent{border:2px solid var(--io-green);box-shadow:0 18px 44px rgba(60,150,70,.16)}
-    .package--rent:before{
-      content:"Empfohlene Lösung";position:absolute;top:-18px;left:14px;background:var(--io-green);color:#fff;font-weight:900;
-      font-size:12px;letter-spacing:.3px;padding:6px 10px;border-radius:999px;box-shadow:var(--shadow)
-    }
+    .package--rent:before{content:"Empfohlene Lösung";position:absolute;top:-18px;left:14px;background:var(--io-green);color:#fff;font-weight:900;
+      font-size:12px;letter-spacing:.3px;padding:6px 10px;border-radius:999px;box-shadow:var(--shadow)}
 
     /* ================= TECH / PROCESS ================= */
     .specs{grid-template-columns:repeat(4,1fr)}
-    .spec{display:block}
     .spec .img-wrap{height:130px;border-radius:12px;overflow:hidden;margin-bottom:10px;background:#eef2f7}
     .spec .img-wrap img{width:100%;height:100%;object-fit:cover}
     .steps{counter-reset:step}
@@ -120,11 +122,15 @@
     /* ================= TESTIMONIALS / FAQ ================= */
     .testimonials{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
     .stars{color:#f59e0b}
+
     details{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:12px}
+    /* globale Abstände NICHT auf FAQ anwenden */
     details+details{margin-top:12px}
+    .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sp-3);align-items:stretch}
+    .faq-grid details{margin:0; height:100%}
+    .faq-grid details+details{margin-top:0} /* gleiche Flucht */
+
     summary{cursor:pointer;font-weight:700}
-    .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sp-3);align-items:stretch;grid-auto-rows:1fr}
-    .faq-grid details.card{display:flex;flex-direction:column;height:100%}
 
     /* ================= FORMS / CALC ================= */
     .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sp-3)}
@@ -136,11 +142,10 @@
     }
     .form-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-start;margin-top:6px}
 
-    /* Lokaler Rechner exakt ausrichten */
+    /* Lokaler Rechner: Felder exakt ausrichten */
     #costForm .form-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:end}
-    #kosten .grid{grid-template-columns:1fr 1fr !important} /* override inline */
 
-    /* Ergebnis-Container standardmässig verstecken */
+    /* Ergebnis-Container */
     .result-container[hidden]{display:none}
     .result-container .card{margin-top:10px;border-left:4px solid var(--io-green);padding:12px}
 
@@ -154,8 +159,8 @@
     /* ================= MODALS ================= */
     .modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(15,23,42,.6);z-index:80}
     .modal.open{display:grid}
-    .modal-card{width:min(820px,92vw);background:#fff;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,.25);padding:20px}
-    .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .modal-card{width:min(820px,92vw);max-height:92vh;overflow:auto;-webkit-overflow-scrolling:touch;background:#fff;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,.25);padding:20px}
+    .modal-head{position:sticky;top:0;background:#fff;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #e5e7eb;z-index:1}
     .modal-head h3{margin:0}
     .modal-close{background:transparent;border:0;font-size:24px;cursor:pointer}
 
@@ -165,6 +170,32 @@
     .cta-banner{background:linear-gradient(135deg,rgba(60,150,70,.1),rgba(215,32,39,.05));border:1px solid #e7f7ea}
     footer{padding:var(--sp-4) 0;color:#fff;background:#0f172a}
     footer a{color:#fff}
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width:980px){
+      .specs{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:760px){
+      .nav-links{display:none}
+      .hero-media{height:58vh}
+      .section{padding:30px 0}
+      .btn{padding:10px 14px;font-size:.95rem;border-width:1px}
+      .packages .pkg-footer .btn{width:100%}
+      .specs{grid-template-columns:1fr}
+      .sticky-cta{right:12px;bottom:12px;gap:6px}
+
+      /* Kostenrechner 1 Spalte, volle Breite */
+      #kosten .grid{grid-template-columns:1fr !important}
+      .rent-row,.rent-rows-head{grid-template-columns:1fr 1fr auto}
+      .form-actions .btn{width:100%}
+
+      #costForm .form-grid{grid-template-columns:1fr}
+      #howitworks img.how-gif{max-width:100%;height:auto;margin:8px auto;border-radius:12px}
+      /* Rückrufleiste – Inputs volle Breite */
+      #benefits .cta-row{flex-direction:column;align-items:stretch}
+      #benefits .cta-actions{margin-left:0;flex-direction:column;align-items:stretch}
+      #benefits .cta-actions input{width:100%}
+    }
 
     /* CTA Rückruf */
     #benefits .cta-callback{margin-top:var(--sp-4);padding:18px 20px;border-radius:var(--radius);
@@ -179,60 +210,14 @@
     /* ================= ANIMATIONS ================= */
     .reveal{opacity:0;transform:translateY(10px);transition:opacity .4s ease, transform .4s ease}
     .reveal.in-view{opacity:1;transform:none}
-
-    /* ================= RESPONSIVE ================= */
-    @media (max-width:980px){
-      .specs{grid-template-columns:repeat(2,1fr)}
-      #kosten .grid{grid-template-columns:1fr !important}
-    }
-    @media (max-width:760px){
-      .nav-links{display:none}
-      .hero-media{height:58vh}
-      .section{padding:30px 0}
-      .btn{padding:10px 14px;font-size:.95rem;border-width:1px}
-      .packages .pkg-footer .btn{width:100%}
-      .specs{grid-template-columns:1fr}
-      .sticky-cta{right:12px;bottom:12px;gap:6px}
-      #pakete .cta-banner .grid,#demo .card .grid{grid-template-columns:1fr !important;align-items:center !important}
-      #pakete .cta-banner .grid>div,#demo .card .grid>div{text-align:center !important}
-
-      /* Rechner mobil lesbarer */
-      .rent-row,.rent-rows-head{grid-template-columns:1fr 1fr auto}
-      .form-actions .btn{width:100%}
-      #costForm .form-grid{grid-template-columns:1fr}
-      #benefits .cta-row{flex-direction:column;align-items:stretch;gap:12px}
-      #benefits .cta-actions{flex-direction:column;align-items:stretch;margin-left:0}
-      #benefits .cta-actions input{width:100%}
-      #benefits .cta-actions .btn{width:100%}
-
-      /* GIF mobil */
-      #howitworks .how-gif{width:100%;height:auto;margin:8px auto;border-radius:12px;max-width:100%}
-    }
   </style>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Infraone IT Solutions GmbH",
-    "url":"https://www.infraone.ch/",
-    "logo":"https://werbebildschirme.ch/assets/images/logo.png"
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Infraone IT Solutions GmbH","url":"https://www.infraone.ch/","logo":"https://werbebildschirme.ch/assets/images/logo.png"}
   </script>
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"Infraone Digital Signage",
-    "provider":{"@type":"Organization","name":"Infraone IT Solutions GmbH"},
-    "areaServed":"CH",
-    "offers":[
-      {"@type":"Offer","name":"Mietmodell (gehostet) – ab Preis","price":"59","priceCurrency":"CHF","description":"Komplette Infrastruktur im Abo (Display Indoor/Outdoor, Player & Hosting in der Schweiz). Verwaltung per Weboberfläche. Vertragslaufzeit 24 Monate."},
-      {"@type":"Offer","name":"Starter-Paket (lokal)","price":"660","priceCurrency":"CHF","description":"CMS-Server lokal (Mini), 1 Player, personalisierte Anzeige-Vorlagen"},
-      {"@type":"Offer","name":"Enterprise (lokal/gehostet)","price":"0","priceCurrency":"CHF","description":"Zentrale Steuerung für Filialnetze/Behörden, Monitoring/SLAs – Preis auf Anfrage"}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Service","name":"Infraone Digital Signage","provider":{"@type":"Organization","name":"Infraone IT Solutions GmbH"},"areaServed":"CH","offers":[{"@type":"Offer","name":"Mietmodell (gehostet) – ab Preis","price":"59","priceCurrency":"CHF","description":"Komplette Infrastruktur im Abo (Display Indoor/Outdoor, Player & Hosting in der Schweiz). Verwaltung per Weboberfläche. Vertragslaufzeit 24 Monate."},{"@type":"Offer","name":"Starter-Paket (lokal)","price":"660","priceCurrency":"CHF","description":"CMS-Server lokal (Mini), 1 Player, personalisierte Anzeige-Vorlagen"},{"@type":"Offer","name":"Enterprise (lokal/gehostet)","price":"0","priceCurrency":"CHF","description":"Zentrale Steuerung für Filialnetze/Behörden, Monitoring/SLAs – Preis auf Anfrage"}]}
   </script>
 </head>
 
@@ -266,7 +251,7 @@
   <!-- ================= HERO ================= -->
   <header class="hero" role="banner">
     <div class="hero-media" data-fallback="assets/images/screen1.jpg">
-      <video class="hero-video" id="heroVideo" autoplay muted playsinline loop preload="metadata" poster="assets/images/screen1.jpg">
+      <video class="hero-video" id="heroVideo" autoplay muted playsinline loop preload="auto" poster="assets/images/screen1.jpg">
         <source src="assets/videos/herovideo.mp4" type="video/mp4">
       </video>
       <div class="hero-body">
@@ -290,10 +275,9 @@
         <article class="card hover-card benefit reveal">
           <div class="img-wrap">
             <picture><source srcset="assets/images/screen6.webp" type="image/webp">
-              <img loading="lazy" decoding="async" alt="Flexibles Kostenmodell" src="assets/images/screen6.jpg" width="1200" height="675">
+              <img loading="lazy" decoding="async" alt="Flexibles Kostenmodell" src="assets/images/screen6.jpg">
             </picture>
           </div>
-          <span class="tag">Flexibilität</span>
           <h3>Miete oder lokal – mit/ohne Display</h3>
           <p class="muted">Mietlösungen ab CHF 59.–/Monat mit Display & Player <em>oder</em> lokale Installation ohne Abo – auf Wunsch mit eigenem Display.</p>
         </article>
@@ -301,10 +285,9 @@
         <article class="card hover-card benefit reveal">
           <div class="img-wrap">
             <picture><source srcset="assets/images/screen7.webp" type="image/webp">
-              <img loading="lazy" decoding="async" alt="Einfache Bedienung am Laptop" src="assets/images/screen7.jpg" width="1200" height="675">
+              <img loading="lazy" decoding="async" alt="Einfache Bedienung am Laptop" src="assets/images/screen7.jpg">
             </picture>
           </div>
-          <span class="tag">Vorlagen</span>
           <h3>Personalisierte Anzeige-Vorlagen</h3>
           <p class="muted">Fixfertige Designs (Menü, Aktionen, Öffnungszeiten, KPI). Inhalte austauschen – fertig.</p>
         </article>
@@ -312,10 +295,9 @@
         <article class="card hover-card benefit reveal">
           <div class="img-wrap">
             <picture><source srcset="assets/images/screen8.webp" type="image/webp">
-              <img loading="lazy" decoding="async" alt="Offline-Betrieb" src="assets/images/screen8.jpg" width="1200" height="675">
+              <img loading="lazy" decoding="async" alt="Offline-Betrieb" src="assets/images/screen8.jpg">
             </picture>
           </div>
-          <span class="tag">Betrieb</span>
           <h3>Offline-tauglich & skalierbar</h3>
           <p class="muted">Lokal weiter ohne Internet. Von 1 bis 100+ Displays – beliebig erweiterbar.</p>
         </article>
@@ -323,31 +305,27 @@
         <article class="card hover-card benefit reveal">
           <div class="img-wrap">
             <picture><source srcset="assets/images/screen9.webp" type="image/webp">
-              <img loading="lazy" decoding="async" alt="Datafeeds & Integrationen" src="assets/images/screen9.jpg" width="1200" height="675">
+              <img loading="lazy" decoding="async" alt="Datafeeds & Integrationen" src="assets/images/screen9.jpg">
             </picture>
           </div>
-          <span class="tag">Integration</span>
           <h3>Datafeeds & Integrationen</h3>
           <p class="muted">Kalender, Datenbanken, Websites, Dashboards & mehr – zentral einbinden.</p>
         </article>
       </div>
 
-      <!-- CTA: Rückruf (mobil optimiert) -->
-      <div class="card cta-callback reveal">
-        <form class="cta-row" action="https://formsubmit.co/info@infraone.ch" method="POST" novalidate>
+      <!-- CTA: Rückruf -->
+      <div class="card cta-callback reveal" id="callbackCard">
+        <form class="cta-row" id="callbackForm" action="#" method="POST" novalidate>
           <span class="cta-headline">Fragen? Wir rufen Sie zurück.</span>
           <div class="cta-actions">
             <input type="text" name="name" id="cbName" placeholder="Name*" required aria-label="Name">
             <input type="tel" name="phone" id="cbPhone" placeholder="Telefonnummer*" required inputmode="tel" autocomplete="tel" aria-label="Telefonnummer">
-            <button type="submit" class="btn btn-primary">Rückruf anfordern</button>
+            <button type="submit" class="btn btn-primary" id="cbSubmit">Rückruf anfordern</button>
           </div>
-          <input type="hidden" name="_subject" value="Rückrufwunsch – werbebildschirme.ch">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="Seite" id="cbPage">
-          <input type="text" name="_honey" style="display:none">
-          <input type="hidden" name="_next" value="https://www.werbebildschirme.ch/#danke">
+          <input type="hidden" name="page" id="cbPage">
+          <input type="text" name="_honey" id="cbHoney" style="display:none">
         </form>
+        <div id="callbackMsg" class="muted" style="margin-top:10px;display:none"></div>
       </div>
     </div>
   </section>
@@ -356,10 +334,8 @@
   <section id="usecases" class="section" aria-label="Anwendungsbeispiele">
     <div class="container">
       <div class="section-title"><h2>Anwendungsbereiche</h2><div class="line"></div></div>
-
-      <!-- ********** SLIDER-PLATZHALTER **********
-           >> Hier deinen bestehenden Slider-Code wieder einfügen <<
-           **************************************** -->
+      <!-- SLIDER HIER EINFÜGEN -->
+      <!-- // DEIN SLIDER-HTML KOMMT AN DIESER STELLE HINEIN -->
     </div>
   </section>
 
@@ -449,7 +425,7 @@
         <article class="card hover-card spec reveal">
           <div class="img-wrap">
             <picture><source srcset="assets/images/tech1.webp" type="image/webp">
-              <img src="assets/images/tech1.jpg" alt="CMS-Software" loading="lazy" decoding="async" width="1200" height="675">
+              <img src="assets/images/tech1.jpg" alt="CMS-Software" loading="lazy" decoding="async">
             </picture>
           </div>
           <h3>Software (CMS)</h3>
@@ -463,7 +439,7 @@
         <article class="card hover-card spec reveal">
           <div class="img-wrap">
             <picture><source srcset="assets/images/tech2.webp" type="image/webp">
-              <img src="assets/images/tech2.jpg" alt="Inhalte &amp; Formate" loading="lazy" decoding="async" width="1200" height="675">
+              <img src="assets/images/tech2.jpg" alt="Inhalte &amp; Formate" loading="lazy" decoding="async">
             </picture>
           </div>
           <h3>Inhalte &amp; Formate</h3>
@@ -477,7 +453,7 @@
         <article class="card hover-card spec reveal">
           <div class="img-wrap">
             <picture><source srcset="assets/images/tech3.webp" type="image/webp">
-              <img src="assets/images/tech3.jpg" alt="Hardware" loading="lazy" decoding="async" width="1200" height="675">
+              <img src="assets/images/tech3.jpg" alt="Hardware" loading="lazy" decoding="async">
             </picture>
           </div>
           <h3>Hardware</h3>
@@ -491,7 +467,7 @@
         <article class="card hover-card spec reveal">
           <div class="img-wrap">
             <picture><source srcset="assets/images/tech4.webp" type="image/webp">
-              <img src="assets/images/tech4.jpg" alt="Player-Optionen" loading="lazy" decoding="async" width="1200" height="675">
+              <img src="assets/images/tech4.jpg" alt="Player-Optionen" loading="lazy" decoding="async">
             </picture>
           </div>
           <h3>Player-Optionen</h3>
@@ -518,7 +494,7 @@
           sind jederzeit möglich.
         </p>
         <div style="text-align:center">
-          <img class="how-gif" src="assets/videos/how-digital-signage-works.gif" alt="So funktioniert Digital Signage – Animation">
+          <img class="how-gif" src="assets/videos/how-digital-signage-works.gif" alt="So funktioniert Digital Signage – Animation" style="max-width:960px;margin:6px auto;border-radius:14px">
         </div>
       </div>
     </div>
@@ -574,13 +550,13 @@
         <!-- Lokal -->
         <div class="card reveal">
           <h3 style="margin-top:0">Lokales System (einmalig)</h3>
-          <form id="costForm" aria-label="Kostenrechner lokal" novalidate>
+          <form id="costForm" aria-label="Kostenrechner lokal">
             <div class="form-grid" style="margin-bottom:6px">
               <label class="form-field">Anzahl Player<br><input type="number" id="screens" value="1" min="1" required></label>
               <label class="form-field">Anzahl Standorte (1 CMS-Server/Standort)<br><input type="number" id="sites" value="1" min="1" required></label>
             </div>
 
-            <!-- Displays kaufen (optional) – volle Breite -->
+            <!-- Displays kaufen (optional) -->
             <div class="form-grid" style="margin:6px 0">
               <details class="card" style="padding:10px;margin:0;grid-column:1/-1">
                 <summary>Displays dazukaufen (optional)</summary>
@@ -614,7 +590,7 @@
         <div class="card reveal">
           <h3 style="margin-top:0">Mietmodell (monatlich)</h3>
 
-          <form id="rentForm" aria-label="Kostenrechner Mietmodell" novalidate>
+          <form id="rentForm" aria-label="Kostenrechner Mietmodell">
             <!-- Eigener Display Toggle -->
             <label class="form-field" style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
               <input type="checkbox" id="ownDisplay" style="width:auto">
@@ -650,11 +626,11 @@
               </div>
               <div class="form-actions" style="margin-top:10px">
                 <button type="button" class="btn btn-muted" id="addRowBtn">+ Zeile hinzufügen</button>
-                <!-- Entfernt: Displays ansehen (gibt es weiter unten bereits) -->
+                <!-- kein "Displays ansehen" Button hier -->
               </div>
             </div>
 
-            <!-- SIM Option: Menge (gilt für beide Varianten) -->
+            <!-- SIM Option: Menge -->
             <div class="form-grid" style="margin-top:6px">
               <label class="form-field" style="max-width:280px">Anzahl SIM-Karten (4G/5G)<br><input type="number" id="rentSimQty" value="0" min="0"></label>
               <div class="form-field" style="align-self:end"><small class="muted">CHF 10.–/Monat je SIM, unlimitierte Daten, 10&nbsp;Mbit/s</small></div>
@@ -781,28 +757,41 @@
         <h3 id="bkTitle">Buchung / Bestellung</h3>
         <button class="modal-close" aria-label="Schliessen" onclick="closeBooking()">×</button>
       </div>
-      <form id="bookingForm" action="https://formsubmit.co/info@infraone.ch" method="POST" novalidate>
+      <form id="bookingForm" action="#" method="POST" novalidate>
         <div class="form-grid">
           <label class="form-field">Ansprechperson*<br><input type="text" name="Ansprechperson" required></label>
-          <label class="form-field">Firma*<br><input type="text" name="Firma" required></label>
+          <label class="form-field">Firma<br><input type="text" name="Firma"></label>
           <label class="form-field">E-Mail*<br><input type="email" name="E-Mail" required></label>
           <label class="form-field">Telefon*<br><input type="tel" name="Telefon" required></label>
 
-          <label class="form-field">Rechnungsadresse – Strasse*<br><input type="text" name="Rechnungsadresse_Strasse" required></label>
-          <label class="form-field">PLZ/Ort*<br><input type="text" name="Rechnungsadresse_PLZ_Ort" required></label>
-          <label class="form-field">Land*<br><input type="text" name="Rechnungsadresse_Land" value="Schweiz" required></label>
-          <label class="form-field">UID/MwSt-Nr.<br><input type="text" name="UID"></label>
-
+          <!-- Lieferadresse -->
           <label class="form-field">Lieferadresse – Strasse*<br><input type="text" name="Lieferadresse_Strasse" required></label>
           <label class="form-field">PLZ/Ort*<br><input type="text" name="Lieferadresse_PLZ_Ort" required></label>
-          <label class="form-field">E-Mail für Rechnung*<br><input type="email" name="Rechnungs-E-Mail" required></label>
-          <label class="form-field">Zahlungsart<br>
-            <select name="Zahlungsart">
-              <option>Rechnung (30 Tage)</option>
-              <option>Vorkasse</option>
-              <option>TWINT/EC bei Lieferung</option>
-            </select>
+
+          <!-- Rechnungsadresse Toggle -->
+          <label class="form-field" style="grid-column:1/-1;display:flex;align-items:center;gap:10px">
+            <input type="checkbox" id="sameAddr" checked style="width:auto">
+            <span>Rechnungsadresse entspricht der Lieferadresse</span>
           </label>
+
+          <!-- Rechnungsadresse Felder (optional sichtbar) -->
+          <div id="invoiceAddrWrap" style="display:none;grid-column:1/-1">
+            <div class="form-grid">
+              <label class="form-field">Rechnungsadresse – Strasse*<br><input type="text" name="Rechnungsadresse_Strasse"></label>
+              <label class="form-field">PLZ/Ort*<br><input type="text" name="Rechnungsadresse_PLZ_Ort"></label>
+              <label class="form-field">Land*<br><input type="text" name="Rechnungsadresse_Land" value="Schweiz"></label>
+              <label class="form-field">UID/MwSt-Nr.<br><input type="text" name="UID"></label>
+            </div>
+          </div>
+
+          <!-- Rechnungs-E-Mail Toggle -->
+          <label class="form-field" style="grid-column:1/-1;display:flex;align-items:center;gap:10px">
+            <input type="checkbox" id="sameMail" checked style="width:auto">
+            <span>Rechnungs-E-Mail entspricht der E-Mail</span>
+          </label>
+
+          <!-- Rechnungs-E-Mail (optional sichtbar) -->
+          <label class="form-field" id="invoiceMailWrap" style="display:none">Rechnungs-E-Mail*<br><input type="email" name="Rechnungs-E-Mail"></label>
 
           <label class="form-field" style="grid-column:1/-1">Bemerkungen<br><textarea name="Bemerkungen" rows="3" placeholder="Optional"></textarea></label>
           <label class="form-field" style="grid-column:1/-1;display:flex;align-items:center;gap:8px">
@@ -815,16 +804,14 @@
         <!-- Hidden meta -->
         <input type="hidden" name="Paket" id="bkPackage">
         <input type="hidden" name="Konfiguration" id="bkConfig">
-        <input type="hidden" name="_subject" id="bkSubject" value="Buchung – Digital Signage">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.werbebildschirme.ch/#danke">
+        <input type="hidden" name="page" id="bkPage">
         <input type="text" name="_honey" style="display:none">
 
         <div class="form-actions" style="margin-top:10px">
-          <button type="submit" class="btn btn-primary">Bestellung absenden</button>
+          <button type="submit" id="bkSubmit" class="btn btn-primary">Bestellung absenden</button>
           <button type="button" class="btn btn-ghost" onclick="closeBooking()">Abbrechen</button>
         </div>
+        <div id="bkMsg" class="muted" style="margin-top:8px;display:none"></div>
       </form>
     </div>
   </div>
@@ -836,7 +823,7 @@
         <h3 id="dmTitle">Termin vereinbaren / Demo buchen</h3>
         <button class="modal-close" aria-label="Schliessen" onclick="closeDemo()">×</button>
       </div>
-      <form id="demoForm" action="https://formsubmit.co/info@infraone.ch" method="POST" novalidate>
+      <form id="demoForm" action="#" method="POST" novalidate>
         <div class="form-grid">
           <label class="form-field">Name*<br><input type="text" name="Name" required></label>
           <label class="form-field">E-Mail*<br><input type="email" name="E-Mail" required></label>
@@ -844,51 +831,49 @@
           <label class="form-field" style="grid-column:1/-1">3 Terminvorschläge*<br><textarea name="Terminvorschläge" rows="3" placeholder="z. B. Di 10–12, Mi 14–16, Fr 9–11" required></textarea></label>
         </div>
 
-        <!-- Hidden meta -->
-        <input type="hidden" name="_subject" value="Termin / Demo – Digital Signage">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.werbebildschirme.ch/#danke">
         <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="page" id="dmPage">
 
         <div class="form-actions" style="margin-top:10px">
-          <button type="submit" class="btn btn-primary">Anfrage senden</button>
+          <button type="submit" id="dmSubmit" class="btn btn-primary">Anfrage senden</button>
           <button type="button" class="btn btn-ghost" onclick="closeDemo()">Abbrechen</button>
         </div>
+        <div id="dmMsg" class="muted" style="margin-top:8px;display:none"></div>
       </form>
     </div>
   </div>
 
   <!-- ================= SCRIPTS ================= -->
   <script>
-    // HERO-Video: 7s Loop + Fallback (leichter & LCP-freundlicher)
+    // HERO-Video: 7s Loop + Fallback
     (function(){
       const v=document.getElementById('heroVideo'); if(!v) return;
-      // weniger Events als timeupdate
-      setInterval(()=>{ try{ if(!v.paused && v.currentTime>7) v.currentTime=0; }catch{} }, 1000);
+      v.addEventListener('timeupdate',()=>{ if(v.currentTime>7) v.currentTime=0; });
       const hero=document.querySelector('.hero-media');
       const poster=v.getAttribute('poster')||hero?.getAttribute('data-fallback');
       v.addEventListener('error',()=>{ if(poster) hero.style.background=`url('${poster}') center/cover no-repeat`; });
       document.addEventListener('visibilitychange',()=>{ if(!document.hidden&&v.paused){ v.play().catch(()=>{}); } });
     })();
 
-    // Reveal on scroll (idle-init)
-    (window.requestIdleCallback||function(fn){setTimeout(fn,1)})(function(){
+    // Reveal on scroll
+    (function(){
       const els=[...document.querySelectorAll('.reveal')];
       if(!('IntersectionObserver' in window)||!els.length){ els.forEach(e=>e.classList.add('in-view')); return; }
       const io=new IntersectionObserver((entries)=>{
         entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in-view'); io.unobserve(en.target);} });
       },{threshold:.12});
       els.forEach(e=>io.observe(e));
-    });
+    })();
 
-    // Rückruf-CTA: aktuelle Seite in Hidden
+    // Rückruf-CTA: aktuelle Seite in Hidden + AJAX Submit
     document.addEventListener("DOMContentLoaded",()=>{
-      const pageInput=document.getElementById("cbPage"); if(pageInput) pageInput.value=window.location.href;
+      const pageUrl=window.location.href;
+      const cbPage=document.getElementById("cbPage"); if(cbPage) cbPage.value=pageUrl;
+      const dmPage=document.getElementById("dmPage"); if(dmPage) dmPage.value=pageUrl;
+      const bkPage=document.getElementById("bkPage"); if(bkPage) bkPage.value=pageUrl;
     });
 
     // =================== PREISE ===================
-    // Miete pro Display-Typ (Platzhalter)
     const DISP_PRICES={ display01:59, display02:69, display03:79, display04:99, display05:129, display06:159 };
     const DISP_LABELS={
       display01:"Display 01 (Platzhalter)",
@@ -898,7 +883,6 @@
       display05:"Display 05 (Platzhalter)",
       display06:"Display 06 (Platzhalter)"
     };
-    // Kaufpreise (für „Displays dazukaufen“)
     const BUY_PRICES={ display01:500, display02:700, display03:900, display04:1200, display05:1600, display06:2000 };
 
     // =================== LOKALER RECHNER ===================
@@ -1073,19 +1057,18 @@
 
     // =================== BUCHUNG ===================
     function openStarter(){
-      // Immer CHF 660.–
       const modal=document.getElementById('bookingModal');
       const title=document.getElementById('bkTitle');
       const summary=document.getElementById('bkSummary');
       const pkg=document.getElementById('bkPackage');
       const cfg=document.getElementById('bkConfig');
-      const subj=document.getElementById('bkSubject');
+      const subjText='Bestellung – Starter-Paket (CHF 660.–)';
 
       title.textContent='Bestellung – Starter-Paket (lokal)';
       summary.innerHTML=`<strong>Starter-Paket (lokal)</strong><br>• CMS-Server (Mini) + 1 Player + 1h Einführung + 2 Vorlagen<br><strong>Total: CHF 660.–</strong>`;
       pkg.value='Starter-Paket (lokal) – CHF 660.–';
       cfg.value='Fixpreis CHF 660.– (1 Standort, 1 Bildschirm, 1h Einführung inkl.)';
-      subj.value='Bestellung – Starter-Paket (CHF 660.–)';
+      document.getElementById('bkMsg').style.display='none';
       modal.classList.add('open');
     }
 
@@ -1095,7 +1078,6 @@
       const summary=document.getElementById('bkSummary');
       const pkg=document.getElementById('bkPackage');
       const cfg=document.getElementById('bkConfig');
-      const subj=document.getElementById('bkSubject');
 
       let text='',pkgName='',config='';
 
@@ -1112,7 +1094,6 @@
         text=`<strong>Mietmodell (Monatlich)</strong><br>${items.map(i=>`• ${i.label}: ${i.qty} × CHF ${i.unit} = CHF ${(i.qty*i.unit).toLocaleString('de-CH')}`).join('<br>')}
               <br>• SIM: ${simQty} × CHF 10 = CHF ${monthlySIM.toLocaleString('de-CH')}
               <br><br><strong>Monatlich: CHF ${monthly.toLocaleString('de-CH')}</strong>`;
-        subj.value=`Buchung – Mietmodell (CHF ${monthly.toLocaleString('de-CH')}/Monat)`;
       }else if(kind==='playersOnly'){
         const n=+document.getElementById('playersOnly').value||0;
         const simQty=+document.getElementById('rentSimQty').value||0;
@@ -1127,11 +1108,10 @@
         text=`<strong>Monatskosten</strong><br>
               • Player (Abo): ${n} × CHF 25 = CHF ${monthlyPlayers.toLocaleString('de-CH')}<br>
               • SIM: ${simQty} × CHF 10 = CHF ${monthlySIM.toLocaleString('de-CH')}<br>
-              <strong>Summe monatlich: CHF ${(monthlyPlayers+monthlySIM).toLocaleString('de-CH')}</strong>
-              ${buyTotal? `<br><br><strong>Einmalig Displays (Kauf):</strong> CHF ${buyTotal.toLocaleString('de-CH')}`:''}`;
-        subj.value='Bestellung – Player-Abo (eigener Display) + evtl. Display-Kauf';
+              <strong>Summe monatlich: CHF ${(monthlyPlayers + monthlySIM).toLocaleString('de-CH')}</strong>
+              ${buyTotal ? `<br><br><strong>Einmalig Displays (Kauf):</strong> CHF ${buyTotal.toLocaleString('de-CH')}` : ''}`;
       }else{
-        // Lokal (aus Rechner)
+        // Lokal
         const screens=+document.getElementById('screens').value||0;
         const sites=+document.getElementById('sites').value||0;
         const simQty=+document.getElementById('localSimQty').value||0;
@@ -1151,56 +1131,170 @@
               Server CHF ${serverCosts.toLocaleString('de-CH')} + Player CHF ${playerCosts.toLocaleString('de-CH')} + Displays (Kauf) CHF ${buyTotal.toLocaleString('de-CH')}<br>
               <strong>Total: CHF ${(total+buyTotal).toLocaleString('de-CH')}</strong>
               ${simMonthly? `<br><br><strong>Optional SIM:</strong> CHF ${simMonthly.toLocaleString('de-CH')}.–/Monat (${simQty} × CHF 10.–)`:''}`;
-        subj.value=`Buchung – Lokal (${screens}x Screens / ${sites} Standort(e))`;
       }
 
       document.getElementById('bkSummary').innerHTML=`<div>${text}</div>`;
       document.getElementById('bkPackage').value=pkgName;
       document.getElementById('bkConfig').value=config;
-      modal.classList.add('open');
+      document.getElementById('bkMsg').style.display='none';
+      document.getElementById('bookingModal').classList.add('open');
     }
     function closeBooking(){ document.getElementById('bookingModal').classList.remove('open'); }
     document.getElementById('bookingModal').addEventListener('click',(e)=>{ if(e.target.id==='bookingModal') closeBooking(); });
+
+    // Rechnungsadresse/Mail toggles
+    (function(){
+      const sameAddr = document.getElementById('sameAddr');
+      const addrWrap = document.getElementById('invoiceAddrWrap');
+      const invStreet = document.querySelector('[name="Rechnungsadresse_Strasse"]');
+      const invCity = document.querySelector('[name="Rechnungsadresse_PLZ_Ort"]');
+      const invLand = document.querySelector('[name="Rechnungsadresse_Land"]');
+
+      function applyAddr(){
+        const on = sameAddr.checked;
+        addrWrap.style.display = on ? 'none' : 'block';
+        invStreet.required = invCity.required = invLand.required = !on;
+      }
+      sameAddr.addEventListener('change', applyAddr); applyAddr();
+
+      const sameMail = document.getElementById('sameMail');
+      const mailWrap = document.getElementById('invoiceMailWrap');
+      const invMail = document.querySelector('[name="Rechnungs-E-Mail"]');
+      function applyMail(){
+        const on = sameMail.checked;
+        mailWrap.style.display = on ? 'none' : 'block';
+        invMail.required = !on;
+      }
+      sameMail.addEventListener('change', applyMail); applyMail();
+    })();
+
+    // Basic form validator
+    function ensureValid(form){
+      if(!form.checkValidity()){
+        form.reportValidity();
+        return false;
+      }
+      return true;
+    }
+
+    // ============= Submit via Netlify Function (notify) =============
+    async function postJSON(url, data){
+      const res = await fetch(url, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+      });
+      const json = await res.json().catch(()=>({}));
+      if(!res.ok || json.ok===false) throw new Error(json.error || ('HTTP '+res.status));
+      return json;
+    }
+
+    // Demo-Form
+    (function(){
+      const form = document.getElementById('demoForm');
+      const btn = document.getElementById('dmSubmit');
+      const msg = document.getElementById('dmMsg');
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if(!ensureValid(form)) return;
+        btn.disabled = true; btn.textContent='Sendet…';
+        msg.style.display='none';
+        try{
+          await postJSON('/.netlify/functions/notify',{
+            type:'demo',
+            name: form.querySelector('[name="Name"]').value,
+            email: form.querySelector('[name="E-Mail"]').value,
+            phone: form.querySelector('[name="Telefon"]').value || '',
+            slots: form.querySelector('[name="Terminvorschläge"]').value,
+            page: document.getElementById('dmPage').value,
+            honey: form.querySelector('[name="_honey"]').value || ''
+          });
+          msg.textContent = 'Danke! Wir melden uns in Kürze mit einer Terminbestätigung.';
+          msg.style.display='block';
+          form.reset();
+        }catch(err){
+          msg.textContent = 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
+          msg.style.display='block';
+        }finally{
+          btn.disabled=false; btn.textContent='Anfrage senden';
+        }
+      });
+    })();
+
+    // Buchungs-Form
+    (function(){
+      const form = document.getElementById('bookingForm');
+      const btn = document.getElementById('bkSubmit');
+      const msg = document.getElementById('bkMsg');
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if(!ensureValid(form)) return;
+        btn.disabled = true; btn.textContent='Sendet…';
+        msg.style.display='none';
+        const fd = new FormData(form);
+        const obj = Object.fromEntries(fd.entries());
+        try{
+          await postJSON('/.netlify/functions/notify',{
+            type:'booking',
+            name: obj['Ansprechperson'],
+            email: obj['E-Mail'],
+            phone: obj['Telefon'] || '',
+            company: obj['Firma'] || '',
+            package: obj['Paket'],
+            config: obj['Konfiguration'],
+            message: obj['Bemerkungen'] || '',
+            page: obj['page'] || window.location.href,
+            honey: obj['_honey'] || ''
+          });
+          msg.textContent = 'Vielen Dank! Ihre Bestellung ist eingegangen – wir melden uns in Kürze zur Abstimmung.';
+          msg.style.display='block';
+          // Optional: Modal nach kurzer Zeit schliessen
+          // setTimeout(closeBooking, 2000);
+          form.reset();
+        }catch(err){
+          msg.textContent = 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
+          msg.style.display='block';
+        }finally{
+          btn.disabled=false; btn.textContent='Bestellung absenden';
+        }
+      });
+    })();
+
+    // Rückruf-Form (Callback)
+    (function(){
+      const form = document.getElementById('callbackForm');
+      const btn = document.getElementById('cbSubmit');
+      const msg = document.getElementById('callbackMsg');
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if(!ensureValid(form)) return;
+        btn.disabled = true; btn.textContent='Sendet…';
+        msg.style.display='none';
+        try{
+          await postJSON('/.netlify/functions/notify',{
+            type:'callback',
+            name: form.querySelector('[name="name"]').value,
+            phone: form.querySelector('[name="phone"]').value,
+            page: form.querySelector('[name="page"]').value,
+            honey: form.querySelector('[name="_honey"]').value || ''
+          });
+          msg.textContent = 'Danke! Wir melden uns in den nächsten 4 Stunden.';
+          msg.style.display='block';
+          form.reset();
+        }catch(err){
+          msg.textContent = 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
+          msg.style.display='block';
+        }finally{
+          btn.disabled=false; btn.textContent='Rückruf anfordern';
+        }
+      });
+    })();
 
     // =================== DEMO MODAL ===================
     function openDemo(){ document.getElementById('demoModal').classList.add('open'); }
     function closeDemo(){ document.getElementById('demoModal').classList.remove('open'); }
     document.getElementById('demoModal').addEventListener('click',(e)=>{ if(e.target.id==='demoModal') closeDemo(); });
     document.querySelectorAll('.js-open-demo').forEach(btn=>btn.addEventListener('click',openDemo));
-
-    // =================== VALIDIERUNG + ANTI-DOPPELKLICK + FEEDBACK ===================
-    (function enhanceForms(){
-      const enhance = (form) => {
-        if(!form) return;
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const statusBar = document.createElement('div');
-        statusBar.className = 'muted';
-        statusBar.setAttribute('aria-live','polite');
-        statusBar.style.marginTop = '8px';
-        form.appendChild(statusBar);
-
-        form.addEventListener('submit', (e) => {
-          if(!form.checkValidity()){
-            e.preventDefault();
-            form.reportValidity();
-            return;
-          }
-          // Anti-Doppelklick + visuelles Feedback
-          if(submitBtn){
-            submitBtn.disabled = true;
-            submitBtn.dataset.prev = submitBtn.innerText;
-            submitBtn.innerText = 'Senden…';
-            submitBtn.style.cursor = 'not-allowed';
-          }
-          form.querySelectorAll('input,select,textarea').forEach(el => { try{ el.readOnly = true; }catch{} });
-          statusBar.textContent = 'Wird gesendet…';
-        });
-      };
-
-      enhance(document.getElementById('bookingForm'));
-      enhance(document.getElementById('demoForm'));
-      enhance(document.querySelector('#benefits .cta-callback form'));
-    })();
   </script>
 </body>
 </html>
