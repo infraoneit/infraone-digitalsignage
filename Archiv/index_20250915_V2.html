@@ -102,20 +102,7 @@
 
     .grid {
       display: grid;
-      gap: var(--sp-3);
-      /* verhindert, dass Grid-Kinder overflowen (fix für mobile Abschneidung) */
-    }
-
-    /* Wichtig, damit Inhalte auf kleinen Screens nicht überstehen */
-    .grid>*,
-    .card,
-    .rent-rows,
-    .rent-row,
-    .form-field input,
-    .form-field select,
-    .form-field textarea {
-      min-width: 0;
-      max-width: 100%;
+      gap: var(--sp-3)
     }
 
     .card {
@@ -192,8 +179,7 @@
     }
 
     .muted {
-      color: var(--muted);
-      overflow-wrap: anywhere; /* verhindert abgeschnittene Wörter auf Mobil */
+      color: var(--muted)
     }
 
     .hover-card {
@@ -354,6 +340,7 @@
     .benefit .tag {
       display: none !important;
     }
+
     /* schwarze kleinen Tags komplett ausblenden */
 
     /* ================= USE CASES ================= */
@@ -694,11 +681,17 @@
     }
 
     @media (max-width:760px) {
-      .nav-links { display: none }
+      .nav-links {
+        display: none
+      }
 
-      .hero-media { height: 58vh }
+      .hero-media {
+        height: 58vh
+      }
 
-      .section { padding: 30px 0 }
+      .section {
+        padding: 30px 0
+      }
 
       .btn {
         padding: 10px 14px;
@@ -706,9 +699,13 @@
         border-width: 1px
       }
 
-      .packages .pkg-footer .btn { width: 100% }
+      .packages .pkg-footer .btn {
+        width: 100%
+      }
 
-      .specs { grid-template-columns: 1fr }
+      .specs {
+        grid-template-columns: 1fr
+      }
 
       .sticky-cta {
         right: 12px;
@@ -717,13 +714,26 @@
       }
 
       /* Kostenrechner 1 Spalte, volle Breite und ohne harte Max-Widths */
-      #kosten .grid { grid-template-columns: 1fr !important }
-      #kosten .form-field { max-width: 100% !important }
+      #kosten .grid {
+        grid-template-columns: 1fr !important
+      }
 
-      .rent-row, .rent-rows-head { grid-template-columns: 1fr 1fr auto }
-      .form-actions .btn { width: 100% }
+      #kosten .form-field {
+        max-width: 100% !important
+      }
 
-      #costForm .form-grid { grid-template-columns: 1fr }
+      .rent-row,
+      .rent-rows-head {
+        grid-template-columns: 1fr 1fr auto
+      }
+
+      .form-actions .btn {
+        width: 100%
+      }
+
+      #costForm .form-grid {
+        grid-template-columns: 1fr
+      }
 
       /* GIF voll responsiv */
       #howitworks .how-gif {
@@ -734,49 +744,34 @@
         border-radius: 12px
       }
 
-      /* Rückrufleiste – alles untereinander + mittig */
-      #benefits .cta-callback { text-align: center; }
+      /* Rückrufleiste – alles untereinander */
       #benefits .cta-row {
         flex-direction: column;
-        align-items: center; /* mittig */
+        align-items: stretch
       }
-      #benefits .cta-headline { text-align: center; width: 100%; }
+
       #benefits .cta-actions {
         margin-left: 0;
         flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        max-width: 520px; /* hält Inputs schön mittig */
-      }
-      #benefits .cta-actions input { width: 100% }
-
-      /* CTA-Banner („Kein passendes Paket…“ & „Displays ansehen“) – Button mittig unter Text */
-      .cta-banner .grid {
-        grid-template-columns: 1fr !important;
-        text-align: center;
-      }
-      .cta-banner .grid > div,
-      .cta-banner .grid > div:last-child { text-align: center !important; }
-      .cta-banner .btn {
-        width: 100%;
-        max-width: 420px;
-        margin: 6px auto 0;
+        align-items: stretch
       }
 
-      /* Demo-Abschnitt – Buttons unter den Text + Abstand */
-      #demo .card .grid { grid-template-columns: 1fr !important }
-      #demo .card .grid > div:last-child { text-align: center }
+      #benefits .cta-actions input {
+        width: 100%
+      }
+
+      /* Demo-Abschnitt – Buttons unter den Text */
+      #demo .card .grid {
+        grid-template-columns: 1fr !important
+      }
+
+      #demo .card .grid>div:last-child {
+        text-align: left
+      }
+
       #demo .card .btn {
-        width: 100%;
-        max-width: 420px;
-        margin: 0 auto;
+        width: 100%
       }
-      #demo .card .btn + .btn { margin-top: 10px; } /* Abstand Demo/Whitepaper */
-
-      /* „Display-Modelle ansehen“ Banner (unter Rechnern) – Button mittig */
-      #kosten .cta-banner .grid { grid-template-columns: 1fr !important; }
-      #kosten .cta-banner .grid > div { text-align: center !important; }
-      #kosten .cta-banner .btn { width: 100%; max-width: 420px; margin: 6px auto 0; }
     }
 
     /* CTA Rückruf */
@@ -977,7 +972,7 @@
     </div>
   </section>
 
-    <!-- ================= USE CASES ================= -->
+  <!-- ================= USE CASES ================= -->
   <section id="usecases" class="section" aria-label="Anwendungsbeispiele">
     <div class="container">
       <div class="section-title">
@@ -1364,7 +1359,7 @@
       <!-- Displays CTA unter den Rechnern -->
       <div class="card cta-banner reveal" style="margin-top:var(--sp-3)">
         <div class="grid" style="grid-template-columns:1fr auto;align-items:center">
-          <p style="margin:0"><strong>Display-Modelle ansehen</strong> – Indoor, Outdoor, High-Brightness &amp;
+          <p style="margin:0"><strong>Display-Modelle ansehen</strong> – Indoor, Outdoor, High-Brightness &
             Spezialgrössen.</p>
           <div style="text-align:right">
             <a class="btn btn-primary" href="/displays/" target="_blank" rel="noopener">Displays ansehen</a>
@@ -1374,7 +1369,7 @@
     </div>
   </section>
 
-    <!-- ================= FAQ ================= -->
+  <!-- ================= FAQ ================= -->
   <section id="faq" class="section">
     <div class="container">
       <div class="section-title">
@@ -1448,7 +1443,7 @@
     </div>
   </section>
 
-    <!-- ================= STICKY CTA ================= -->
+  <!-- ================= STICKY CTA ================= -->
   <div class="sticky-cta" aria-label="Schnellkontakt">
     <a class="btn btn-primary" href="#pakete">Jetzt mieten</a>
     <a class="btn btn-ghost" href="https://wa.me/41765875055" target="_blank" rel="noopener">WhatsApp</a>
@@ -1811,15 +1806,15 @@
 
       if (kind === 'rent') {
         const simQty = +document.getElementById('rentSimQty').value || 0;
-        theItems = [...getRentItems()];
-        const monthlyBase = theItems.reduce((s, i) => s + i.qty * i.unit, 0);
+        const items = [...getRentItems()];
+        const monthlyBase = items.reduce((s, i) => s + i.qty * i.unit, 0);
         const monthlySIM = simQty * 10;
         const monthly = monthlyBase + monthlySIM;
 
         title.textContent = 'Buchung – Mietmodell';
         pkgName = 'Mietmodell (gehostet, 24 Monate)';
-        config = `Monatlich: CHF ${monthly} | Positionen: ${theItems.map(i => `${i.label} x${i.qty}@${i.unit}`).join(', ')} | SIM: ${simQty}x10`;
-        text = `<strong>Mietmodell (Monatlich)</strong><br>${theItems.map(i => `• ${i.label}: ${i.qty} × CHF ${i.unit} = CHF ${(i.qty * i.unit).toLocaleString('de-CH')}`).join('<br>')}
+        config = `Monatlich: CHF ${monthly} | Positionen: ${items.map(i => `${i.label} x${i.qty}@${i.unit}`).join(', ')} | SIM: ${simQty}x10`;
+        text = `<strong>Mietmodell (Monatlich)</strong><br>${items.map(i => `• ${i.label}: ${i.qty} × CHF ${i.unit} = CHF ${(i.qty * i.unit).toLocaleString('de-CH')}`).join('<br>')}
               <br>• SIM: ${simQty} × CHF 10 = CHF ${monthlySIM.toLocaleString('de-CH')}
               <br><br><strong>Monatlich: CHF ${monthly.toLocaleString('de-CH')}</strong>`;
       } else if (kind === 'playersOnly') {
@@ -1837,7 +1832,7 @@
               • Player (Abo): ${n} × CHF 25 = CHF ${monthlyPlayers.toLocaleString('de-CH')}<br>
               • SIM: ${simQty} × CHF 10 = CHF ${monthlySIM.toLocaleString('de-CH')}<br>
               <strong>Summe monatlich: CHF ${(monthlyPlayers + monthlySIM).toLocaleString('de-CH')}</strong>
-              ${buyTotal ? `<br><br><strong>Einmalig Kauf-Displays:</strong> CHF ${buyTotal.toLocaleString('de-CH')}` : ''}`;
+              ${buyTotal ? `<br><br><strong>Einmalig Displays (Kauf):</strong> CHF ${buyTotal.toLocaleString('de-CH')}` : ''}`;
       } else {
         // Lokal
         const screens = +document.getElementById('screens').value || 0;
@@ -2052,4 +2047,5 @@
     document.querySelectorAll('.js-open-demo').forEach(btn => btn.addEventListener('click', openDemo));
   </script>
 </body>
+
 </html>
