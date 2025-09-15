@@ -686,26 +686,11 @@
       color: #fff
     }
 
-    /* ===== Footer-Grid (3 Spalten wie Muster) ===== */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr; /* Firma breiter */
-      gap: 24px;
-      align-items: start;
-    }
-    .footer-col h4 { margin: 0 0 8px; font-size: 1.05rem }
-    .footer-col ul { list-style: none; padding: 0; margin: 0 }
-    .footer-col li + li { margin-top: 6px }
-
-    /* Liste im Demo-Block zentrieren, Text linksbündig zum Bullet (auch Desktop okay) */
-    #demo .card ul { max-width: 720px; margin: 0 auto; padding-left: 1.2rem; text-align: left; }
-
     /* ================= RESPONSIVE ================= */
     @media (max-width:980px) {
       .specs {
         grid-template-columns: repeat(2, 1fr)
       }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width:760px) {
@@ -735,8 +720,7 @@
       #kosten .grid { grid-template-columns: 1fr !important }
       #kosten .form-field { max-width: 100% !important }
 
-      .rent-row, .rent-rows-head { grid-template-columns: 1fr 1fr auto } /* Head bleibt 3-spaltig */
-
+      .rent-row, .rent-rows-head { grid-template-columns: 1fr 1fr auto }
       .form-actions .btn { width: 100% }
 
       #costForm .form-grid { grid-template-columns: 1fr }
@@ -752,7 +736,10 @@
 
       /* Rückrufleiste – alles untereinander + mittig */
       #benefits .cta-callback { text-align: center; }
-      #benefits .cta-row { flex-direction: column; align-items: center; }
+      #benefits .cta-row {
+        flex-direction: column;
+        align-items: center; /* mittig */
+      }
       #benefits .cta-headline { text-align: center; width: 100%; }
       #benefits .cta-actions {
         margin-left: 0;
@@ -762,7 +749,6 @@
         max-width: 520px; /* hält Inputs schön mittig */
       }
       #benefits .cta-actions input { width: 100% }
-      #benefits .cta-actions .btn { width: 100% } /* Was: Button volle Breite; Warum: sauberer Touch-Zielbereich */
 
       /* CTA-Banner („Kein passendes Paket…“ & „Displays ansehen“) – Button mittig unter Text */
       .cta-banner .grid {
@@ -780,33 +766,17 @@
       /* Demo-Abschnitt – Buttons unter den Text + Abstand */
       #demo .card .grid { grid-template-columns: 1fr !important }
       #demo .card .grid > div:last-child { text-align: center }
-      #demo .card .btn { width: 100%; max-width: 420px; margin: 0 auto; }
+      #demo .card .btn {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+      }
       #demo .card .btn + .btn { margin-top: 10px; } /* Abstand Demo/Whitepaper */
 
       /* „Display-Modelle ansehen“ Banner (unter Rechnern) – Button mittig */
       #kosten .cta-banner .grid { grid-template-columns: 1fr !important; }
       #kosten .cta-banner .grid > div { text-align: center !important; }
       #kosten .cta-banner .btn { width: 100%; max-width: 420px; margin: 6px auto 0; }
-
-      /* === MOBILE-FIX #1: „Displays kaufen“ – Entfernen-Button sichtbar (nur Kauf-Details!) ===
-         Zeile 1: Select + Menge (je 1fr)
-         Zeile 2: .remove als eigene Zeile, rechtsbündig */
-      #localBuyRows .rent-row,
-      #buyRows .rent-row {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-          "sel qty"
-          "rm  rm";
-      }
-      #localBuyRows .rent-row > *:first-child,
-      #buyRows   .rent-row > *:first-child { grid-area: sel; min-width: 0; }
-      #localBuyRows .rent-row > *:nth-child(2),
-      #buyRows   .rent-row > *:nth-child(2) { grid-area: qty; min-width: 0; }
-      #localBuyRows .rent-row .remove,
-      #buyRows   .rent-row .remove { grid-area: rm; justify-self: end; width: auto; }
-
-      /* Footer stacked */
-      .footer-grid { grid-template-columns: 1fr; gap: 16px; }
     }
 
     /* CTA Rückruf */
@@ -1007,7 +977,7 @@
     </div>
   </section>
 
-  <!-- ================= USE CASES ================= -->
+    <!-- ================= USE CASES ================= -->
   <section id="usecases" class="section" aria-label="Anwendungsbeispiele">
     <div class="container">
       <div class="section-title">
@@ -1404,7 +1374,7 @@
     </div>
   </section>
 
-  <!-- ================= FAQ ================= -->
+    <!-- ================= FAQ ================= -->
   <section id="faq" class="section">
     <div class="container">
       <div class="section-title">
@@ -1478,7 +1448,7 @@
     </div>
   </section>
 
-  <!-- ================= STICKY CTA ================= -->
+    <!-- ================= STICKY CTA ================= -->
   <div class="sticky-cta" aria-label="Schnellkontakt">
     <a class="btn btn-primary" href="#pakete">Jetzt mieten</a>
     <a class="btn btn-ghost" href="https://wa.me/41765875055" target="_blank" rel="noopener">WhatsApp</a>
@@ -1488,32 +1458,6 @@
   <!-- ================= FOOTER ================= -->
   <footer role="contentinfo">
     <div class="container">
-      <!-- Drei Spalten wie Muster; einfache Links, Desktop-Optik dezent – mobil stacked -->
-      <div class="footer-grid" style="margin-bottom:16px">
-        <div class="footer-col">
-          <h4><strong>Infraone IT Solutions GmbH</strong></h4>
-          <p class="muted" style="margin:0">
-            Winterthur • <a href="https://www.infraone.ch/" target="_blank" rel="noopener">infraone.ch</a><br>
-            <a href="mailto:info@infraone.ch">info@infraone.ch</a>
-          </p>
-        </div>
-        <div class="footer-col">
-          <h4>Weitere Infos</h4>
-          <ul>
-            <li><a href="/displays/" aria-label="Displays &amp; Modelle">Displays &amp; Modelle</a></li>
-            <li><a href="/whitepaper/index.html" target="_blank" rel="noopener">Whitepaper</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Rechtliches</h4>
-          <ul>
-            <li><a href="/impressum/">Impressum</a></li>
-            <li><a href="/datenschutz/">Datenschutz</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- vorhandene Fließtexte beibehalten -->
       <p><strong>Infraone IT Solutions GmbH</strong> • Winterthur • <a href="https://www.infraone.ch/" target="_blank"
           rel="noopener">www.infraone.ch</a> • info@infraone.ch</p>
       <p class="muted">werbebildschirme.ch ist eine Marke von <a href="https://www.infraone.ch/" target="_blank"
@@ -1628,6 +1572,7 @@
     </div>
   </div>
 
+  <!-- ================= SCRIPTS ================= -->
   <script>
     // HERO-Video: 7s Loop + Fallback
     (function () {
@@ -1866,7 +1811,7 @@
 
       if (kind === 'rent') {
         const simQty = +document.getElementById('rentSimQty').value || 0;
-        const theItems = [...getRentItems()]; // Fix: lokale Deklaration, verhindert implizite Global-Variable
+        theItems = [...getRentItems()];
         const monthlyBase = theItems.reduce((s, i) => s + i.qty * i.unit, 0);
         const monthlySIM = simQty * 10;
         const monthly = monthlyBase + monthlySIM;
