@@ -193,7 +193,8 @@
 
     .muted {
       color: var(--muted);
-      overflow-wrap: anywhere; /* verhindert abgeschnittene Wörter auf Mobil */
+      overflow-wrap: anywhere;
+      /* verhindert abgeschnittene Wörter auf Mobil */
     }
 
     .hover-card {
@@ -354,6 +355,7 @@
     .benefit .tag {
       display: none !important;
     }
+
     /* schwarze kleinen Tags komplett ausblenden */
 
     /* ================= USE CASES ================= */
@@ -689,31 +691,58 @@
     /* ===== Footer-Grid (3 Spalten wie Muster) ===== */
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr; /* Firma breiter */
+      grid-template-columns: 1.2fr 1fr 1fr;
+      /* Firma breiter */
       gap: 24px;
       align-items: start;
     }
-    .footer-col h4 { margin: 0 0 8px; font-size: 1.05rem }
-    .footer-col ul { list-style: none; padding: 0; margin: 0 }
-    .footer-col li + li { margin-top: 6px }
+
+    .footer-col h4 {
+      margin: 0 0 8px;
+      font-size: 1.05rem
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .footer-col li+li {
+      margin-top: 6px
+    }
 
     /* Liste im Demo-Block zentrieren, Text linksbündig zum Bullet (auch Desktop okay) */
-    #demo .card ul { max-width: 720px; margin: 0 auto; padding-left: 1.2rem; text-align: left; }
+    #demo .card ul {
+      max-width: 720px;
+      margin: 0 auto;
+      padding-left: 1.2rem;
+      text-align: left;
+    }
 
     /* ================= RESPONSIVE ================= */
     @media (max-width:980px) {
       .specs {
         grid-template-columns: repeat(2, 1fr)
       }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width:760px) {
-      .nav-links { display: none }
+      .nav-links {
+        display: none
+      }
 
-      .hero-media { height: 58vh }
+      .hero-media {
+        height: 58vh
+      }
 
-      .section { padding: 30px 0 }
+      .section {
+        padding: 30px 0
+      }
 
       .btn {
         padding: 10px 14px;
@@ -721,9 +750,13 @@
         border-width: 1px
       }
 
-      .packages .pkg-footer .btn { width: 100% }
+      .packages .pkg-footer .btn {
+        width: 100%
+      }
 
-      .specs { grid-template-columns: 1fr }
+      .specs {
+        grid-template-columns: 1fr
+      }
 
       .sticky-cta {
         right: 12px;
@@ -732,14 +765,28 @@
       }
 
       /* Kostenrechner 1 Spalte, volle Breite und ohne harte Max-Widths */
-      #kosten .grid { grid-template-columns: 1fr !important }
-      #kosten .form-field { max-width: 100% !important }
+      #kosten .grid {
+        grid-template-columns: 1fr !important
+      }
 
-      .rent-row, .rent-rows-head { grid-template-columns: 1fr 1fr auto } /* Head bleibt 3-spaltig */
+      #kosten .form-field {
+        max-width: 100% !important
+      }
 
-      .form-actions .btn { width: 100% }
+      .rent-row,
+      .rent-rows-head {
+        grid-template-columns: 1fr 1fr auto
+      }
 
-      #costForm .form-grid { grid-template-columns: 1fr }
+      /* Head bleibt 3-spaltig */
+
+      .form-actions .btn {
+        width: 100%
+      }
+
+      #costForm .form-grid {
+        grid-template-columns: 1fr
+      }
 
       /* GIF voll responsiv */
       #howitworks .how-gif {
@@ -751,26 +798,50 @@
       }
 
       /* Rückrufleiste – alles untereinander + mittig */
-      #benefits .cta-callback { text-align: center; }
-      #benefits .cta-row { flex-direction: column; align-items: center; }
-      #benefits .cta-headline { text-align: center; width: 100%; }
+      #benefits .cta-callback {
+        text-align: center;
+      }
+
+      #benefits .cta-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #benefits .cta-headline {
+        text-align: center;
+        width: 100%;
+      }
+
       #benefits .cta-actions {
         margin-left: 0;
         flex-direction: column;
         align-items: stretch;
         width: 100%;
-        max-width: 520px; /* hält Inputs schön mittig */
+        max-width: 520px;
+        /* hält Inputs schön mittig */
       }
-      #benefits .cta-actions input { width: 100% }
-      #benefits .cta-actions .btn { width: 100% } /* Was: Button volle Breite; Warum: sauberer Touch-Zielbereich */
+
+      #benefits .cta-actions input {
+        width: 100%
+      }
+
+      #benefits .cta-actions .btn {
+        width: 100%
+      }
+
+      /* Was: Button volle Breite; Warum: sauberer Touch-Zielbereich */
 
       /* CTA-Banner („Kein passendes Paket…“ & „Displays ansehen“) – Button mittig unter Text */
       .cta-banner .grid {
         grid-template-columns: 1fr !important;
         text-align: center;
       }
-      .cta-banner .grid > div,
-      .cta-banner .grid > div:last-child { text-align: center !important; }
+
+      .cta-banner .grid>div,
+      .cta-banner .grid>div:last-child {
+        text-align: center !important;
+      }
+
       .cta-banner .btn {
         width: 100%;
         max-width: 420px;
@@ -778,35 +849,83 @@
       }
 
       /* Demo-Abschnitt – Buttons unter den Text + Abstand */
-      #demo .card .grid { grid-template-columns: 1fr !important }
-      #demo .card .grid > div:last-child { text-align: center }
-      #demo .card .btn { width: 100%; max-width: 420px; margin: 0 auto; }
-      #demo .card .btn + .btn { margin-top: 10px; } /* Abstand Demo/Whitepaper */
+      #demo .card .grid {
+        grid-template-columns: 1fr !important
+      }
+
+      #demo .card .grid>div:last-child {
+        text-align: center
+      }
+
+      #demo .card .btn {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      #demo .card .btn+.btn {
+        margin-top: 10px;
+      }
+
+      /* Abstand Demo/Whitepaper */
 
       /* „Display-Modelle ansehen“ Banner (unter Rechnern) – Button mittig */
-      #kosten .cta-banner .grid { grid-template-columns: 1fr !important; }
-      #kosten .cta-banner .grid > div { text-align: center !important; }
-      #kosten .cta-banner .btn { width: 100%; max-width: 420px; margin: 6px auto 0; }
+      #kosten .cta-banner .grid {
+        grid-template-columns: 1fr !important;
+      }
 
-      /* === MOBILE-FIX #1: „Displays kaufen“ – Entfernen-Button sichtbar (nur Kauf-Details!) ===
-         Zeile 1: Select + Menge (je 1fr)
-         Zeile 2: .remove als eigene Zeile, rechtsbündig */
+      #kosten .cta-banner .grid>div {
+        text-align: center !important;
+      }
+
+      #kosten .cta-banner .btn {
+        width: 100%;
+        max-width: 420px;
+        margin: 6px auto 0;
+      }
+
+      /* *** MOBILE-FIX: Entfernen-Button zweizeilig sichtbar (Kauf + Miete)
+   Was: Zeile 1 = Select + Menge (je 1fr), Zeile 2 = Entfernen-Button volle Breite, rechtsbündig
+   Warum: Auf schmalen Screens war .remove abgeschnitten/unklickbar
+   Gilt für: Kauf-Details (#localBuyRows, #buyRows) UND Miet-Positionen (#rentRows) *** */
+
       #localBuyRows .rent-row,
-      #buyRows .rent-row {
+      #buyRows .rent-row,
+      #rentRows .rent-row {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
           "sel qty"
           "rm  rm";
       }
-      #localBuyRows .rent-row > *:first-child,
-      #buyRows   .rent-row > *:first-child { grid-area: sel; min-width: 0; }
-      #localBuyRows .rent-row > *:nth-child(2),
-      #buyRows   .rent-row > *:nth-child(2) { grid-area: qty; min-width: 0; }
+
+      #localBuyRows .rent-row>*:first-child,
+      #buyRows .rent-row>*:first-child,
+      #rentRows .rent-row>*:first-child {
+        grid-area: sel;
+        min-width: 0;
+      }
+
+      #localBuyRows .rent-row>*:nth-child(2),
+      #buyRows .rent-row>*:nth-child(2),
+      #rentRows .rent-row>*:nth-child(2) {
+        grid-area: qty;
+        min-width: 0;
+      }
+
       #localBuyRows .rent-row .remove,
-      #buyRows   .rent-row .remove { grid-area: rm; justify-self: end; width: auto; }
+      #buyRows .rent-row .remove,
+      #rentRows .rent-row .remove {
+        grid-area: rm;
+        justify-self: end;
+        width: auto;
+      }
+
 
       /* Footer stacked */
-      .footer-grid { grid-template-columns: 1fr; gap: 16px; }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
     }
 
     /* CTA Rückruf */
@@ -2107,4 +2226,5 @@
     document.querySelectorAll('.js-open-demo').forEach(btn => btn.addEventListener('click', openDemo));
   </script>
 </body>
+
 </html>

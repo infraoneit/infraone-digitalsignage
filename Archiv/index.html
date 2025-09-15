@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <!-- =====================================================
        Infraone – Digital Signage Landing (HTML only)
-       Fokus: Mietlösung pushen + Lokallösung
        Primärfarbe: #3C9646
        ===================================================== -->
   <meta charset="UTF-8" />
@@ -11,18 +11,21 @@
 
   <!-- SEO -->
   <title>Werbebildschirme & Digital Signage Schweiz – mieten ab CHF 59.– | Infraone IT Solutions</title>
-  <meta name="description" content="Schweizweit: Werbebildschirme im Mietmodell ab CHF 59.–/Monat – inkl. Display (Indoor/Outdoor), Player & Schweizer Hosting. Alternativ: lokale Lösung ohne Abo.">
+  <meta name="description"
+    content="Schweizweit: Werbebildschirme im Mietmodell ab CHF 59.–/Monat – inkl. Display (Indoor/Outdoor), Player & Schweizer Hosting. Alternativ: lokale Lösung ohne Abo.">
 
   <!-- Canonical & Social -->
   <link rel="canonical" href="https://www.werbebildschirme.ch/">
   <meta property="og:title" content="Digital Signage Schweiz – mieten ab CHF 59.– | Infraone">
-  <meta property="og:description" content="Transparente Mietlösung (inkl. Display, Player & Schweizer Hosting) oder einmalig lokal ohne Abo. Vorlagen & zentrale Steuerung.">
+  <meta property="og:description"
+    content="Transparente Mietlösung (inkl. Display, Player & Schweizer Hosting) oder einmalig lokal ohne Abo. Vorlagen & zentrale Steuerung.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.werbebildschirme.ch/">
   <meta property="og:image" content="assets/images/screen1.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Infraone Digital Signage – Mietlösung ab CHF 59.–">
-  <meta name="twitter:description" content="Komplette Infrastruktur im Abo oder lokal ohne Abo – mit Schweizer Hosting.">
+  <meta name="twitter:description"
+    content="Komplette Infrastruktur im Abo oder lokal ohne Abo – mit Schweizer Hosting.">
   <meta name="twitter:image" content="assets/images/screen1.jpg">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 
@@ -32,206 +35,850 @@
 
   <style>
     /* ================= TOKENS & RESET ================= */
-    :root{
-      --io-green:#3C9646; --io-red:#D72027; --ink:#0f172a; --muted:#6b7280; --bg:#f5f7fa; --card:#ffffff;
-      --shadow:0 14px 34px rgba(0,0,0,.10); --radius:20px; --maxw:1180px;
-      --sp-1:8px; --sp-2:14px; --sp-3:18px; --sp-4:28px; --sp-5:40px; --hover-raise:translateY(-4px)
+    :root {
+      --io-green: #3C9646;
+      --io-red: #D72027;
+      --ink: #0f172a;
+      --muted: #6b7280;
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --shadow: 0 14px 34px rgba(0, 0, 0, .10);
+      --radius: 20px;
+      --maxw: 1180px;
+      --sp-1: 8px;
+      --sp-2: 14px;
+      --sp-3: 18px;
+      --sp-4: 28px;
+      --sp-5: 40px;
+      --hover-raise: translateY(-4px)
     }
-    *{box-sizing:border-box} html,body{margin:0;padding:0}
-    body{font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-    h1,h2,h3,h4{line-height:1.2;margin:0 0 .5em} p{margin:.25em 0 .85em} a{color:var(--io-green);text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:var(--maxw);margin:auto;padding:0 var(--sp-2)}
-    .grid{display:grid;gap:var(--sp-3)}
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--sp-3)}
-    .section{padding:var(--sp-5) 0}
 
-    .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;
-      font-weight:700;transition:.2s ease;text-align:center;border:0;cursor:pointer}
-    .btn-primary{background:var(--io-green);color:#fff}
-    .btn-primary:hover{filter:saturate(105%) brightness(1.03);transform:var(--hover-raise)}
-    .btn-ghost{border:2px solid var(--io-green);color:var(--io-green);background:#fff}
-    .btn-ghost:hover{background:#e8f7ea;transform:var(--hover-raise)}
-    .btn-muted{background:#f3f4f6;color:#111827}
-    .btn-block{width:100%}
+    * {
+      box-sizing: border-box
+    }
 
-    .pill{display:inline-block;padding:.35em .7em;border-radius:999px;font-weight:700}
-    .badge{background:#E8F9EA;color:#0E7F1C;border:1px solid #CFF3D4}
-    .muted{color:var(--muted)}
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden
+    }
 
-    .hover-card{transition:transform .2s ease, box-shadow .2s ease}
-    .hover-card:hover{transform:var(--hover-raise);box-shadow:0 18px 40px rgba(0,0,0,.12)}
+    body {
+      font: 16px/1.55 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink)
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.2;
+      margin: 0 0 .5em
+    }
+
+    p {
+      margin: .25em 0 .85em
+    }
+
+    a {
+      color: var(--io-green);
+      text-decoration: none
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: auto;
+      padding: 0 var(--sp-2)
+    }
+
+    .grid {
+      display: grid;
+      gap: var(--sp-3);
+      /* verhindert, dass Grid-Kinder overflowen (fix für mobile Abschneidung) */
+    }
+
+    /* Wichtig, damit Inhalte auf kleinen Screens nicht überstehen */
+    .grid>*,
+    .card,
+    .rent-rows,
+    .rent-row,
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: var(--sp-3)
+    }
+
+    .section {
+      padding: var(--sp-5) 0
+    }
+
+    .btn {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: .2s ease;
+      text-align: center;
+      border: 0;
+      cursor: pointer
+    }
+
+    .btn-primary {
+      background: var(--io-green);
+      color: #fff
+    }
+
+    .btn-primary[disabled] {
+      opacity: .6;
+      cursor: not-allowed
+    }
+
+    .btn-primary:hover {
+      filter: saturate(105%) brightness(1.03);
+      transform: var(--hover-raise)
+    }
+
+    .btn-ghost {
+      border: 2px solid var(--io-green);
+      color: var(--io-green);
+      background: #fff
+    }
+
+    .btn-ghost:hover {
+      background: #e8f7ea;
+      transform: var(--hover-raise)
+    }
+
+    .btn-muted {
+      background: #f3f4f6;
+      color: #111827
+    }
+
+    .btn-block {
+      width: 100%
+    }
+
+    .pill {
+      display: inline-block;
+      padding: .35em .7em;
+      border-radius: 999px;
+      font-weight: 700
+    }
+
+    .badge {
+      background: #E8F9EA;
+      color: #0E7F1C;
+      border: 1px solid #CFF3D4
+    }
+
+    .muted {
+      color: var(--muted);
+      overflow-wrap: anywhere; /* verhindert abgeschnittene Wörter auf Mobil */
+    }
+
+    .hover-card {
+      transition: transform .2s ease, box-shadow .2s ease
+    }
+
+    .hover-card:hover {
+      transform: var(--hover-raise);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .12)
+    }
 
     /* ================= NAVBAR ================= */
-    .nav{position:sticky;top:0;z-index:55;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #e5e7eb}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px var(--sp-2);max-width:var(--maxw);margin:auto}
-    .nav-brand{display:flex;gap:10px;align-items:center}
-    .logo-img{width:128px;height:50px;border-radius:8px;object-fit:contain;display:block}
-    .nav-links{display:flex;gap:16px;flex-wrap:wrap}
-    .nav-links a{font-weight:600;color:#1f2937}
-    .nav-cta{display:flex;gap:10px}
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 55;
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid #e5e7eb
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px var(--sp-2);
+      max-width: var(--maxw);
+      margin: auto
+    }
+
+    .nav-brand {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .logo-img {
+      width: 128px;
+      height: 50px;
+      border-radius: 8px;
+      object-fit: contain;
+      display: block
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: #1f2937
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 10px
+    }
 
     /* ================= HERO (Video) ================= */
-    .hero{position:relative}
-    .hero-media{position:relative;height:66vh;min-height:420px;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;overflow:hidden;background:#000}
-    .hero-media:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.25),rgba(0,0,0,.6));z-index:1}
-    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-    .hero-body{position:relative;z-index:2;padding:0 var(--sp-2)}
-    .hero h1{font-size:clamp(30px,4.6vw,54px);color:#fff;text-shadow:0 8px 32px rgba(0,0,0,.45)}
-    .hero p{font-size:clamp(16px,1.3vw,20px);max-width:880px;margin:12px auto 16px;color:#eef2ff}
-    .hero-cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .hero {
+      position: relative
+    }
+
+    .hero-media {
+      position: relative;
+      height: 66vh;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+      background: #000
+    }
+
+    .hero-media:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .25), rgba(0, 0, 0, .6));
+      z-index: 1
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0
+    }
+
+    .hero-body {
+      position: relative;
+      z-index: 2;
+      padding: 0 var(--sp-2)
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.6vw, 54px);
+      color: #fff;
+      text-shadow: 0 8px 32px rgba(0, 0, 0, .45)
+    }
+
+    .hero p {
+      font-size: clamp(16px, 1.3vw, 20px);
+      max-width: 880px;
+      margin: 12px auto 16px;
+      color: #eef2ff
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center
+    }
 
     /* ================= SECTION TITLE ================= */
-    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:var(--sp-3)}
-    .section-title .line{flex:1;height:2px;background:linear-gradient(90deg,var(--io-green),transparent)}
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: var(--sp-3)
+    }
+
+    .section-title .line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--io-green), transparent)
+    }
 
     /* ================= BENEFITS ================= */
-    .benefits{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .benefit{display:grid;gap:10px}
-    .benefit .img-wrap{position:relative;border-radius:12px;overflow:hidden}
-    .benefit img{width:100%;height:150px;object-fit:cover}
-    .benefit .tag{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;padding:4px 8px;border-radius:8px;font-size:12px}
+    .benefits {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+    }
 
-    /* Usecases – Platzhalter */
-    .usecase-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .usecase-card{border:1px dashed #d1d5db;border-radius:14px;padding:14px;background:#fff}
-    .usecase-card h3{margin:0 0 6px}
+    .benefit {
+      display: grid;
+      gap: 10px
+    }
+
+    .benefit .img-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden
+    }
+
+    .benefit img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover
+    }
+
+    .benefit .tag {
+      display: none !important;
+    }
+    /* schwarze kleinen Tags komplett ausblenden */
+
+    /* ================= USE CASES ================= */
+    /* --- HIER (optional) DEIN SLIDER-CODE (HTML+CSS+JS) EINFÜGEN --- */
 
     /* ================= PACKAGES ================= */
-    .packages{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-    .package{display:flex;flex-direction:column;position:relative}
-    .price{font-size:26px;color:var(--io-red);font-weight:800}
-    .pkg-body{flex:1}
-    .pkg-footer{display:flex;justify-content:flex-start;align-items:center;margin-top:auto;gap:12px;flex-wrap:wrap}
-    .pkg-footer .btn-primary{min-width:220px}
-    .pkg-note{flex:1 1 auto;color:var(--muted);font-size:.95rem}
+    .packages {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    }
+
+    .package {
+      display: flex;
+      flex-direction: column;
+      position: relative
+    }
+
+    .price {
+      font-size: 26px;
+      color: var(--io-red);
+      font-weight: 800
+    }
+
+    .pkg-body {
+      flex: 1
+    }
+
+    .pkg-footer {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: auto;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .pkg-footer .btn-primary {
+      min-width: 220px
+    }
+
+    .pkg-note {
+      flex: 1 1 auto;
+      color: var(--muted);
+      font-size: .95rem
+    }
 
     /* Mietmodell hervorheben */
-    .package--rent{border:2px solid var(--io-green);box-shadow:0 18px 44px rgba(60,150,70,.16)}
-    .package--rent:before{
-      content:"Transparente Mietoption";position:absolute;top:-10px;left:14px;background:var(--io-green);color:#fff;font-weight:900;
-      font-size:12px;letter-spacing:.3px;padding:6px 10px;border-radius:999px;box-shadow:var(--shadow)
+    .package--rent {
+      border: 2px solid var(--io-green);
+      box-shadow: 0 18px 44px rgba(60, 150, 70, .16)
+    }
+
+    .package--rent:before {
+      content: "Empfohlene Lösung";
+      position: absolute;
+      top: -18px;
+      left: 14px;
+      background: var(--io-green);
+      color: #fff;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .3px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      box-shadow: var(--shadow)
     }
 
     /* ================= TECH / PROCESS ================= */
-    .specs{grid-template-columns:repeat(4,1fr)}
-    .spec{display:block}
-    .spec .img-wrap{height:130px;border-radius:12px;overflow:hidden;margin-bottom:10px;background:#eef2f7}
-    .spec .img-wrap img{width:100%;height:100%;object-fit:cover}
-    .steps{counter-reset:step}
-    .step{position:relative;padding-left:52px}
-    .step:not(:last-child){margin-bottom:16px}
-    .step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:10px;background:var(--io-green);color:#fff;display:grid;place-items:center;font-weight:800}
+    .specs {
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .spec .img-wrap {
+      height: 130px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      background: #eef2f7
+    }
+
+    .spec .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .steps {
+      counter-reset: step
+    }
+
+    .step {
+      position: relative;
+      padding-left: 52px
+    }
+
+    .step:not(:last-child) {
+      margin-bottom: 16px
+    }
+
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--io-green);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800
+    }
 
     /* ================= TESTIMONIALS / FAQ ================= */
-    .testimonials{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-    .stars{color:#f59e0b}
+    .testimonials {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    }
 
-    details{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:12px}
-    details+details{margin-top:12px}
-    summary{cursor:pointer;font-weight:700}
-    .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sp-3);align-items:stretch;grid-auto-rows:1fr}
-    .faq-grid details.card{display:flex;flex-direction:column;height:100%}
+    .stars {
+      color: #f59e0b
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 12px
+    }
+
+    details+details {
+      margin-top: 12px
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--sp-3);
+      align-items: stretch
+    }
+
+    .faq-grid details {
+      margin: 0;
+      height: 100%
+    }
+
+    .faq-grid details+details {
+      margin-top: 0
+    }
+
+    /* gleiche Flucht */
+    summary {
+      cursor: pointer;
+      font-weight: 700
+    }
 
     /* ================= FORMS / CALC ================= */
-    .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sp-3)}
-    .form-field input,.form-field select,.form-field textarea{
-      width:100%;padding:10px 12px;border-radius:12px;border:1px solid #e5e7eb;outline:0;background:#fff;font:inherit
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--sp-3)
     }
-    .form-field input:focus,.form-field select:focus,.form-field textarea:focus{
-      border-color:var(--io-green);box-shadow:0 0 0 3px rgba(60,150,70,.18)
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      outline: 0;
+      background: #fff;
+      font: inherit
     }
-    .form-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-start;margin-top:6px}
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--io-green);
+      box-shadow: 0 0 0 3px rgba(60, 150, 70, .18)
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 6px
+    }
 
     /* Lokaler Rechner: Felder exakt ausrichten */
-    #costForm .form-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:end}
+    #costForm .form-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: end
+    }
 
-    /* Ergebnis-Container standardmässig verstecken */
-    .result-container[hidden]{display:none}
-    .result-container .card{margin-top:10px;border-left:4px solid var(--io-green);padding:12px}
+    /* Ergebnis-Container */
+    .result-container[hidden] {
+      display: none
+    }
 
-    .rent-rows{width:100%;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;background:#fff}
-    .rent-row{display:grid;grid-template-columns:1.4fr .8fr auto;gap:10px;padding:10px;border-bottom:1px solid #f3f4f6;align-items:center}
-    .rent-row:last-child{border-bottom:0}
-    .rent-row .remove{background:transparent;border:1px solid #e5e7eb;border-radius:10px;padding:8px 10px;cursor:pointer}
-    .rent-row .remove:hover{background:#f9fafb}
-    .rent-rows-head{display:grid;grid-template-columns:1.4fr .8fr auto;gap:10px;padding:10px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-weight:700;color:#334155}
+    .result-container .card {
+      margin-top: 10px;
+      border-left: 4px solid var(--io-green);
+      padding: 12px
+    }
+
+    .rent-rows {
+      width: 100%;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff
+    }
+
+    .rent-row {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr auto;
+      gap: 10px;
+      padding: 10px;
+      border-bottom: 1px solid #f3f4f6;
+      align-items: center
+    }
+
+    .rent-row:last-child {
+      border-bottom: 0
+    }
+
+    .rent-row .remove {
+      background: transparent;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer
+    }
+
+    .rent-row .remove:hover {
+      background: #f9fafb
+    }
+
+    .rent-rows-head {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr auto;
+      gap: 10px;
+      padding: 10px;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+      font-weight: 700;
+      color: #334155
+    }
 
     /* ================= MODALS ================= */
-    .modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(15,23,42,.6);z-index:80}
-    .modal.open{display:grid}
-    .modal-card{width:min(820px,92vw);background:#fff;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,.25);padding:20px}
-    .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-    .modal-head h3{margin:0}
-    .modal-close{background:transparent;border:0;font-size:24px;cursor:pointer}
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      background: rgba(15, 23, 42, .6);
+      z-index: 80
+    }
+
+    .modal.open {
+      display: grid
+    }
+
+    .modal-card {
+      width: min(820px, 92vw);
+      max-height: 92vh;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, .25);
+      padding: 20px
+    }
+
+    .modal-head {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 1
+    }
+
+    .modal-head h3 {
+      margin: 0
+    }
+
+    .modal-close {
+      background: transparent;
+      border: 0;
+      font-size: 24px;
+      cursor: pointer
+    }
 
     /* ================= FUNNELS / FOOTER ================= */
-    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:8px}
-    .sticky-cta a,.sticky-cta button{box-shadow:var(--shadow)}
-    .cta-banner{background:linear-gradient(135deg,rgba(60,150,70,.1),rgba(215,32,39,.05));border:1px solid #e7f7ea}
-    footer{padding:var(--sp-4) 0;color:#fff;background:#0f172a}
-    footer a{color:#fff}
+    .sticky-cta {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .sticky-cta a,
+    .sticky-cta button {
+      box-shadow: var(--shadow)
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(60, 150, 70, .1), rgba(215, 32, 39, .05));
+      border: 1px solid #e7f7ea
+    }
+
+    footer {
+      padding: var(--sp-4) 0;
+      color: #fff;
+      background: #0f172a
+    }
+
+    footer a {
+      color: #fff
+    }
+
+    /* ===== Footer-Grid (3 Spalten wie Muster) ===== */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr; /* Firma breiter */
+      gap: 24px;
+      align-items: start;
+    }
+    .footer-col h4 { margin: 0 0 8px; font-size: 1.05rem }
+    .footer-col ul { list-style: none; padding: 0; margin: 0 }
+    .footer-col li + li { margin-top: 6px }
+
+    /* Liste im Demo-Block zentrieren, Text linksbündig zum Bullet (auch Desktop okay) */
+    #demo .card ul { max-width: 720px; margin: 0 auto; padding-left: 1.2rem; text-align: left; }
 
     /* ================= RESPONSIVE ================= */
-    @media (max-width:980px){
-      .specs{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:980px) {
+      .specs {
+        grid-template-columns: repeat(2, 1fr)
+      }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width:760px){
-      .nav-links{display:none}
-      .hero-media{height:58vh}
-      .section{padding:30px 0}
-      .btn{padding:10px 14px;font-size:.95rem;border-width:1px}
-      .packages .pkg-footer .btn{width:100%}
-      .specs{grid-template-columns:1fr}
-      .sticky-cta{right:12px;bottom:12px;gap:6px}
-      #pakete .cta-banner .grid,#demo .card .grid{grid-template-columns:1fr !important;align-items:center !important}
-      #pakete .cta-banner .grid>div,#demo .card .grid>div{text-align:center !important}
 
-      /* Rechner mobil lesbarer */
-      .rent-row,.rent-rows-head{grid-template-columns:1fr 1fr auto}
-      .form-actions .btn{width:100%}
-      #costForm .form-grid{grid-template-columns:1fr}
-      #howitworks img.how-gif{max-width:100%;height:auto;margin:8px auto;border-radius:12px}
+    @media (max-width:760px) {
+      .nav-links { display: none }
+
+      .hero-media { height: 58vh }
+
+      .section { padding: 30px 0 }
+
+      .btn {
+        padding: 10px 14px;
+        font-size: .95rem;
+        border-width: 1px
+      }
+
+      .packages .pkg-footer .btn { width: 100% }
+
+      .specs { grid-template-columns: 1fr }
+
+      .sticky-cta {
+        right: 12px;
+        bottom: 12px;
+        gap: 6px
+      }
+
+      /* Kostenrechner 1 Spalte, volle Breite und ohne harte Max-Widths */
+      #kosten .grid { grid-template-columns: 1fr !important }
+      #kosten .form-field { max-width: 100% !important }
+
+      .rent-row, .rent-rows-head { grid-template-columns: 1fr 1fr auto } /* Head bleibt 3-spaltig */
+
+      .form-actions .btn { width: 100% }
+
+      #costForm .form-grid { grid-template-columns: 1fr }
+
+      /* GIF voll responsiv */
+      #howitworks .how-gif {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 8px auto;
+        border-radius: 12px
+      }
+
+      /* Rückrufleiste – alles untereinander + mittig */
+      #benefits .cta-callback { text-align: center; }
+      #benefits .cta-row { flex-direction: column; align-items: center; }
+      #benefits .cta-headline { text-align: center; width: 100%; }
+      #benefits .cta-actions {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 520px; /* hält Inputs schön mittig */
+      }
+      #benefits .cta-actions input { width: 100% }
+      #benefits .cta-actions .btn { width: 100% } /* Was: Button volle Breite; Warum: sauberer Touch-Zielbereich */
+
+      /* CTA-Banner („Kein passendes Paket…“ & „Displays ansehen“) – Button mittig unter Text */
+      .cta-banner .grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+      }
+      .cta-banner .grid > div,
+      .cta-banner .grid > div:last-child { text-align: center !important; }
+      .cta-banner .btn {
+        width: 100%;
+        max-width: 420px;
+        margin: 6px auto 0;
+      }
+
+      /* Demo-Abschnitt – Buttons unter den Text + Abstand */
+      #demo .card .grid { grid-template-columns: 1fr !important }
+      #demo .card .grid > div:last-child { text-align: center }
+      #demo .card .btn { width: 100%; max-width: 420px; margin: 0 auto; }
+      #demo .card .btn + .btn { margin-top: 10px; } /* Abstand Demo/Whitepaper */
+
+      /* „Display-Modelle ansehen“ Banner (unter Rechnern) – Button mittig */
+      #kosten .cta-banner .grid { grid-template-columns: 1fr !important; }
+      #kosten .cta-banner .grid > div { text-align: center !important; }
+      #kosten .cta-banner .btn { width: 100%; max-width: 420px; margin: 6px auto 0; }
+
+      /* === MOBILE-FIX #1: „Displays kaufen“ – Entfernen-Button sichtbar (nur Kauf-Details!) ===
+         Zeile 1: Select + Menge (je 1fr)
+         Zeile 2: .remove als eigene Zeile, rechtsbündig */
+      #localBuyRows .rent-row,
+      #buyRows .rent-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "sel qty"
+          "rm  rm";
+      }
+      #localBuyRows .rent-row > *:first-child,
+      #buyRows   .rent-row > *:first-child { grid-area: sel; min-width: 0; }
+      #localBuyRows .rent-row > *:nth-child(2),
+      #buyRows   .rent-row > *:nth-child(2) { grid-area: qty; min-width: 0; }
+      #localBuyRows .rent-row .remove,
+      #buyRows   .rent-row .remove { grid-area: rm; justify-self: end; width: auto; }
+
+      /* Footer stacked */
+      .footer-grid { grid-template-columns: 1fr; gap: 16px; }
     }
 
     /* CTA Rückruf */
-    #benefits .cta-callback{margin-top:var(--sp-4);padding:18px 20px;border-radius:var(--radius);
-      background:linear-gradient(135deg,rgba(60,150,70,.06),rgba(215,32,39,.04));border:1px solid #e7f7ea}
-    #benefits .cta-row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    #benefits .cta-headline{font-size:1.35rem;font-weight:700;color:var(--ink)}
-    #benefits .cta-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
-    #benefits .cta-actions input{width:220px;padding:10px 12px;border-radius:12px;border:1px solid #e5e7eb;outline:0;background:#fff}
-    #benefits .cta-actions input:focus{border-color:var(--io-green);box-shadow:0 0 0 3px rgba(60,150,70,.18)}
-    #benefits .cta-actions .btn{border:none;background:var(--io-green);color:#fff;white-space:nowrap}
+    #benefits .cta-callback {
+      margin-top: var(--sp-4);
+      padding: 18px 20px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(60, 150, 70, .06), rgba(215, 32, 39, .04));
+      border: 1px solid #e7f7ea
+    }
+
+    #benefits .cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    #benefits .cta-headline {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink)
+    }
+
+    #benefits .cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto
+    }
+
+    #benefits .cta-actions input {
+      width: 220px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      outline: 0;
+      background: #fff
+    }
+
+    #benefits .cta-actions input:focus {
+      border-color: var(--io-green);
+      box-shadow: 0 0 0 3px rgba(60, 150, 70, .18)
+    }
+
+    #benefits .cta-actions .btn {
+      border: none;
+      background: var(--io-green);
+      color: #fff;
+      white-space: nowrap
+    }
 
     /* ================= ANIMATIONS ================= */
-    .reveal{opacity:0;transform:translateY(10px);transition:opacity .4s ease, transform .4s ease}
-    .reveal.in-view{opacity:1;transform:none}
+    .reveal {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .4s ease, transform .4s ease
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: none
+    }
   </style>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Infraone IT Solutions GmbH",
-    "url":"https://www.infraone.ch/",
-    "logo":"https://werbebildschirme.ch/assets/images/logo.png"
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Infraone IT Solutions GmbH","url":"https://www.infraone.ch/","logo":"https://werbebildschirme.ch/assets/images/logo.png"}
   </script>
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"Infraone Digital Signage",
-    "provider":{"@type":"Organization","name":"Infraone IT Solutions GmbH"},
-    "areaServed":"CH",
-    "offers":[
-      {"@type":"Offer","name":"Mietmodell (gehostet) – ab Preis","price":"59","priceCurrency":"CHF","description":"Komplette Infrastruktur im Abo (Display Indoor/Outdoor, Player & Hosting in der Schweiz). Verwaltung per Weboberfläche. Vertragslaufzeit 24 Monate."},
-      {"@type":"Offer","name":"Starter-Paket (lokal)","price":"660","priceCurrency":"CHF","description":"CMS-Server lokal (Mini), 1 Player, personalisierte Anzeige-Vorlagen"},
-      {"@type":"Offer","name":"Enterprise (lokal/gehostet)","price":"0","priceCurrency":"CHF","description":"Zentrale Steuerung für Filialnetze/Behörden, Monitoring/SLAs – Preis auf Anfrage"}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Service","name":"Infraone Digital Signage","provider":{"@type":"Organization","name":"Infraone IT Solutions GmbH"},"areaServed":"CH","offers":[{"@type":"Offer","name":"Mietmodell (gehostet) – ab Preis","price":"59","priceCurrency":"CHF","description":"Komplette Infrastruktur im Abo (Display Indoor/Outdoor, Player & Hosting in der Schweiz). Verwaltung per Weboberfläche. Vertragslaufzeit 24 Monate."},{"@type":"Offer","name":"Starter-Paket (lokal)","price":"660","priceCurrency":"CHF","description":"CMS-Server lokal (Mini), 1 Player, personalisierte Anzeige-Vorlagen"},{"@type":"Offer","name":"Enterprise (lokal/gehostet)","price":"0","priceCurrency":"CHF","description":"Zentrale Steuerung für Filialnetze/Behörden, Monitoring/SLAs – Preis auf Anfrage"}]}
   </script>
 </head>
 
@@ -242,7 +889,8 @@
     <div class="nav-inner">
       <div class="nav-brand">
         <a href="https://www.infraone.ch/" aria-label="Zur Infraone Hauptseite">
-          <img class="logo-img" src="assets/images/logo.png" alt="Infraone Logo" width="64" height="64" decoding="async" />
+          <img class="logo-img" src="assets/images/logo.png" alt="Infraone Logo" width="64" height="64"
+            decoding="async" />
         </a>
       </div>
       <div class="nav-links">
@@ -265,13 +913,15 @@
   <!-- ================= HERO ================= -->
   <header class="hero" role="banner">
     <div class="hero-media" data-fallback="assets/images/screen1.jpg">
-      <video class="hero-video" id="heroVideo" autoplay muted playsinline loop preload="auto" poster="assets/images/screen1.jpg">
+      <video class="hero-video" id="heroVideo" autoplay muted playsinline loop preload="auto"
+        poster="assets/images/screen1.jpg">
         <source src="assets/videos/herovideo.mp4" type="video/mp4">
       </video>
       <div class="hero-body">
         <span class="pill badge">Infraone • Mietlösung ab CHF 59.–</span>
         <h1>Werbebildschirme in der Schweiz – <em>flexible Miet- oder Lokallösung</em></h1>
-        <p class="muted">Mieten ab CHF 59.–/Monat (24 Monate) inkl. Display (Indoor/Outdoor), Player & Hosting in der Schweiz – Inhalte einfach per Weboberfläche. Alternativ einmalig lokal ohne Abo.</p>
+        <p class="muted">Mieten ab CHF 59.–/Monat inkl. Display (Indoor/Outdoor), Player & Hosting in der Schweiz –
+          Inhalte einfach per Weboberfläche. Alternativ einmalig lokal ohne Abo.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#pakete">Pakete &amp; Preise</a>
           <a class="btn btn-ghost" href="#kosten">Zum Kostenrechner</a>
@@ -283,541 +933,104 @@
   <!-- ================= BENEFITS ================= -->
   <section id="benefits" class="section">
     <div class="container">
-      <div class="section-title"><h2>Warum Infraone Digital Signage?</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Warum Infraone Digital Signage?</h2>
+        <div class="line"></div>
+      </div>
 
       <div class="grid benefits">
         <article class="card hover-card benefit reveal">
           <div class="img-wrap">
-            <picture><source srcset="assets/images/screen6.webp" type="image/webp">
+            <picture>
+              <source srcset="assets/images/screen6.webp" type="image/webp">
               <img loading="lazy" decoding="async" alt="Flexibles Kostenmodell" src="assets/images/screen6.jpg">
             </picture>
           </div>
-          <span class="tag">Flexibilität</span>
           <h3>Miete oder lokal – mit/ohne Display</h3>
-          <p class="muted">Mietlösungen ab CHF 59.–/Monat mit Display & Player <em>oder</em> lokale Installation ohne Abo – auf Wunsch mit eigenem Display.</p>
+          <p class="muted">Mietlösungen ab CHF 59.–/Monat mit Display & Player <em>oder</em> lokale Installation ohne
+            Abo – auf Wunsch mit eigenem Display.</p>
         </article>
 
         <article class="card hover-card benefit reveal">
           <div class="img-wrap">
-            <picture><source srcset="assets/images/screen7.webp" type="image/webp">
+            <picture>
+              <source srcset="assets/images/screen7.webp" type="image/webp">
               <img loading="lazy" decoding="async" alt="Einfache Bedienung am Laptop" src="assets/images/screen7.jpg">
             </picture>
           </div>
-          <span class="tag">Vorlagen</span>
           <h3>Personalisierte Anzeige-Vorlagen</h3>
           <p class="muted">Fixfertige Designs (Menü, Aktionen, Öffnungszeiten, KPI). Inhalte austauschen – fertig.</p>
         </article>
 
         <article class="card hover-card benefit reveal">
           <div class="img-wrap">
-            <picture><source srcset="assets/images/screen8.webp" type="image/webp">
+            <picture>
+              <source srcset="assets/images/screen8.webp" type="image/webp">
               <img loading="lazy" decoding="async" alt="Offline-Betrieb" src="assets/images/screen8.jpg">
             </picture>
           </div>
-          <span class="tag">Betrieb</span>
           <h3>Offline-tauglich & skalierbar</h3>
           <p class="muted">Lokal weiter ohne Internet. Von 1 bis 100+ Displays – beliebig erweiterbar.</p>
         </article>
 
         <article class="card hover-card benefit reveal">
           <div class="img-wrap">
-            <picture><source srcset="assets/images/screen9.webp" type="image/webp">
+            <picture>
+              <source srcset="assets/images/screen9.webp" type="image/webp">
               <img loading="lazy" decoding="async" alt="Datafeeds & Integrationen" src="assets/images/screen9.jpg">
             </picture>
           </div>
-          <span class="tag">Integration</span>
           <h3>Datafeeds & Integrationen</h3>
           <p class="muted">Kalender, Datenbanken, Websites, Dashboards & mehr – zentral einbinden.</p>
         </article>
       </div>
 
       <!-- CTA: Rückruf -->
-      <div class="card cta-callback reveal">
-        <form class="cta-row" action="https://formsubmit.co/info@infraone.ch" method="POST">
+      <div class="card cta-callback reveal" id="callbackCard">
+        <form class="cta-row" id="callbackForm" action="https://formsubmit.co/ajax/info@infraone.ch" method="POST"
+          novalidate>
           <span class="cta-headline">Fragen? Wir rufen Sie zurück.</span>
           <div class="cta-actions">
-            <input type="text" name="name" id="cbName" placeholder="Name*" required aria-label="Name">
-            <input type="tel" name="phone" id="cbPhone" placeholder="Telefonnummer*" required inputmode="tel" autocomplete="tel" aria-label="Telefonnummer">
-            <button type="submit" class="btn btn-primary">Rückruf anfordern</button>
+            <input type="text" name="Name" id="cbName" placeholder="Name*" required aria-label="Name">
+            <input type="tel" name="Telefon" id="cbPhone" placeholder="Telefonnummer*" required inputmode="tel"
+              autocomplete="tel" aria-label="Telefonnummer">
+            <button type="submit" class="btn btn-primary" id="cbSubmit">Rückruf anfordern</button>
           </div>
           <input type="hidden" name="_subject" value="Rückrufwunsch – werbebildschirme.ch">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="Seite" id="cbPage">
-          <input type="text" name="_honey" style="display:none">
-          <input type="hidden" name="_next" value="https://www.werbebildschirme.ch/#danke">
+          <input type="text" name="_honey" id="cbHoney" style="display:none">
         </form>
+        <div id="callbackMsg" class="muted" style="margin-top:10px;display:none"></div>
       </div>
     </div>
   </section>
 
-
-<!-- ================= USE CASES ================= -->
-  <section id="usecases" class="section">
+  <!-- ================= USE CASES ================= -->
+  <section id="usecases" class="section" aria-label="Anwendungsbeispiele">
     <div class="container">
       <div class="section-title">
         <h2>Anwendungsbereiche</h2>
         <div class="line"></div>
       </div>
-
-      <!-- SLIDER STYLES -->
-      <style>
-        :root {
-          --io-green: #3C9646;
-        }
-
-        #usecases .usecase-slider {
-          position: relative;
-          overflow: hidden;
-          border-radius: 20px
-        }
-
-        #usecases .usecase-track {
-          display: flex;
-          transition: transform .5s ease;
-          will-change: transform
-        }
-
-        #usecases .uc-slide {
-          min-width: 100%;
-          padding: 0;
-          margin: 0
-        }
-
-        #usecases .uc-card {
-          position: relative;
-          height: 600px;
-          border-radius: 20px;
-          overflow: hidden;
-          background: #000;
-        }
-
-        /* Vorder- & Rückseite (Fade) */
-        #usecases .uc-front,
-        #usecases .uc-back {
-          position: absolute;
-          inset: 0;
-          border-radius: 20px;
-          overflow: hidden;
-          transition: opacity .35s ease;
-        }
-
-        #usecases .uc-front {
-          opacity: 1;
-          z-index: 2
-        }
-
-        #usecases .uc-back {
-          opacity: 0;
-          z-index: 1;
-          pointer-events: none
-        }
-
-        #usecases .uc-card.show-back .uc-front {
-          opacity: 0;
-          pointer-events: none
-        }
-
-        #usecases .uc-card.show-back .uc-back {
-          opacity: 1;
-          pointer-events: auto;
-          z-index: 3
-        }
-
-        /* Bilder (wieder vollflächig) */
-        #usecases .uc-front picture,
-        #usecases .uc-front img {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center center;
-        }
-
-        /* Titel vorne */
-        #usecases .uc-title {
-          position: absolute;
-          left: 50%;
-          bottom: 18px;
-          transform: translateX(-50%);
-          background: rgba(15, 23, 42, .72);
-          color: #fff;
-          padding: 12px 18px;
-          border-radius: 14px;
-          font-weight: 800;
-          font-size: clamp(18px, 2.6vw, 28px);
-          text-align: center;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
-        }
-
-        /* Rückseite */
-        #usecases .uc-back {
-          background: #000;
-          color: #fff;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          padding: 28px;
-        }
-
-        #usecases .uc-back .uc-back-content {
-          max-width: 960px;
-          margin: 0 auto;
-          text-align: center;
-          padding: 0 72px;
-        }
-
-        #usecases .uc-back h3 {
-          margin: 0 0 12px;
-          font-size: clamp(20px, 2.4vw, 30px)
-        }
-
-        #usecases .uc-back p {
-          margin: 0;
-          line-height: 1.78;
-          font-size: clamp(16px, 1.4vw, 19px)
-        }
-
-        /* Info- & Zurück-Buttons (rechts oben) */
-        #usecases .uc-flip,
-        #usecases .uc-unflip {
-          position: absolute;
-          top: 14px;
-          right: 14px;
-          z-index: 4;
-          border: none;
-          padding: 9px 12px;
-          border-radius: 12px;
-          background: var(--io-green);
-          color: #fff;
-          font-weight: 900;
-          cursor: pointer;
-          box-shadow: 0 10px 22px rgba(0, 0, 0, .18);
-        }
-
-        /* Nav-Pfeile: schwarz */
-        #usecases .uc-nav {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 3;
-          border: none;
-          width: 46px;
-          height: 70px;
-          border-radius: 12px;
-          background: #000;
-          color: #fff;
-          font-size: 24px;
-          font-weight: 800;
-          cursor: pointer;
-          opacity: .95;
-        }
-
-        #usecases .uc-prev {
-          left: 12px
-        }
-
-        #usecases .uc-next {
-          right: 12px
-        }
-
-        /* Dots */
-        #usecases .uc-dots {
-          display: flex;
-          gap: 8px;
-          justify-content: center;
-          margin-top: 12px
-        }
-
-        #usecases .uc-dot {
-          width: 10px;
-          height: 10px;
-          border-radius: 999px;
-          background: #d1d5db;
-          border: 1px solid #cbd5e1;
-          cursor: pointer
-        }
-
-        #usecases .uc-dot[aria-selected="true"] {
-          background: var(--io-green);
-          border-color: var(--io-green)
-        }
-
-        /* Mobile */
-        @media (max-width:760px) {
-          #usecases .uc-card {
-            height: 480px
-          }
-
-          #usecases .uc-back .uc-back-content {
-            padding: 0 36px
-          }
-
-          #usecases .uc-nav {
-            width: 42px;
-            height: 64px
-          }
-        }
-      </style>
-
-
-    <!-- use-cases -- SLIDER -->
-      <div class="usecase-slider" id="usecaseSlider" aria-label="Anwendungsbereiche">
-        <div class="usecase-track" id="usecaseTrack">
-
-          <!-- 1 Showroom -->
-          <figure class="uc-slide">
-            <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Showroom & Beratung anzeigen">
-              <div class="uc-front">
-                <picture>
-                  <source srcset="assets/images/usecases/usecase1.webp" type="image/webp">
-                  <img src="assets/images/usecases/usecase1.jpg" alt="Showroom mit Digital-Signage-Display">
-                </picture>
-                <div class="uc-title">Showroom & Beratung</div>
-                <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
-              </div>
-              <div class="uc-back">
-                <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
-                <div class="uc-back-content">
-                  <h3>Angebote live am Produkt zeigen</h3>
-                  <p>Neuheiten, Preise und Aktionen sofort auf Bildschirmen darstellen. Ideal für <strong>digitale
-                      Werbung</strong> im Verkaufsraum. Inhalte lassen sich zentral steuern und direkt am Produkt
-                    sichtbar machen – das überzeugt Kunden und steigert Abschlüsse.</p>
-                </div>
-              </div>
-            </div>
-          </figure>
-
-          <!-- 2 Digitale Speisekarten -->
-          <figure class="uc-slide">
-            <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu digitalen Speisekarten anzeigen">
-              <div class="uc-front">
-                <picture>
-                  <source srcset="assets/images/usecases/usecase2.webp" type="image/webp">
-                  <img src="assets/images/usecases/usecase2.jpg" alt="Digitale Speisekarten in der Gastronomie">
-                </picture>
-                <div class="uc-title">Digitale Speisekarten</div>
-                <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
-              </div>
-              <div class="uc-back">
-                <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
-                <div class="uc-back-content">
-                  <h3>Menüs & Preise sofort ändern</h3>
-                  <p>Tagesmenüs, Allergene oder neue Angebote lassen sich ohne Druckkosten einpflegen.
-                    <strong>Werbebildschirme</strong> in Restaurants oder Take-aways zeigen Inhalte ansprechend und
-                    aktuell – ideal für Zusatzverkäufe und klare Kommunikation.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </figure>
-
-          <!-- 3 Retail -->
-          <figure class="uc-slide">
-            <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Retail & Schaufenster anzeigen">
-              <div class="uc-front">
-                <picture>
-                  <source srcset="assets/images/usecases/usecase3.webp" type="image/webp">
-                  <img src="assets/images/usecases/usecase3.jpg" alt="Schaufenster mit Display">
-                </picture>
-                <div class="uc-title">Schaufenster & Laden</div>
-                <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
-              </div>
-              <div class="uc-back">
-                <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
-                <div class="uc-back-content">
-                  <h3>Angebote klar präsentieren</h3>
-                  <p><strong>Digitale Werbung</strong> in Schaufenstern oder direkt im Laden lenkt Aufmerksamkeit auf
-                    Produkte. Aktionen oder Neuheiten lassen sich einfach und schnell für alle Standorte planen und
-                    anzeigen.</p>
-                </div>
-              </div>
-            </div>
-          </figure>
-
-          <!-- 4 Empfang & Lobby -->
-          <figure class="uc-slide">
-            <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Empfang & Lobby anzeigen">
-              <div class="uc-front">
-                <picture>
-                  <source srcset="assets/images/usecases/usecase4.webp" type="image/webp">
-                  <img src="assets/images/usecases/usecase4.jpg" alt="Empfang und Lobby mit Display">
-                </picture>
-                <div class="uc-title">Empfang & Lobby</div>
-                <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
-              </div>
-              <div class="uc-back">
-                <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
-                <div class="uc-back-content">
-                  <h3>Besucher begrüssen und informieren</h3>
-                  <p>Willkommens-Nachrichten, Wegweiser oder Veranstaltungsinfos direkt im Eingangsbereich anzeigen.
-                    <strong>Digital-Signage Schweiz</strong> sorgt für einen professionellen ersten Eindruck und
-                    entlastet das Personal.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </figure>
-
-          <!-- 5 Wartebereich -->
-          <figure class="uc-slide">
-            <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Wartebereichen anzeigen">
-              <div class="uc-front">
-                <picture>
-                  <source srcset="assets/images/usecases/usecase5.webp" type="image/webp">
-                  <img src="assets/images/usecases/usecase5.jpg" alt="Wartebereich mit Infodisplay">
-                </picture>
-                <div class="uc-title">Wartebereich</div>
-                <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
-              </div>
-              <div class="uc-back">
-                <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
-                <div class="uc-back-content">
-                  <h3>Aufrufe & Hinweise klar anzeigen</h3>
-                  <p>Digitale Monitore zeigen Patientenaufrufe, Wartezeiten oder Service-Infos deutlich sichtbar.
-                    <strong>Werbebildschirme</strong> verbessern Abläufe in Praxen, Kliniken und Apotheken – klar,
-                    modern und DSGVO-konform.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </figure>
-
-          <!-- 6 Öffentliche Informationen -->
-          <figure class="uc-slide">
-            <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu öffentlichen Infos anzeigen">
-              <div class="uc-front">
-                <picture>
-                  <source srcset="assets/images/usecases/usecase6.webp" type="image/webp">
-                  <img src="assets/images/usecases/usecase6.jpg" alt="Öffentliche Informationen auf Display">
-                </picture>
-                <div class="uc-title">Öffentliche Informationen</div>
-                <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
-              </div>
-              <div class="uc-back">
-                <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
-                <div class="uc-back-content">
-                  <h3>Bürger-Informationen einfach sichtbar machen</h3>
-                  <p>Öffnungszeiten, Baustellen, Abstimmungen oder Notfallmeldungen lassen sich zentral steuern und
-                    sofort anzeigen. <strong>Digital-Signage</strong> schafft Transparenz und schnelle Information für
-                    Gemeinden.</p>
-                </div>
-              </div>
-            </div>
-          </figure>
-
-          <!-- 7 Campus & Bildung -->
-          <figure class="uc-slide">
-            <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Campus & Bildung anzeigen">
-              <div class="uc-front">
-                <picture>
-                  <source srcset="assets/images/usecases/usecase7.webp" type="image/webp">
-                  <img src="assets/images/usecases/usecase7.jpg" alt="Campus mit Displays">
-                </picture>
-                <div class="uc-title">Campus & Bildung</div>
-                <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
-              </div>
-              <div class="uc-back">
-                <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
-                <div class="uc-back-content">
-                  <h3>Pläne, Räume & Sicherheit</h3>
-                  <p>Digitale Infoboards zeigen Stundenpläne, Raumänderungen, Mensa-Menüs oder Sicherheitshinweise.
-                    <strong>Werbebildschirme</strong> erleichtern Orientierung und erhöhen die Sicherheit.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </figure>
-
-          <!-- 8 Outdoor Displays -->
-          <figure class="uc-slide">
-            <div class="uc-card" tabindex="0" aria-label="Mehr Infos zu Outdoor & High-Brightness anzeigen">
-              <div class="uc-front">
-                <picture>
-                  <source srcset="assets/images/usecases/usecase8.webp" type="image/webp">
-                  <img src="assets/images/usecases/usecase8.jpg" alt="Outdoor High-Brightness Display">
-                </picture>
-                <div class="uc-title">Outdoor Displays</div>
-                <button class="uc-flip" type="button" aria-label="Mehr Infos">i</button>
-              </div>
-              <div class="uc-back">
-                <button class="uc-unflip" type="button" aria-label="Zurück">↩︎</button>
-                <div class="uc-back-content">
-                  <h3>Wetterfest, hell & verbunden</h3>
-                  <p>Outdoor-Displays sind robust, tageslichttauglich und per SIM/4G/5G angebunden. Perfekt für
-                    Gemeinden, Events und Handel – Inhalte bleiben auch draussen jederzeit sichtbar.</p>
-                </div>
-              </div>
-            </div>
-          </figure>
-
-        </div>
-
-        <!-- NAV + Dots -->
-        <button class="uc-nav uc-prev" id="ucPrev">‹</button>
-        <button class="uc-nav uc-next" id="ucNext">›</button>
-        <div class="uc-dots" id="ucDots"></div>
-      </div>
+      <!-- SLIDER HIER EINFÜGEN -->
+      <!-- // DEIN SLIDER-HTML KOMMT AN DIESER STELLE HINEIN -->
     </div>
   </section>
-
-  <!-- SLIDER SCRIPT -->
-  <script>
-    (function () {
-      const track = document.getElementById('usecaseTrack');
-      const slides = [...track.querySelectorAll('.uc-slide')];
-      const prev = document.getElementById('ucPrev');
-      const next = document.getElementById('ucNext');
-      const dotsWrap = document.getElementById('ucDots');
-      let idx = 0;
-
-      function render() {
-        track.style.transform = `translateX(-${idx * 100}%)`;
-        [...dotsWrap.children].forEach((d, i) => d.setAttribute('aria-selected', i === idx ? 'true' : 'false'));
-      }
-
-      // Dots
-      dotsWrap.innerHTML = '';
-      slides.forEach((_, i) => {
-        const b = document.createElement('button');
-        b.className = 'uc-dot';
-        b.type = 'button';
-        b.setAttribute('aria-label', `Zu Slide ${i + 1}`);
-        b.onclick = () => { idx = i; render(); };
-        dotsWrap.appendChild(b);
-      });
-
-      // Navigation
-      prev.onclick = () => { idx = (idx - 1 + slides.length) % slides.length; render(); };
-      next.onclick = () => { idx = (idx + 1) % slides.length; render(); };
-
-      // Info/Back toggle
-      track.addEventListener('click', e => {
-        if (e.target.closest('.uc-flip')) e.target.closest('.uc-card').classList.add('show-back');
-        if (e.target.closest('.uc-unflip')) e.target.closest('.uc-card').classList.remove('show-back');
-      });
-
-      // Keyboard toggle (optional)
-      track.addEventListener('keydown', (e) => {
-        if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('uc-card')) {
-          e.preventDefault();
-          e.target.classList.toggle('show-back');
-        }
-      });
-
-      render();
-    })();
-  </script>
 
   <!-- ================= PACKAGES ================= -->
   <section id="pakete" class="section">
     <div class="container">
-      <div class="section-title"><h2>Pakete &amp; Preise</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Pakete &amp; Preise</h2>
+        <div class="line"></div>
+      </div>
 
       <div class="grid packages">
         <!-- Mietmodell -->
-        <article class="card hover-card package package--rent reveal" aria-label="Mietmodell – komplette Infrastruktur im Abo">
+        <article class="card hover-card package package--rent reveal"
+          aria-label="Mietmodell – komplette Infrastruktur im Abo">
           <h3>Mietmodell (gehostet)</h3>
           <p class="price">ab CHF 59.–/Monat</p>
           <div class="pkg-body">
@@ -871,14 +1084,16 @@
         </article>
       </div>
 
-      <p class="muted" style="margin-top:8px"><em>*Die passende SIM-Karte für Standorte ohne Internetanschluss ist direkt bei InfraOne erhältlich.</em></p>
+      <p class="muted" style="margin-top:8px"><em>*Die passende SIM-Karte für Standorte ohne Internetanschluss ist
+          direkt bei InfraOne erhältlich.</em></p>
 
       <!-- CTA -->
       <div class="card cta-banner reveal" style="margin-top:var(--sp-3)">
         <div class="grid" style="grid-template-columns:1.2fr .8fr;align-items:center">
           <div>
             <h3>Kein passendes Paket dabei?</h3>
-            <p class="muted">Nutze den Kostenrechner – Miete oder lokal in wenigen Sekunden kalkulieren und direkt buchen.</p>
+            <p class="muted">Nutze den Kostenrechner – Miete oder lokal in wenigen Sekunden kalkulieren und direkt
+              buchen.</p>
           </div>
           <div style="text-align:right">
             <a class="btn btn-primary" href="#kosten">Zum Kostenrechner</a>
@@ -891,11 +1106,15 @@
   <!-- ================= TECH SPECS ================= -->
   <section id="technik" class="section">
     <div class="container">
-      <div class="section-title"><h2>Technik – einfach erklärt</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Technik – einfach erklärt</h2>
+        <div class="line"></div>
+      </div>
       <div class="grid specs">
         <article class="card hover-card spec reveal">
           <div class="img-wrap">
-            <picture><source srcset="assets/images/tech1.webp" type="image/webp">
+            <picture>
+              <source srcset="assets/images/tech1.webp" type="image/webp">
               <img src="assets/images/tech1.jpg" alt="CMS-Software" loading="lazy" decoding="async">
             </picture>
           </div>
@@ -909,7 +1128,8 @@
 
         <article class="card hover-card spec reveal">
           <div class="img-wrap">
-            <picture><source srcset="assets/images/tech2.webp" type="image/webp">
+            <picture>
+              <source srcset="assets/images/tech2.webp" type="image/webp">
               <img src="assets/images/tech2.jpg" alt="Inhalte &amp; Formate" loading="lazy" decoding="async">
             </picture>
           </div>
@@ -923,7 +1143,8 @@
 
         <article class="card hover-card spec reveal">
           <div class="img-wrap">
-            <picture><source srcset="assets/images/tech3.webp" type="image/webp">
+            <picture>
+              <source srcset="assets/images/tech3.webp" type="image/webp">
               <img src="assets/images/tech3.jpg" alt="Hardware" loading="lazy" decoding="async">
             </picture>
           </div>
@@ -937,7 +1158,8 @@
 
         <article class="card hover-card spec reveal">
           <div class="img-wrap">
-            <picture><source srcset="assets/images/tech4.webp" type="image/webp">
+            <picture>
+              <source srcset="assets/images/tech4.webp" type="image/webp">
               <img src="assets/images/tech4.jpg" alt="Player-Optionen" loading="lazy" decoding="async">
             </picture>
           </div>
@@ -955,7 +1177,10 @@
   <!-- ================= HOW IT WORKS ================= -->
   <section id="howitworks" class="section">
     <div class="container">
-      <div class="section-title"><h2>Wie funktioniert Digital Signage?</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Wie funktioniert Digital Signage?</h2>
+        <div class="line"></div>
+      </div>
       <div class="card reveal">
         <p class="muted" style="margin-top:0">
           Bei Infraone werden Inhalte in einer benutzerfreundlichen Weboberfläche erstellt und geplant.
@@ -965,7 +1190,9 @@
           sind jederzeit möglich.
         </p>
         <div style="text-align:center">
-          <img class="how-gif" src="assets/videos/how-digital-signage-works.gif" alt="So funktioniert Digital Signage – Animation" style="max-width:960px;margin:6px auto;border-radius:14px">
+          <img class="how-gif" src="assets/videos/how-digital-signage-works.gif"
+            alt="So funktioniert Digital Signage – Animation"
+            style="width:100%;max-width:960px;margin:6px auto;border-radius:14px">
         </div>
       </div>
     </div>
@@ -974,13 +1201,31 @@
   <!-- ================= PROCESS ================= -->
   <section id="prozess" class="section">
     <div class="container">
-      <div class="section-title"><h2>So laufen Projekte ab</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>So laufen Projekte ab</h2>
+        <div class="line"></div>
+      </div>
       <div class="card steps reveal">
-        <div class="step"><h3>Bedarfsanalyse</h3><p class="muted">Displays, Standorte, Inhalte, Zuständigkeiten, Netz.</p></div>
-        <div class="step"><h3>Konzept &amp; Angebot</h3><p class="muted">Paketwahl, Hardware-Sizing, Vorlagen, Zeitplan.</p></div>
-        <div class="step"><h3>Installation</h3><p class="muted">CMS/Hosting einrichten, Player registrieren, Tests.</p></div>
-        <div class="step"><h3>Content &amp; Einführung</h3><p class="muted">Vorlagen befüllen, Feindaten übernehmen, Redaktion einweisen.</p></div>
-        <div class="step"><h3>Go-Live &amp; Erweiterung</h3><p class="muted">Abnahme, Doku, optional Monitoring/Support, Ausbau.</p></div>
+        <div class="step">
+          <h3>Bedarfsanalyse</h3>
+          <p class="muted">Displays, Standorte, Inhalte, Zuständigkeiten, Netz.</p>
+        </div>
+        <div class="step">
+          <h3>Konzept &amp; Angebot</h3>
+          <p class="muted">Paketwahl, Hardware-Sizing, Vorlagen, Zeitplan.</p>
+        </div>
+        <div class="step">
+          <h3>Installation</h3>
+          <p class="muted">CMS/Hosting einrichten, Player registrieren, Tests.</p>
+        </div>
+        <div class="step">
+          <h3>Content &amp; Einführung</h3>
+          <p class="muted">Vorlagen befüllen, Feindaten übernehmen, Redaktion einweisen.</p>
+        </div>
+        <div class="step">
+          <h3>Go-Live &amp; Erweiterung</h3>
+          <p class="muted">Abnahme, Doku, optional Monitoring/Support, Ausbau.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -988,12 +1233,16 @@
   <!-- ================= TESTIMONIALS ================= -->
   <section id="testimonials" class="section" aria-label="Kundenbewertungen">
     <div class="container">
-      <div class="section-title"><h2>Stimmen unserer Kunden</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Stimmen unserer Kunden</h2>
+        <div class="line"></div>
+      </div>
       <div class="grid testimonials">
         <article class="card reveal">
           <h3 style="margin:0 0 .25rem">Top Beratung & Ablauf</h3>
           <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-          <p class="muted">„Unkomplizierter und speditiver Service! Beratung und Preis-Leistung top. Reibungsloser Ablauf, gute Vorbereitungsarbeit. Vielen Dank!“</p>
+          <p class="muted">„Unkomplizierter und speditiver Service! Beratung und Preis-Leistung top. Reibungsloser
+            Ablauf, gute Vorbereitungsarbeit. Vielen Dank!“</p>
           <small class="muted">– Kunde</small>
         </article>
         <article class="card reveal">
@@ -1015,7 +1264,10 @@
   <!-- ================= KOSTENRECHNER ================= -->
   <section id="kosten" class="section">
     <div class="container">
-      <div class="section-title"><h2>Kostenrechner</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Kostenrechner</h2>
+        <div class="line"></div>
+      </div>
 
       <div class="grid" style="grid-template-columns:1fr 1fr">
         <!-- Lokal -->
@@ -1023,16 +1275,22 @@
           <h3 style="margin-top:0">Lokales System (einmalig)</h3>
           <form id="costForm" aria-label="Kostenrechner lokal">
             <div class="form-grid" style="margin-bottom:6px">
-              <label class="form-field">Anzahl Bildschirme<br><input type="number" id="screens" value="1" min="1"></label>
-              <label class="form-field">Anzahl Standorte (1 CMS-Server/Standort)<br><input type="number" id="sites" value="1" min="1"></label>
+              <label class="form-field">Anzahl Player<br><input type="number" id="screens" value="1" min="1"
+                  required></label>
+              <label class="form-field">Anzahl Standorte (1 CMS-Server/Standort)<br><input type="number" id="sites"
+                  value="1" min="1" required></label>
             </div>
 
-            <!-- Displays kaufen (optional) – volle Breite -->
+            <!-- Displays kaufen (optional) -->
             <div class="form-grid" style="margin:6px 0">
               <details class="card" style="padding:10px;margin:0;grid-column:1/-1">
                 <summary>Displays dazukaufen (optional)</summary>
                 <div class="rent-rows" style="margin-top:10px">
-                  <div class="rent-rows-head"><div>Display-Typ</div><div>Menge</div><div>Aktion</div></div>
+                  <div class="rent-rows-head">
+                    <div>Display-Typ</div>
+                    <div>Menge</div>
+                    <div>Aktion</div>
+                  </div>
                   <div id="localBuyRows"></div>
                 </div>
                 <div class="form-actions" style="margin-top:10px">
@@ -1043,8 +1301,10 @@
 
             <!-- SIM Option mit Menge -->
             <div class="form-grid" style="margin-top:6px">
-              <label class="form-field" style="max-width:280px">Anzahl SIM-Karten (4G/5G)<br><input type="number" id="localSimQty" value="0" min="0"></label>
-              <div class="form-field" style="align-self:end"><small class="muted">CHF 10.–/Monat je SIM, unlimitierte Daten, 10&nbsp;Mbit/s</small></div>
+              <label class="form-field" style="max-width:280px">Anzahl SIM-Karten (4G/5G)<br><input type="number"
+                  id="localSimQty" value="0" min="0"></label>
+              <div class="form-field" style="align-self:end"><small class="muted">CHF 10.–/Monat je SIM, unlimitierte
+                  Daten, 10&nbsp;Mbit/s</small></div>
             </div>
 
             <div class="form-actions">
@@ -1071,7 +1331,8 @@
             <!-- Variante: eigener Display → Player-Abo + Displays (Kauf) -->
             <div id="playersOnlyWrap" style="display:none">
               <div class="form-grid" style="margin-bottom:6px">
-                <label class="form-field" style="max-width:280px">Anzahl Player (Abo)<br><input type="number" id="playersOnly" value="1" min="1"></label>
+                <label class="form-field" style="max-width:280px">Anzahl Player (Abo)<br><input type="number"
+                    id="playersOnly" value="1" min="1"></label>
                 <div class="form-field" style="align-self:end">
                   <small class="muted">Preis pro Player (inkl. CMS-Zugang): <strong>CHF 25.–/Monat</strong></small>
                 </div>
@@ -1080,7 +1341,11 @@
               <details class="card" style="padding:10px;margin:0 0 6px">
                 <summary>Displays zusätzlich kaufen (optional)</summary>
                 <div class="rent-rows" style="margin-top:10px">
-                  <div class="rent-rows-head"><div>Display-Typ (Kauf)</div><div>Menge</div><div>Aktion</div></div>
+                  <div class="rent-rows-head">
+                    <div>Display-Typ (Kauf)</div>
+                    <div>Menge</div>
+                    <div>Aktion</div>
+                  </div>
                   <div id="buyRows"></div>
                 </div>
                 <div class="form-actions" style="margin-top:10px">
@@ -1092,19 +1357,25 @@
             <!-- Miet-Positionen (Monatspreise) -->
             <div id="rentRowsBlock">
               <div class="rent-rows" id="rentRowsWrap">
-                <div class="rent-rows-head"><div>Display-Typ (Miete)</div><div>Menge</div><div>Aktion</div></div>
+                <div class="rent-rows-head">
+                  <div>Display-Typ (Miete)</div>
+                  <div>Menge</div>
+                  <div>Aktion</div>
+                </div>
                 <div id="rentRows"></div>
               </div>
               <div class="form-actions" style="margin-top:10px">
                 <button type="button" class="btn btn-muted" id="addRowBtn">+ Zeile hinzufügen</button>
-                <!-- Entfernt: Displays ansehen (gibt es weiter unten bereits) -->
+                <!-- kein "Displays ansehen" Button hier -->
               </div>
             </div>
 
-            <!-- SIM Option: Menge (gilt für beide Varianten) -->
+            <!-- SIM Option: Menge -->
             <div class="form-grid" style="margin-top:6px">
-              <label class="form-field" style="max-width:280px">Anzahl SIM-Karten (4G/5G)<br><input type="number" id="rentSimQty" value="0" min="0"></label>
-              <div class="form-field" style="align-self:end"><small class="muted">CHF 10.–/Monat je SIM, unlimitierte Daten, 10&nbsp;Mbit/s</small></div>
+              <label class="form-field" style="max-width:280px">Anzahl SIM-Karten (4G/5G)<br><input type="number"
+                  id="rentSimQty" value="0" min="0"></label>
+              <div class="form-field" style="align-self:end"><small class="muted">CHF 10.–/Monat je SIM, unlimitierte
+                  Daten, 10&nbsp;Mbit/s</small></div>
             </div>
 
             <!-- Aktionsbuttons -->
@@ -1114,7 +1385,8 @@
             </div>
 
             <div id="rentResult" class="result-container" hidden aria-live="polite"></div>
-            <small class="muted">Hinweis: Preise je Display-Typ sind Platzhalter. Passe die Typen &amp; Preise später an.</small>
+            <small class="muted">Hinweis: Preise je Display-Typ sind Platzhalter. Passe die Typen &amp; Preise später
+              an.</small>
           </form>
         </div>
       </div>
@@ -1122,7 +1394,8 @@
       <!-- Displays CTA unter den Rechnern -->
       <div class="card cta-banner reveal" style="margin-top:var(--sp-3)">
         <div class="grid" style="grid-template-columns:1fr auto;align-items:center">
-          <p style="margin:0"><strong>Display-Modelle ansehen</strong> – Indoor, Outdoor, High-Brightness & Spezialgrössen.</p>
+          <p style="margin:0"><strong>Display-Modelle ansehen</strong> – Indoor, Outdoor, High-Brightness &amp;
+            Spezialgrössen.</p>
           <div style="text-align:right">
             <a class="btn btn-primary" href="/displays/" target="_blank" rel="noopener">Displays ansehen</a>
           </div>
@@ -1134,7 +1407,10 @@
   <!-- ================= FAQ ================= -->
   <section id="faq" class="section">
     <div class="container">
-      <div class="section-title"><h2>FAQ</h2><div class="line"></div></div>
+      <div class="section-title">
+        <h2>FAQ</h2>
+        <div class="line"></div>
+      </div>
       <div class="grid faq-grid">
         <details class="card reveal">
           <summary>Was sind die Vorteile einer Mietlösung?</summary>
@@ -1155,7 +1431,8 @@
         </details>
         <details class="card reveal">
           <summary>Gibt es Vorlagen?</summary>
-          <p>Ja. Infraone liefert personalisierte Anzeige-Vorlagen im eigenen Branding, die in Sekunden befüllt werden.</p>
+          <p>Ja. Infraone liefert personalisierte Anzeige-Vorlagen im eigenen Branding, die in Sekunden befüllt werden.
+          </p>
         </details>
         <details class="card reveal">
           <summary>Support &amp; Wartung?</summary>
@@ -1188,7 +1465,8 @@
                 <li>Videoüberwachung</li>
                 <li>Gebäudeautomation &amp; IoT</li>
               </ul>
-              <p style="margin-top:6px">Mehr dazu auf unserer <a href="https://www.infraone.ch/" target="_blank" rel="noopener">Hauptseite</a>.</p>
+              <p style="margin-top:6px">Mehr dazu auf unserer <a href="https://www.infraone.ch/" target="_blank"
+                  rel="noopener">Hauptseite</a>.</p>
             </div>
           </div>
           <div style="text-align:right">
@@ -1210,11 +1488,40 @@
   <!-- ================= FOOTER ================= -->
   <footer role="contentinfo">
     <div class="container">
-      <p><strong>Infraone IT Solutions GmbH</strong> • Winterthur • <a href="https://www.infraone.ch/" target="_blank" rel="noopener">www.infraone.ch</a> • info@infraone.ch</p>
-      <p class="muted">werbebildschirme.ch ist eine Marke von <a href="https://www.infraone.ch/" target="_blank" rel="noopener">Infraone IT Solutions GmbH</a>.</p>
+      <!-- Drei Spalten wie Muster; einfache Links, Desktop-Optik dezent – mobil stacked -->
+      <div class="footer-grid" style="margin-bottom:16px">
+        <div class="footer-col">
+          <h4><strong>Infraone IT Solutions GmbH</strong></h4>
+          <p class="muted" style="margin:0">
+            Winterthur • <a href="https://www.infraone.ch/" target="_blank" rel="noopener">infraone.ch</a><br>
+            <a href="mailto:info@infraone.ch">info@infraone.ch</a>
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Weitere Infos</h4>
+          <ul>
+            <li><a href="/displays/" aria-label="Displays &amp; Modelle">Displays &amp; Modelle</a></li>
+            <li><a href="/whitepaper/index.html" target="_blank" rel="noopener">Whitepaper</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="/impressum/">Impressum</a></li>
+            <li><a href="/datenschutz/">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- vorhandene Fließtexte beibehalten -->
+      <p><strong>Infraone IT Solutions GmbH</strong> • Winterthur • <a href="https://www.infraone.ch/" target="_blank"
+          rel="noopener">www.infraone.ch</a> • info@infraone.ch</p>
+      <p class="muted">werbebildschirme.ch ist eine Marke von <a href="https://www.infraone.ch/" target="_blank"
+          rel="noopener">Infraone IT Solutions GmbH</a>.</p>
       <p class="muted">
         Alle Preise exkl. MwSt. Optional: Service/SLA nach Bedarf.
-        PDF: <a href="assets/pdf/whitepaper-infraone-digitalsignage.pdf" download type="application/pdf" rel="noopener">Whitepaper herunterladen</a>
+        PDF: <a href="assets/pdf/whitepaper-infraone-digitalsignage.pdf" download type="application/pdf"
+          rel="noopener">Whitepaper herunterladen</a>
       </p>
     </div>
   </footer>
@@ -1228,50 +1535,67 @@
         <h3 id="bkTitle">Buchung / Bestellung</h3>
         <button class="modal-close" aria-label="Schliessen" onclick="closeBooking()">×</button>
       </div>
-      <form id="bookingForm" action="https://formsubmit.co/info@infraone.ch" method="POST" novalidate>
+      <form id="bookingForm" action="#" method="POST" novalidate>
         <div class="form-grid">
           <label class="form-field">Ansprechperson*<br><input type="text" name="Ansprechperson" required></label>
-          <label class="form-field">Firma*<br><input type="text" name="Firma" required></label>
+          <label class="form-field">Firma<br><input type="text" name="Firma"></label>
           <label class="form-field">E-Mail*<br><input type="email" name="E-Mail" required></label>
           <label class="form-field">Telefon*<br><input type="tel" name="Telefon" required></label>
 
-          <label class="form-field">Rechnungsadresse – Strasse*<br><input type="text" name="Rechnungsadresse_Strasse" required></label>
-          <label class="form-field">PLZ/Ort*<br><input type="text" name="Rechnungsadresse_PLZ_Ort" required></label>
-          <label class="form-field">Land*<br><input type="text" name="Rechnungsadresse_Land" value="Schweiz" required></label>
-          <label class="form-field">UID/MwSt-Nr.<br><input type="text" name="UID"></label>
-
-          <label class="form-field">Lieferadresse – Strasse*<br><input type="text" name="Lieferadresse_Strasse" required></label>
+          <!-- Lieferadresse -->
+          <label class="form-field">Lieferadresse – Strasse*<br><input type="text" name="Lieferadresse_Strasse"
+              required></label>
           <label class="form-field">PLZ/Ort*<br><input type="text" name="Lieferadresse_PLZ_Ort" required></label>
-          <label class="form-field">E-Mail für Rechnung*<br><input type="email" name="Rechnungs-E-Mail" required></label>
-          <label class="form-field">Zahlungsart<br>
-            <select name="Zahlungsart">
-              <option>Rechnung (30 Tage)</option>
-              <option>Vorkasse</option>
-              <option>TWINT/EC bei Lieferung</option>
-            </select>
+
+          <!-- Rechnungsadresse Toggle -->
+          <label class="form-field" style="grid-column:1/-1;display:flex;align-items:center;gap:10px">
+            <input type="checkbox" id="sameAddr" checked style="width:auto">
+            <span>Rechnungsadresse entspricht der Lieferadresse</span>
           </label>
 
-          <label class="form-field" style="grid-column:1/-1">Bemerkungen<br><textarea name="Bemerkungen" rows="3" placeholder="Optional"></textarea></label>
+          <!-- Rechnungsadresse Felder (optional sichtbar) -->
+          <div id="invoiceAddrWrap" style="display:none;grid-column:1/-1">
+            <div class="form-grid">
+              <label class="form-field">Rechnungsadresse – Strasse*<br><input type="text"
+                  name="Rechnungsadresse_Strasse"></label>
+              <label class="form-field">PLZ/Ort*<br><input type="text" name="Rechnungsadresse_PLZ_Ort"></label>
+              <label class="form-field">Land*<br><input type="text" name="Rechnungsadresse_Land"
+                  value="Schweiz"></label>
+              <label class="form-field">UID/MwSt-Nr.<br><input type="text" name="UID"></label>
+            </div>
+          </div>
+
+          <!-- Rechnungs-E-Mail Toggle -->
+          <label class="form-field" style="grid-column:1/-1;display:flex;align-items:center;gap:10px">
+            <input type="checkbox" id="sameMail" checked style="width:auto">
+            <span>Rechnungs-E-Mail entspricht der E-Mail</span>
+          </label>
+
+          <!-- Rechnungs-E-Mail (optional sichtbar) -->
+          <label class="form-field" id="invoiceMailWrap" style="display:none">Rechnungs-E-Mail*<br><input type="email"
+              name="Rechnungs-E-Mail"></label>
+
+          <label class="form-field" style="grid-column:1/-1">Bemerkungen<br><textarea name="Bemerkungen" rows="3"
+              placeholder="Optional"></textarea></label>
           <label class="form-field" style="grid-column:1/-1;display:flex;align-items:center;gap:8px">
             <input type="checkbox" name="AGB" id="bkAGB" required style="width:auto"> Ich akzeptiere die AGB.
           </label>
         </div>
 
-        <div class="card" id="bkSummary" style="margin-top:12px;border-left:4px solid var(--io-green);padding:12px"></div>
+        <div class="card" id="bkSummary" style="margin-top:12px;border-left:4px solid var(--io-green);padding:12px">
+        </div>
 
         <!-- Hidden meta -->
         <input type="hidden" name="Paket" id="bkPackage">
         <input type="hidden" name="Konfiguration" id="bkConfig">
-        <input type="hidden" name="_subject" id="bkSubject" value="Buchung – Digital Signage">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.werbebildschirme.ch/#danke">
+        <input type="hidden" name="page" id="bkPage">
         <input type="text" name="_honey" style="display:none">
 
         <div class="form-actions" style="margin-top:10px">
-          <button type="submit" class="btn btn-primary">Bestellung absenden</button>
+          <button type="submit" id="bkSubmit" class="btn btn-primary">Bestellung absenden</button>
           <button type="button" class="btn btn-ghost" onclick="closeBooking()">Abbrechen</button>
         </div>
+        <div id="bkMsg" class="muted" style="margin-top:8px;display:none"></div>
       </form>
     </div>
   </div>
@@ -1283,229 +1607,227 @@
         <h3 id="dmTitle">Termin vereinbaren / Demo buchen</h3>
         <button class="modal-close" aria-label="Schliessen" onclick="closeDemo()">×</button>
       </div>
-      <form id="demoForm" action="https://formsubmit.co/info@infraone.ch" method="POST" novalidate>
+      <form id="demoForm" action="#" method="POST" novalidate>
         <div class="form-grid">
           <label class="form-field">Name*<br><input type="text" name="Name" required></label>
           <label class="form-field">E-Mail*<br><input type="email" name="E-Mail" required></label>
           <label class="form-field">Telefon<br><input type="tel" name="Telefon"></label>
-          <label class="form-field" style="grid-column:1/-1">3 Terminvorschläge*<br><textarea name="Terminvorschläge" rows="3" placeholder="z. B. Di 10–12, Mi 14–16, Fr 9–11" required></textarea></label>
+          <label class="form-field" style="grid-column:1/-1">3 Terminvorschläge*<br><textarea name="Terminvorschläge"
+              rows="3" placeholder="z. B. Di 10–12, Mi 14–16, Fr 9–11" required></textarea></label>
         </div>
 
-        <!-- Hidden meta -->
-        <input type="hidden" name="_subject" value="Termin / Demo – Digital Signage">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.werbebildschirme.ch/#danke">
         <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="page" id="dmPage">
 
         <div class="form-actions" style="margin-top:10px">
-          <button type="submit" class="btn btn-primary">Anfrage senden</button>
+          <button type="submit" id="dmSubmit" class="btn btn-primary">Anfrage senden</button>
           <button type="button" class="btn btn-ghost" onclick="closeDemo()">Abbrechen</button>
         </div>
+        <div id="dmMsg" class="muted" style="margin-top:8px;display:none"></div>
       </form>
     </div>
   </div>
 
-  <!-- ================= SCRIPTS ================= -->
   <script>
     // HERO-Video: 7s Loop + Fallback
-    (function(){
-      const v=document.getElementById('heroVideo'); if(!v) return;
-      v.addEventListener('timeupdate',()=>{ if(v.currentTime>7) v.currentTime=0; });
-      const hero=document.querySelector('.hero-media');
-      const poster=v.getAttribute('poster')||hero?.getAttribute('data-fallback');
-      v.addEventListener('error',()=>{ if(poster) hero.style.background=`url('${poster}') center/cover no-repeat`; });
-      document.addEventListener('visibilitychange',()=>{ if(!document.hidden&&v.paused){ v.play().catch(()=>{}); } });
+    (function () {
+      const v = document.getElementById('heroVideo'); if (!v) return;
+      v.addEventListener('timeupdate', () => { if (v.currentTime > 7) v.currentTime = 0; });
+      const hero = document.querySelector('.hero-media');
+      const poster = v.getAttribute('poster') || hero?.getAttribute('data-fallback');
+      v.addEventListener('error', () => { if (poster) hero.style.background = `url('${poster}') center/cover no-repeat`; });
+      document.addEventListener('visibilitychange', () => { if (!document.hidden && v.paused) { v.play().catch(() => { }); } });
     })();
 
     // Reveal on scroll
-    (function(){
-      const els=[...document.querySelectorAll('.reveal')];
-      if(!('IntersectionObserver' in window)||!els.length){ els.forEach(e=>e.classList.add('in-view')); return; }
-      const io=new IntersectionObserver((entries)=>{
-        entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in-view'); io.unobserve(en.target);} });
-      },{threshold:.12});
-      els.forEach(e=>io.observe(e));
+    (function () {
+      const els = [...document.querySelectorAll('.reveal')];
+      if (!('IntersectionObserver' in window) || !els.length) { els.forEach(e => e.classList.add('in-view')); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in-view'); io.unobserve(en.target); } });
+      }, { threshold: .12 });
+      els.forEach(e => io.observe(e));
     })();
 
-    // Rückruf-CTA: aktuelle Seite in Hidden
-    document.addEventListener("DOMContentLoaded",()=>{
-      const pageInput=document.getElementById("cbPage"); if(pageInput) pageInput.value=window.location.href;
+    // Seiten-URL für Hidden-Felder
+    document.addEventListener("DOMContentLoaded", () => {
+      const pageUrl = window.location.href;
+      const cbPage = document.getElementById("cbPage"); if (cbPage) cbPage.value = pageUrl;
+      const dmPage = document.getElementById("dmPage"); if (dmPage) dmPage.value = pageUrl;
+      const bkPage = document.getElementById("bkPage"); if (bkPage) bkPage.value = pageUrl;
     });
 
     // =================== PREISE ===================
-    // Miete pro Display-Typ (Platzhalter)
-    const DISP_PRICES={ display01:59, display02:69, display03:79, display04:99, display05:129, display06:159 };
-    const DISP_LABELS={
-      display01:"Display 01 (Platzhalter)",
-      display02:"Display 02 (Platzhalter)",
-      display03:"Display 03 (Platzhalter)",
-      display04:"Display 04 (Platzhalter)",
-      display05:"Display 05 (Platzhalter)",
-      display06:"Display 06 (Platzhalter)"
+    const DISP_PRICES = { display01: 59, display02: 69, display03: 79, display04: 99, display05: 129, display06: 159 };
+    const DISP_LABELS = {
+      display01: "Display 01 (Platzhalter)",
+      display02: "Display 02 (Platzhalter)",
+      display03: "Display 03 (Platzhalter)",
+      display04: "Display 04 (Platzhalter)",
+      display05: "Display 05 (Platzhalter)",
+      display06: "Display 06 (Platzhalter)"
     };
-    // Kaufpreise (für „Displays dazukaufen“)
-    const BUY_PRICES={ display01:500, display02:700, display03:900, display04:1200, display05:1600, display06:2000 };
+    const BUY_PRICES = { display01: 500, display02: 700, display03: 900, display04: 1200, display05: 1600, display06: 2000 };
 
     // =================== LOKALER RECHNER ===================
-    let localBuyId=0;
-    function addLocalBuyRow(type='display01',qty=1){
-      const wrap=document.getElementById('localBuyRows');
-      const row=document.createElement('div');
-      row.className='rent-row'; row.dataset.id=++localBuyId;
-      const sel=document.createElement('select'); sel.className='form-field'; sel.innerHTML=
-        Object.keys(BUY_PRICES).map(k=>`<option value="${k}" ${k===type?'selected':''}>${DISP_LABELS[k]} (Kauf)</option>`).join('');
-      const qtyIn=document.createElement('input'); qtyIn.type='number'; qtyIn.min='0'; qtyIn.value=qty; qtyIn.className='form-field';
-      const rm=document.createElement('button'); rm.type='button'; rm.className='remove'; rm.textContent='Entfernen'; rm.onclick=()=>row.remove();
+    let localBuyId = 0;
+    function addLocalBuyRow(type = 'display01', qty = 1) {
+      const wrap = document.getElementById('localBuyRows');
+      const row = document.createElement('div');
+      row.className = 'rent-row'; row.dataset.id = ++localBuyId;
+      const sel = document.createElement('select'); sel.className = 'form-field'; sel.innerHTML =
+        Object.keys(BUY_PRICES).map(k => `<option value="${k}" ${k === type ? 'selected' : ''}>${DISP_LABELS[k]} (Kauf)</option>`).join('');
+      const qtyIn = document.createElement('input'); qtyIn.type = 'number'; qtyIn.min = '0'; qtyIn.value = qty; qtyIn.className = 'form-field';
+      const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'remove'; rm.textContent = 'Entfernen'; rm.onclick = () => row.remove();
       row.appendChild(sel); row.appendChild(qtyIn); row.appendChild(rm); wrap.appendChild(row);
     }
-    document.getElementById('addLocalBuyRow').addEventListener('click',()=>addLocalBuyRow());
+    document.getElementById('addLocalBuyRow').addEventListener('click', () => addLocalBuyRow());
 
-    function getLocalBuyItems(){
-      const items=[];
-      document.querySelectorAll('#localBuyRows .rent-row').forEach(r=>{
-        const type=r.children[0].value; const qty=+r.children[1].value||0;
-        if(qty>0) items.push({type,qty,unit:BUY_PRICES[type],label:DISP_LABELS[type]+" (Kauf)"});
+    function getLocalBuyItems() {
+      const items = [];
+      document.querySelectorAll('#localBuyRows .rent-row').forEach(r => {
+        const type = r.children[0].value; const qty = +r.children[1].value || 0;
+        if (qty > 0) items.push({ type, qty, unit: BUY_PRICES[type], label: DISP_LABELS[type] + " (Kauf)" });
       });
       return items;
     }
 
-    function calcLocal(){
-      const screens=+document.getElementById('screens').value||0;
-      const sites=+document.getElementById('sites').value||0;
-      const simQty=+document.getElementById('localSimQty').value||0;
-      const container=document.getElementById('costResult');
-      if(screens<1||sites<1){ container.innerHTML='<div class="card">Bitte gültige Zahlen eingeben.</div>'; container.hidden=false; return; }
+    function calcLocal() {
+      const screens = +document.getElementById('screens').value || 0;
+      const sites = +document.getElementById('sites').value || 0;
+      const simQty = +document.getElementById('localSimQty').value || 0;
+      const container = document.getElementById('costResult');
+      if (screens < 1 || sites < 1) { container.innerHTML = '<div class="card">Bitte gültige Zahlen eingeben.</div>'; container.hidden = false; return; }
 
-      const serverCosts=sites*470;
-      const playerCosts=screens*190;
-      let total=serverCosts+playerCosts;
-      if(sites===1&&screens===1) total=660; // Starter
-      const buys=getLocalBuyItems();
-      const buyTotal=buys.reduce((s,i)=>s+i.qty*i.unit,0);
-      const simMonthly=simQty*10;
+      const serverCosts = sites * 470;
+      const playerCosts = screens * 190;
+      let total = serverCosts + playerCosts;
+      if (sites === 1 && screens === 1) total = 660; // Starter
+      const buys = getLocalBuyItems();
+      const buyTotal = buys.reduce((s, i) => s + i.qty * i.unit, 0);
+      const simMonthly = simQty * 10;
 
-      const list=buys.length? `<div class="muted" style="margin-top:6px">Kauf-Displays:<br>${buys.map(i=>`• ${i.label}: ${i.qty} × CHF ${i.unit.toLocaleString('de-CH')} = CHF ${(i.qty*i.unit).toLocaleString('de-CH')}`).join('<br>')}</div>` : '';
+      const list = buys.length ? `<div class="muted" style="margin-top:6px">Kauf-Displays:<br>${buys.map(i => `• ${i.label}: ${i.qty} × CHF ${i.unit.toLocaleString('de-CH')} = CHF ${(i.qty * i.unit).toLocaleString('de-CH')}`).join('<br>')}</div>` : '';
 
-      container.innerHTML=
+      container.innerHTML =
         `<div class="card">
-          <strong>Einmalige Kosten (lokal):</strong> CHF ${(total+buyTotal).toLocaleString('de-CH')}.–<br>
+          <strong>Einmalige Kosten (lokal):</strong> CHF ${(total + buyTotal).toLocaleString('de-CH')}.–<br>
           <div class="muted" style="margin-top:6px">Aufschlüsselung: Server CHF ${serverCosts.toLocaleString('de-CH')} + Player CHF ${playerCosts.toLocaleString('de-CH')} + Displays (Kauf) CHF ${buyTotal.toLocaleString('de-CH')}.</div>
           ${list}
-          ${simMonthly? `<div class="muted" style="margin-top:6px"><strong>Optional:</strong> ${simQty} SIM-Karte(n): CHF ${simMonthly.toLocaleString('de-CH')}.–/Monat</div>`:''}
+          ${simMonthly ? `<div class="muted" style="margin-top:6px"><strong>Optional:</strong> ${simQty} SIM-Karte(n): CHF ${simMonthly.toLocaleString('de-CH')}.–/Monat</div>` : ''}
           <div class="form-actions" style="margin-top:8px">
             <button type="button" class="btn btn-primary" onclick="openBooking('local')">Jetzt bestellen</button>
           </div>
         </div>`;
-      container.hidden=false;
+      container.hidden = false;
     }
 
     // =================== MIETRECHNER ===================
-    let rentRowId=0;
-    const rentRowsEl=()=>document.getElementById('rentRows');
-    function addRentRow(type='display01',qty=1){
-      const row=document.createElement('div');
-      row.className='rent-row'; row.dataset.id=++rentRowId;
+    let rentRowId = 0;
+    const rentRowsEl = () => document.getElementById('rentRows');
+    function addRentRow(type = 'display01', qty = 1) {
+      const row = document.createElement('div');
+      row.className = 'rent-row'; row.dataset.id = ++rentRowId;
 
-      const sel=document.createElement('select'); sel.innerHTML=Object.keys(DISP_PRICES)
-        .map(k=>`<option value="${k}" ${k===type?'selected':''}>${DISP_LABELS[k]}</option>`).join('');
-      sel.className='form-field'; sel.style.margin=0;
+      const sel = document.createElement('select'); sel.innerHTML = Object.keys(DISP_PRICES)
+        .map(k => `<option value="${k}" ${k === type ? 'selected' : ''}>${DISP_LABELS[k]}</option>`).join('');
+      sel.className = 'form-field'; sel.style.margin = 0;
 
-      const inp=document.createElement('input'); inp.type='number'; inp.min='0'; inp.value=qty; inp.className='form-field'; inp.style.margin=0;
+      const inp = document.createElement('input'); inp.type = 'number'; inp.min = '0'; inp.value = qty; inp.className = 'form-field'; inp.style.margin = 0;
 
-      const rm=document.createElement('button'); rm.type='button'; rm.className='remove'; rm.textContent='Entfernen';
-      rm.onclick=()=>row.remove();
+      const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'remove'; rm.textContent = 'Entfernen';
+      rm.onclick = () => row.remove();
 
       row.appendChild(sel); row.appendChild(inp); row.appendChild(rm);
       rentRowsEl().appendChild(row);
     }
-    document.getElementById('addRowBtn').addEventListener('click',()=>addRentRow());
-    document.addEventListener('DOMContentLoaded',()=>addRentRow());
+    document.getElementById('addRowBtn').addEventListener('click', () => addRentRow());
+    document.addEventListener('DOMContentLoaded', () => addRentRow());
 
-    function getRentItems(){
-      const items=[];
-      rentRowsEl().querySelectorAll('.rent-row').forEach(row=>{
-        const type=row.children[0].value;
-        const qty=+row.children[1].value||0;
-        if(qty>0) items.push({type,qty,unit:DISP_PRICES[type],label:DISP_LABELS[type]});
+    function getRentItems() {
+      const items = [];
+      rentRowsEl().querySelectorAll('.rent-row').forEach(row => {
+        const type = row.children[0].value;
+        const qty = +row.children[1].value || 0;
+        if (qty > 0) items.push({ type, qty, unit: DISP_PRICES[type], label: DISP_LABELS[type] });
       });
       return items;
     }
 
     // Kauf-Displays im „eigener Display“-Pfad
-    let buyRowId=0;
-    function addBuyRow(type='display01',qty=1){
-      const wrap=document.getElementById('buyRows');
-      const row=document.createElement('div'); row.className='rent-row'; row.dataset.id=++buyRowId;
-      const sel=document.createElement('select'); sel.className='form-field'; sel.innerHTML=
-        Object.keys(BUY_PRICES).map(k=>`<option value="${k}" ${k===type?'selected':''}>${DISP_LABELS[k]} (Kauf)</option>`).join('');
-      const qtyIn=document.createElement('input'); qtyIn.type='number'; qtyIn.min='0'; qtyIn.value=qty; qtyIn.className='form-field';
-      const rm=document.createElement('button'); rm.type='button'; rm.className='remove'; rm.textContent='Entfernen'; rm.onclick=()=>row.remove();
+    let buyRowId = 0;
+    function addBuyRow(type = 'display01', qty = 1) {
+      const wrap = document.getElementById('buyRows');
+      const row = document.createElement('div'); row.className = 'rent-row'; row.dataset.id = ++buyRowId;
+      const sel = document.createElement('select'); sel.className = 'form-field'; sel.innerHTML =
+        Object.keys(BUY_PRICES).map(k => `<option value="${k}" ${k === type ? 'selected' : ''}>${DISP_LABELS[k]} (Kauf)</option>`).join('');
+      const qtyIn = document.createElement('input'); qtyIn.type = 'number'; qtyIn.min = '0'; qtyIn.value = qty; qtyIn.className = 'form-field';
+      const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'remove'; rm.textContent = 'Entfernen'; rm.onclick = () => row.remove();
       row.appendChild(sel); row.appendChild(qtyIn); row.appendChild(rm); wrap.appendChild(row);
     }
-    document.getElementById('addBuyRow').addEventListener('click',()=>addBuyRow());
+    document.getElementById('addBuyRow').addEventListener('click', () => addBuyRow());
 
-    function getBuyItems(){
-      const items=[]; document.querySelectorAll('#buyRows .rent-row').forEach(r=>{
-        const type=r.children[0].value; const qty=+r.children[1].value||0;
-        if(qty>0) items.push({type,qty,unit:BUY_PRICES[type],label:DISP_LABELS[type]+" (Kauf)"});
+    function getBuyItems() {
+      const items = []; document.querySelectorAll('#buyRows .rent-row').forEach(r => {
+        const type = r.children[0].value; const qty = +r.children[1].value || 0;
+        if (qty > 0) items.push({ type, qty, unit: BUY_PRICES[type], label: DISP_LABELS[type] + " (Kauf)" });
       }); return items;
     }
 
     // Toggle eigener Display
-    const ownDisplayCb=document.getElementById('ownDisplay');
-    const playersOnlyWrap=document.getElementById('playersOnlyWrap');
-    const rentRowsBlock=document.getElementById('rentRowsBlock');
-    ownDisplayCb.addEventListener('change',()=>{
-      const own=ownDisplayCb.checked;
-      playersOnlyWrap.style.display=own?'block':'none';
-      rentRowsBlock.style.display=own?'none':'block';
-      document.getElementById('rentResult').hidden=true;
+    const ownDisplayCb = document.getElementById('ownDisplay');
+    const playersOnlyWrap = document.getElementById('playersOnlyWrap');
+    const rentRowsBlock = document.getElementById('rentRowsBlock');
+    ownDisplayCb.addEventListener('change', () => {
+      const own = ownDisplayCb.checked;
+      playersOnlyWrap.style.display = own ? 'block' : 'none';
+      rentRowsBlock.style.display = own ? 'none' : 'block';
+      document.getElementById('rentResult').hidden = true;
     });
 
-    function calcRent(){
-      const own=ownDisplayCb.checked;
-      const simQty=+document.getElementById('rentSimQty').value||0;
-      const container=document.getElementById('rentResult');
+    function calcRent() {
+      const own = ownDisplayCb.checked;
+      const simQty = +document.getElementById('rentSimQty').value || 0;
+      const container = document.getElementById('rentResult');
 
-      if(own){
-        const n=+document.getElementById('playersOnly').value||0;
-        const buys=getBuyItems();
-        if(n<1 && !buys.length){
-          container.innerHTML='<div class="card">Bitte Anzahl Player &gt; 0 oder Displays (Kauf) erfassen.</div>';
-          container.hidden=false; return;
+      if (own) {
+        const n = +document.getElementById('playersOnly').value || 0;
+        const buys = getBuyItems();
+        if (n < 1 && !buys.length) {
+          container.innerHTML = '<div class="card">Bitte Anzahl Player &gt; 0 oder Displays (Kauf) erfassen.</div>';
+          container.hidden = false; return;
         }
-        const monthlyPlayers=n*25;           // Abo-Preis pro Player
-        const monthlySIM=simQty*10;
-        const buyTotal=buys.reduce((s,i)=>s+i.qty*i.unit,0);
-        const list=buys.length? `<div class="muted" style="margin-top:6px">Displays (Kauf):<br>${buys.map(i=>`• ${i.label}: ${i.qty} × CHF ${i.unit.toLocaleString('de-CH')} = CHF ${(i.qty*i.unit).toLocaleString('de-CH')}`).join('<br>')}</div>`:'';        
+        const monthlyPlayers = n * 25;           // Abo-Preis pro Player
+        const monthlySIM = simQty * 10;
+        const buyTotal = buys.reduce((s, i) => s + i.qty * i.unit, 0);
+        const list = buys.length ? `<div class="muted" style="margin-top:6px">Displays (Kauf):<br>${buys.map(i => `• ${i.label}: ${i.qty} × CHF ${i.unit.toLocaleString('de-CH')} = CHF ${(i.qty * i.unit).toLocaleString('de-CH')}`).join('<br>')}</div>` : '';
 
-        container.innerHTML=
+        container.innerHTML =
           `<div class="card">
-            <strong>Monatskosten (Abo):</strong> CHF ${(monthlyPlayers+monthlySIM).toLocaleString('de-CH')}.–<br>
+            <strong>Monatskosten (Abo):</strong> CHF ${(monthlyPlayers + monthlySIM).toLocaleString('de-CH')}.–<br>
             <div class="muted" style="margin-top:6px">Player (Abo): CHF ${monthlyPlayers.toLocaleString('de-CH')} • SIM: CHF ${monthlySIM.toLocaleString('de-CH')}</div>
             ${list}
-            ${buyTotal? `<div class="muted" style="margin-top:6px"><strong>Einmalig Kauf-Displays:</strong> CHF ${buyTotal.toLocaleString('de-CH')}</div>`:''}
+            ${buyTotal ? `<div class="muted" style="margin-top:6px"><strong>Einmalig Kauf-Displays:</strong> CHF ${buyTotal.toLocaleString('de-CH')}</div>` : ''}
             <div class="form-actions" style="margin-top:8px">
               <button type="button" class="btn btn-primary" onclick="openBooking('playersOnly')">Jetzt bestellen</button>
             </div>
           </div>`;
-        container.hidden=false;
+        container.hidden = false;
         return;
       }
 
       // klassisches Mietmodell (Monat)
-      const items=getRentItems();
-      if(!items.length){
-        container.innerHTML='<div class="card">Bitte mindestens eine Position mit Menge &gt; 0 erfassen.</div>';
-        container.hidden=false; return;
+      const items = getRentItems();
+      if (!items.length) {
+        container.innerHTML = '<div class="card">Bitte mindestens eine Position mit Menge &gt; 0 erfassen.</div>';
+        container.hidden = false; return;
       }
-      const monthlyBase=items.reduce((sum,i)=>sum+i.qty*i.unit,0);
-      const monthlySIM=simQty*10;
-      const monthly=monthlyBase + monthlySIM;
+      const monthlyBase = items.reduce((sum, i) => sum + i.qty * i.unit, 0);
+      const monthlySIM = simQty * 10;
+      const monthly = monthlyBase + monthlySIM;
 
-      const list=items.map(i=>`• ${i.label}: ${i.qty} × CHF ${i.unit.toLocaleString('de-CH')} = CHF ${(i.qty*i.unit).toLocaleString('de-CH')}`).join('<br>');
-      container.innerHTML=
+      const list = items.map(i => `• ${i.label}: ${i.qty} × CHF ${i.unit.toLocaleString('de-CH')} = CHF ${(i.qty * i.unit).toLocaleString('de-CH')}`).join('<br>');
+      container.innerHTML =
         `<div class="card">
           <strong>Monatskosten (Miete):</strong> CHF ${monthly.toLocaleString('de-CH')}.–<br>
           <div class="muted" style="margin-top:6px">${list}</div>
@@ -1514,127 +1836,275 @@
             <button type="button" class="btn btn-primary" onclick="openBooking('rent')">Jetzt mieten</button>
           </div>
         </div>`;
-      container.hidden=false;
+      container.hidden = false;
     }
 
     // =================== BUCHUNG ===================
-    function openStarter(){
-      // Immer CHF 660.–
-      const modal=document.getElementById('bookingModal');
-      const title=document.getElementById('bkTitle');
-      const summary=document.getElementById('bkSummary');
-      const pkg=document.getElementById('bkPackage');
-      const cfg=document.getElementById('bkConfig');
-      const subj=document.getElementById('bkSubject');
+    function openStarter() {
+      const modal = document.getElementById('bookingModal');
+      const title = document.getElementById('bkTitle');
+      const summary = document.getElementById('bkSummary');
+      const pkg = document.getElementById('bkPackage');
+      const cfg = document.getElementById('bkConfig');
 
-      title.textContent='Bestellung – Starter-Paket (lokal)';
-      summary.innerHTML=`<strong>Starter-Paket (lokal)</strong><br>• CMS-Server (Mini) + 1 Player + 1h Einführung + 2 Vorlagen<br><strong>Total: CHF 660.–</strong>`;
-      pkg.value='Starter-Paket (lokal) – CHF 660.–';
-      cfg.value='Fixpreis CHF 660.– (1 Standort, 1 Bildschirm, 1h Einführung inkl.)';
-      subj.value='Bestellung – Starter-Paket (CHF 660.–)';
+      title.textContent = 'Bestellung – Starter-Paket (lokal)';
+      summary.innerHTML = `<strong>Starter-Paket (lokal)</strong><br>• CMS-Server (Mini) + 1 Player + 1h Einführung + 2 Vorlagen<br><strong>Total: CHF 660.–</strong>`;
+      pkg.value = 'Starter-Paket (lokal) – CHF 660.–';
+      cfg.value = 'Fixpreis CHF 660.– (1 Standort, 1 Bildschirm, 1h Einführung inkl.)';
+      document.getElementById('bkMsg').style.display = 'none';
       modal.classList.add('open');
     }
 
-    function openBooking(kind){
-      const modal=document.getElementById('bookingModal');
-      const title=document.getElementById('bkTitle');
-      const summary=document.getElementById('bkSummary');
-      const pkg=document.getElementById('bkPackage');
-      const cfg=document.getElementById('bkConfig');
-      const subj=document.getElementById('bkSubject');
+    function openBooking(kind) {
+      const modal = document.getElementById('bookingModal');
+      const title = document.getElementById('bkTitle');
+      const summary = document.getElementById('bkSummary');
+      const pkg = document.getElementById('bkPackage');
+      const cfg = document.getElementById('bkConfig');
 
-      let text='',pkgName='',config='';
+      let text = '', pkgName = '', config = '';
 
-      if(kind==='rent'){
-        const simQty=+document.getElementById('rentSimQty').value||0;
-        const items=[...getRentItems()];
-        const monthlyBase=items.reduce((s,i)=>s+i.qty*i.unit,0);
-        const monthlySIM=simQty*10;
-        const monthly=monthlyBase+monthlySIM;
+      if (kind === 'rent') {
+        const simQty = +document.getElementById('rentSimQty').value || 0;
+        const theItems = [...getRentItems()]; // Fix: lokale Deklaration, verhindert implizite Global-Variable
+        const monthlyBase = theItems.reduce((s, i) => s + i.qty * i.unit, 0);
+        const monthlySIM = simQty * 10;
+        const monthly = monthlyBase + monthlySIM;
 
-        title.textContent='Buchung – Mietmodell';
-        pkgName='Mietmodell (gehostet, 24 Monate)';
-        config=`Monatlich: CHF ${monthly} | Positionen: ${items.map(i=>`${i.label} x${i.qty}@${i.unit}`).join(', ')} | SIM: ${simQty}x10`;
-        text=`<strong>Mietmodell (Monatlich)</strong><br>${items.map(i=>`• ${i.label}: ${i.qty} × CHF ${i.unit} = CHF ${(i.qty*i.unit).toLocaleString('de-CH')}`).join('<br>')}
+        title.textContent = 'Buchung – Mietmodell';
+        pkgName = 'Mietmodell (gehostet, 24 Monate)';
+        config = `Monatlich: CHF ${monthly} | Positionen: ${theItems.map(i => `${i.label} x${i.qty}@${i.unit}`).join(', ')} | SIM: ${simQty}x10`;
+        text = `<strong>Mietmodell (Monatlich)</strong><br>${theItems.map(i => `• ${i.label}: ${i.qty} × CHF ${i.unit} = CHF ${(i.qty * i.unit).toLocaleString('de-CH')}`).join('<br>')}
               <br>• SIM: ${simQty} × CHF 10 = CHF ${monthlySIM.toLocaleString('de-CH')}
               <br><br><strong>Monatlich: CHF ${monthly.toLocaleString('de-CH')}</strong>`;
-        subj.value=`Buchung – Mietmodell (CHF ${monthly.toLocaleString('de-CH')}/Monat)`;
-      }else if(kind==='playersOnly'){
-        const n=+document.getElementById('playersOnly').value||0;
-        const simQty=+document.getElementById('rentSimQty').value||0;
-        const buys=getBuyItems();
-        const monthlyPlayers=n*25;
-        const monthlySIM=simQty*10;
-        const buyTotal=buys.reduce((s,i)=>s+i.qty*i.unit,0);
+      } else if (kind === 'playersOnly') {
+        const n = +document.getElementById('playersOnly').value || 0;
+        const simQty = +document.getElementById('rentSimQty').value || 0;
+        const buys = getBuyItems();
+        const monthlyPlayers = n * 25;
+        const monthlySIM = simQty * 10;
+        const buyTotal = buys.reduce((s, i) => s + i.qty * i.unit, 0);
 
-        title.textContent='Bestellung – Player-Abo & ggf. Displays (Kauf)';
-        pkgName='Abo (eigener Display): Player + CMS';
-        config=`Monatlich: Player ${n}x25 + SIM ${simQty}x10 | Displays(Kauf): ${buys.map(i=>`${i.label} x${i.qty}@${i.unit}`).join(', ') || '–'}`;
-        text=`<strong>Monatskosten</strong><br>
+        title.textContent = 'Bestellung – Player-Abo & ggf. Displays (Kauf)';
+        pkgName = 'Abo (eigener Display): Player + CMS';
+        config = `Monatlich: Player ${n}x25 + SIM ${simQty}x10 | Displays(Kauf): ${buys.map(i => `${i.label} x${i.qty}@${i.unit}`).join(', ') || '–'}`;
+        text = `<strong>Monatskosten</strong><br>
               • Player (Abo): ${n} × CHF 25 = CHF ${monthlyPlayers.toLocaleString('de-CH')}<br>
               • SIM: ${simQty} × CHF 10 = CHF ${monthlySIM.toLocaleString('de-CH')}<br>
-              <strong>Summe monatlich: CHF ${(monthlyPlayers+monthlySIM).toLocaleString('de-CH')}</strong>
-              ${buyTotal? `<br><br><strong>Einmalig Displays (Kauf):</strong> CHF ${buyTotal.toLocaleString('de-CH')}`:''}`;
-        subj.value='Bestellung – Player-Abo (eigener Display) + evtl. Display-Kauf';
-      }else{
-        // Lokal (aus Rechner)
-        const screens=+document.getElementById('screens').value||0;
-        const sites=+document.getElementById('sites').value||0;
-        const simQty=+document.getElementById('localSimQty').value||0;
-        const serverCosts=sites*470;
-        const playerCosts=screens*190;
-        let total=serverCosts+playerCosts; if(sites===1&&screens===1) total=660;
+              <strong>Summe monatlich: CHF ${(monthlyPlayers + monthlySIM).toLocaleString('de-CH')}</strong>
+              ${buyTotal ? `<br><br><strong>Einmalig Kauf-Displays:</strong> CHF ${buyTotal.toLocaleString('de-CH')}` : ''}`;
+      } else {
+        // Lokal
+        const screens = +document.getElementById('screens').value || 0;
+        const sites = +document.getElementById('sites').value || 0;
+        const simQty = +document.getElementById('localSimQty').value || 0;
+        const serverCosts = sites * 470;
+        const playerCosts = screens * 190;
+        let total = serverCosts + playerCosts; if (sites === 1 && screens === 1) total = 660;
 
-        const buys=getLocalBuyItems();
-        const buyTotal=buys.reduce((s,i)=>s+i.qty*i.unit,0);
-        const simMonthly=simQty*10;
+        const buys = getLocalBuyItems();
+        const buyTotal = buys.reduce((s, i) => s + i.qty * i.unit, 0);
+        const simMonthly = simQty * 10;
 
-        title.textContent='Buchung – Lokales System';
-        pkgName='Lokales System (einmalig)';
-        config=`Standorte:${sites} | Screens:${screens} | Server:${serverCosts} | Player:${playerCosts} | Displays(Kauf):${buyTotal} | SIM/Monat:${simMonthly}`;
-        text=`<strong>Lokales System (einmalig)</strong><br>
+        title.textContent = 'Buchung – Lokales System';
+        pkgName = 'Lokales System (einmalig)';
+        config = `Standorte:${sites} | Screens:${screens} | Server:${serverCosts} | Player:${playerCosts} | Displays(Kauf):${buyTotal} | SIM/Monat:${simMonthly}`;
+        text = `<strong>Lokales System (einmalig)</strong><br>
               Standorte: ${sites} • Bildschirme: ${screens}<br>
               Server CHF ${serverCosts.toLocaleString('de-CH')} + Player CHF ${playerCosts.toLocaleString('de-CH')} + Displays (Kauf) CHF ${buyTotal.toLocaleString('de-CH')}<br>
-              <strong>Total: CHF ${(total+buyTotal).toLocaleString('de-CH')}</strong>
-              ${simMonthly? `<br><br><strong>Optional SIM:</strong> CHF ${simMonthly.toLocaleString('de-CH')}.–/Monat (${simQty} × CHF 10.–)`:''}`;
-        subj.value=`Buchung – Lokal (${screens}x Screens / ${sites} Standort(e))`;
+              <strong>Total: CHF ${(total + buyTotal).toLocaleString('de-CH')}</strong>
+              ${simMonthly ? `<br><br><strong>Optional SIM:</strong> CHF ${simMonthly.toLocaleString('de-CH')}.–/Monat (${simQty} × CHF 10.–)` : ''}`;
       }
 
-      document.getElementById('bkSummary').innerHTML=`<div>${text}</div>`;
-      document.getElementById('bkPackage').value=pkgName;
-      document.getElementById('bkConfig').value=config;
-      modal.classList.add('open');
+      document.getElementById('bkSummary').innerHTML = `<div>${text}</div>`;
+      document.getElementById('bkPackage').value = pkgName;
+      document.getElementById('bkConfig').value = config;
+      document.getElementById('bkMsg').style.display = 'none';
+      document.getElementById('bookingModal').classList.add('open');
     }
-    function closeBooking(){ document.getElementById('bookingModal').classList.remove('open'); }
-    document.getElementById('bookingModal').addEventListener('click',(e)=>{ if(e.target.id==='bookingModal') closeBooking(); });
+    function closeBooking() { document.getElementById('bookingModal').classList.remove('open'); }
+    document.getElementById('bookingModal').addEventListener('click', (e) => { if (e.target.id === 'bookingModal') closeBooking(); });
 
-    // Enforce required fields + AGB on booking form + Lieferadresse Pflicht
-    (function(){
-      const form=document.getElementById('bookingForm');
-      form.addEventListener('submit',function(e){
-        if(!form.checkValidity()){
-          e.preventDefault();
-          form.reportValidity();
+
+    // Rechnungsadresse/Mail toggles
+    (function () {
+      const sameAddr = document.getElementById('sameAddr');
+      const addrWrap = document.getElementById('invoiceAddrWrap');
+      const invStreet = document.querySelector('[name="Rechnungsadresse_Strasse"]');
+      const invCity = document.querySelector('[name="Rechnungsadresse_PLZ_Ort"]');
+      const invLand = document.querySelector('[name="Rechnungsadresse_Land"]');
+
+      function applyAddr() {
+        const on = sameAddr.checked;
+        addrWrap.style.display = on ? 'none' : 'block';
+        if (invStreet && invCity && invLand) {
+          invStreet.required = invCity.required = invLand.required = !on;
+        }
+      }
+      sameAddr.addEventListener('change', applyAddr);
+      applyAddr();
+
+      const sameMail = document.getElementById('sameMail');
+      const mailWrap = document.getElementById('invoiceMailWrap');
+      const invMail = document.querySelector('[name="Rechnungs-E-Mail"]');
+
+      function applyMail() {
+        const on = sameMail.checked;
+        mailWrap.style.display = on ? 'none' : 'block';
+        if (invMail) { invMail.required = !on; }
+      }
+      sameMail.addEventListener('change', applyMail);
+      applyMail();
+    })();
+
+    // ====== Basic form validator ======
+    function ensureValid(form) {
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return false;
+      }
+      return true;
+    }
+
+    // ====== Helper für JSON POST (für Demo/Booking via Netlify Function) ======
+    async function postJSON(url, data) {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json.ok === false) throw new Error(json.error || ('HTTP ' + res.status));
+      return json;
+    }
+
+    // ====== Demo-Form (Netlify Function) ======
+    (function () {
+      const form = document.getElementById('demoForm');
+      const btn = document.getElementById('dmSubmit');
+      const msg = document.getElementById('dmMsg');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!ensureValid(form)) return;
+
+        btn.disabled = true; btn.textContent = 'Sendet…';
+        msg.style.display = 'none';
+
+        try {
+          await postJSON('/.netlify/functions/notify', {
+            type: 'demo',
+            name: form.querySelector('[name="Name"]').value,
+            email: form.querySelector('[name="E-Mail"]').value,
+            phone: form.querySelector('[name="Telefon"]').value || '',
+            slots: form.querySelector('[name="Terminvorschläge"]').value,
+            page: document.getElementById('dmPage').value,
+            honey: form.querySelector('[name="_honey"]').value || ''
+          });
+          msg.textContent = 'Danke! Wir melden uns in Kürze mit einer Terminbestätigung.';
+          msg.style.display = 'block';
+          form.reset();
+        } catch (err) {
+          msg.textContent = 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
+          msg.style.display = 'block';
+        } finally {
+          btn.disabled = false; btn.textContent = 'Anfrage senden';
         }
       });
     })();
 
-    // =================== DEMO MODAL ===================
-    function openDemo(){ document.getElementById('demoModal').classList.add('open'); }
-    function closeDemo(){ document.getElementById('demoModal').classList.remove('open'); }
-    document.getElementById('demoModal').addEventListener('click',(e)=>{ if(e.target.id==='demoModal') closeDemo(); });
-    document.querySelectorAll('.js-open-demo').forEach(btn=>btn.addEventListener('click',openDemo));
+    // ====== Buchungs-Form (Netlify Function) ======
+    (function () {
+      const form = document.getElementById('bookingForm');
+      const btn = document.getElementById('bkSubmit');
+      const msg = document.getElementById('bkMsg');
 
-    // Demo-Formular: Validierung aktiv
-    (function(){
-      const form=document.getElementById('demoForm');
-      form.addEventListener('submit',function(e){
-        if(!form.checkValidity()){
-          e.preventDefault();
-          form.reportValidity();
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!ensureValid(form)) return;
+
+        btn.disabled = true; btn.textContent = 'Sendet…';
+        msg.style.display = 'none';
+
+        const fd = new FormData(form);
+        const obj = Object.fromEntries(fd.entries());
+
+        try {
+          await postJSON('/.netlify/functions/notify', {
+            type: 'booking',
+            name: obj['Ansprechperson'],
+            email: obj['E-Mail'],
+            phone: obj['Telefon'] || '',
+            company: obj['Firma'] || '',
+            package: obj['Paket'],
+            config: obj['Konfiguration'],
+            message: obj['Bemerkungen'] || '',
+            page: obj['page'] || window.location.href,
+            honey: obj['_honey'] || ''
+          });
+          msg.textContent = 'Vielen Dank! Ihre Bestellung ist eingegangen – wir melden uns in Kürze zur Abstimmung.';
+          msg.style.display = 'block';
+          form.reset();
+        } catch (err) {
+          msg.textContent = 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
+          msg.style.display = 'block';
+        } finally {
+          btn.disabled = false; btn.textContent = 'Bestellung absenden';
         }
       });
     })();
+
+    // ====== Rückruf-Form (FormSubmit AJAX, mit Ladeanzeige & Meldungen) ======
+    (function () {
+      const form = document.getElementById('callbackForm');
+      const btn = document.getElementById('cbSubmit');
+      const msg = document.getElementById('callbackMsg');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!ensureValid(form)) return;
+
+        btn.disabled = true; btn.textContent = 'Sendet…';
+        msg.style.display = 'none';
+
+        // AJAX an das im form[action] hinterlegte FormSubmit-Endpoint
+        const endpoint = form.getAttribute('action') || 'https://formsubmit.co/ajax/info@infraone.ch';
+        const payload = {
+          Name: form.querySelector('[name="Name"]').value,
+          Telefon: form.querySelector('[name="Telefon"]').value,
+          Seite: form.querySelector('[name="Seite"]').value,
+          _subject: 'Rückrufwunsch – werbebildschirme.ch',
+          _template: 'table',
+          _captcha: 'false'
+        };
+
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok || data.success === false) {
+            throw new Error(data.message || ('HTTP ' + res.status));
+          }
+          msg.textContent = 'Danke! Wir melden uns in den nächsten 4 Stunden.';
+          msg.style.display = 'block';
+          form.reset();
+        } catch (err) {
+          msg.textContent = 'Senden fehlgeschlagen. Bitte später erneut versuchen.';
+          msg.style.display = 'block';
+        } finally {
+          btn.disabled = false; btn.textContent = 'Rückruf anfordern';
+        }
+      });
+    })();
+
+    // ====== Demo-Modal Open/Close ======
+    function openDemo() { document.getElementById('demoModal').classList.add('open'); }
+    function closeDemo() { document.getElementById('demoModal').classList.remove('open'); }
+    document.getElementById('demoModal').addEventListener('click', (e) => { if (e.target.id === 'demoModal') closeDemo(); });
+    document.querySelectorAll('.js-open-demo').forEach(btn => btn.addEventListener('click', openDemo));
   </script>
 </body>
 </html>
